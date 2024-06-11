@@ -25,14 +25,11 @@ jobs:
       - name: Install EAS CLI
         run: npm install -g eas-cli
 
-      - name: Set EXPO_TOKEN environment variable
-        run: echo "EXPO_TOKEN=${{ vars.EXPO_TOKEN }}" >> $GITHUB_ENV
-
-      - name: Verify EXPO_TOKEN secret
-        run: echo "EXPO_TOKEN is set"
-        env:
-          EXPO_TOKEN: ${{ vars.EXPO_TOKEN }}
-          if: ${{ vars.EXPO_TOKEN != '' }}
+      - name: 🏗 Setup EAS
+        uses: expo/expo-github-action@v8
+        with:
+          eas-version: latest
+          token: ${{ vars.EXPO_TOKEN }}
 
       # Debug step to print environment variables (caution: sensitive information)
       - name: Print environment variables
