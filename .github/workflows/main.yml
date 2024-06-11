@@ -13,4 +13,5 @@ jobs:
         with:
           node-version: '18.18.2'
       - run: npm ci
+      - run: npm install eas-cli
       - run: npx eas build -p android --profile preview
