@@ -26,13 +26,13 @@ jobs:
         run: npm install -g eas-cli
 
       - name: Set EXPO_TOKEN environment variable
-        run: echo "EXPO_TOKEN=${{ secrets.EXPO_TOKEN }}" >> $GITHUB_ENV
+        run: echo "EXPO_TOKEN=${{ vars.EXPO_TOKEN }}" >> $GITHUB_ENV
 
       - name: Verify EXPO_TOKEN secret
         run: echo "EXPO_TOKEN is set"
         env:
-          EXPO_TOKEN: ${{ secrets.EXPO_TOKEN }}
-          if: ${{ secrets.EXPO_TOKEN != '' }}
+          EXPO_TOKEN: ${{ vars.EXPO_TOKEN }}
+          if: ${{ vars.EXPO_TOKEN != '' }}
 
       # Debug step to print environment variables (caution: sensitive information)
       - name: Print environment variables
@@ -40,6 +40,6 @@ jobs:
 
       - name: Build
         env:
-          EXPO_TOKEN: ${{ secrets.EXPO_TOKEN }}
+          EXPO_TOKEN: ${{ vars.EXPO_TOKEN }}
           CI: 1
         run: eas build -p android --profile preview --non-interactive
