@@ -1,14 +1,16 @@
 name: septuagint-push-workflow
 
-on: [push, pull_request]
-  branches: - 'main'
+on:
+  push:
+    branches:
+      - 'main'
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
-          with:
-            node-version: '18.18.2'
+        with:
+          node-version: '18.18.2'
       - run: npm ci
       - run: npx eas build -p android --profile preview
