@@ -14,7 +14,11 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: '18.18.2'
+      - name: 🏗 Setup EAS
+        uses: expo/expo-github-action@v8
+        with:
+          eas-version: latest
+          token: ${{ secrets.EXPO_TOKEN }}
       - run: npm ci
       - run: npm install eas-cli
-      - run: npx eas secret:create --name $name --value $value --force --non-interactive --type string
-      - run: npx eas build -p android --profile preview
+      - run: npx eas build -p android --profile preview --non-interactive
