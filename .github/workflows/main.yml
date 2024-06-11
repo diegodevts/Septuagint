@@ -17,10 +17,13 @@ jobs:
         uses: expo/expo-github-action@v8
         with:
           eas-version: latest
-          token: ${{ env.EXPO_TOKEN }}
+          token: ${{ secrets.EXPO_TOKEN }}
 
-      - name: 📦 Install dependencies
+      - name: Install dependencies
         run: npm install
+
+      - name: Log in to Expo
+        run: npx expo login --non-interactive -t ${{ secrets.EXPO_TOKEN }}
 
       - name: Build
         run: npx eas build --non-interactive -p android --profile preview
