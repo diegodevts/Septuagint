@@ -18,6 +18,7 @@
     "@react-navigation/drawer": "^6.6.15",
     "@react-navigation/native": "^6.1.17",
     "@types/react": "~18.2.79",
+    "eas-cli": "^9.2.0",
     "expo": "^51.0.9",
     "expo-font": "~12.0.6",
     "expo-linear-gradient": "^13.0.2",
