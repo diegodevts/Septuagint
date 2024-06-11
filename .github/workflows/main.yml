@@ -23,7 +23,7 @@ jobs:
         uses: expo/expo-github-action@v8
         with:
           eas-version: latest
-          token: ${{ secrets.EXPO_TOKEN }}
+          token: ${{ vars.EXPO_TOKEN }}
 
       # Debug step to print environment variables (caution: sensitive information)
       - name: Print environment variables
