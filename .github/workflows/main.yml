@@ -22,8 +22,8 @@ jobs:
       - name: Install dependencies
         run: npm install
 
-      - name: Log in to Expo
-        run: npx expo login --non-interactive -t ${{ secrets.EXPO_TOKEN }}
-
       - name: Build
+        env:
+          EXPO_TOKEN: ${{ secrets.EXPO_TOKEN }}
+          CI: 1
         run: npx eas build --non-interactive -p android --profile preview
