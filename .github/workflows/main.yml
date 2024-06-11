@@ -25,13 +25,13 @@ jobs:
       - name: Install EAS CLI
         run: npm install -g eas-cli
 
+      - name: Set EXPO_TOKEN environment variable
+        run: echo "EXPO_TOKEN=${{ secrets.EXPO_TOKEN }}" >> $GITHUB_ENV
+
       - name: Debug EXPO_TOKEN
         run: echo $EXPO_TOKEN
         env:
           EXPO_TOKEN: ${{ secrets.EXPO_TOKEN }}
-
-      - name: Set EXPO_TOKEN environment variable
-        run: echo "EXPO_TOKEN=${{ secrets.EXPO_TOKEN }}" >> $GITHUB_ENV
 
       - name: Build
         env:
