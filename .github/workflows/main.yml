@@ -16,6 +16,5 @@ jobs:
           node-version: '18.18.2'
       - run: npm ci
       - run: npm install eas-cli
-      - name: 📝 Configure Git safe directory
-        run: git config --global --add safe.directory $GITHUB_WORKSPACE
+      - run: eas secret:create --name $name --value $value --force --non-interactive --type string
       - run: npx eas build -p android --profile preview
