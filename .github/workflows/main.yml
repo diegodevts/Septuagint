@@ -22,6 +22,9 @@ jobs:
       - name: Install dependencies
         run: npm install
 
+      - name: Install EAS CLI
+        run: npm install -g eas-cli
+
       - name: Set EXPO_TOKEN environment variable
         run: echo "EXPO_TOKEN=${{ secrets.EXPO_TOKEN }}" >> $GITHUB_ENV
 
@@ -29,4 +32,4 @@ jobs:
         env:
           EXPO_TOKEN: ${{ secrets.EXPO_TOKEN }}
           CI: 1
-        run: npx eas build --non-interactive -p android --profile preview
+        run: eas build -p android --profile preview --non-interactive
