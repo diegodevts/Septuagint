@@ -25,13 +25,6 @@ jobs:
           eas-version: latest
           token: ${{ vars.EXPO_TOKEN }}
 
-      # Debug step to print environment variables (caution: sensitive information)
-      - name: Verify EXPO_TOKEN secret
-        run: echo "EXPO_TOKEN is set"
-        env:
-          EXPO_TOKEN: ${{ vars.EXPO_TOKEN }}
-          if: ${{ vars.EXPO_TOKEN != '' }}
-
       - name: Build
         env:
           EXPO_TOKEN: ${{ vars.EXPO_TOKEN }}

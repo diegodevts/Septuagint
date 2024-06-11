@@ -10,7 +10,7 @@ import {
   View
 } from 'react-native'
 import Icon from 'react-native-vector-icons/FontAwesome'
-import { useContext, useEffect, useMemo, useState } from 'react'
+import { useContext, useEffect, useMemo, useRef, useState } from 'react'
 import MyContext from '@/src/contexts/items-context'
 import Voice, {
   SpeechErrorEvent,
@@ -36,13 +36,23 @@ export const Bible = () => {
   } = useContext(MyContext)
   const [voiceMode, setVoiceMode] = useState(false)
   const [voiceResults, setVoiceResults] = useState<string[] | undefined>([])
+  const greekRef = useRef(0)
+  const portugueseRef = useRef(0)
 
   const formatedGreekChapter = greekChapter
     .replaceAll(/Chapter \d+/g, '')
     .trim()
+
   const formatedPortugueseChapter = portugueseChapter
     .replaceAll(/Capítulo \d+/g, '')
     .trim()
+
+  const eachVerseOfGreekChapter = formatedGreekChapter
+    .split(/\d+/)
+    .map((string) => string.replace(/[\n\t]/g, ' '))
+  const eachVerseOfPortugueseChapter = formatedPortugueseChapter
+    .split(/\d+/)
+    .map((string) => string.replace(/[\n\t]/g, ' '))
 
   const onSpeechError = (error: SpeechErrorEvent) => {
     console.log(error)
@@ -123,12 +133,42 @@ export const Bible = () => {
     <View style={styles.mainContainer}>
       <ScrollView style={{ height: '100%' }}>
         <View
-          style={{ flexDirection: 'row', padding: 5, height: '100%', gap: 10 }}
+          style={{
+            padding: 5,
+            height: '100%'
+          }}
         >
-          <Text style={[styles.text, { fontSize: 15 }]}>
-            {formatedGreekChapter}
-          </Text>
-          <Text style={styles.text}>{formatedPortugueseChapter}</Text>
+          <View style={[styles.text]}>
+            {eachVerseOfGreekChapter.map(
+              (verse, index) =>
+                verse != '' && (
+                  <View
+                    style={{
+                      flexDirection: 'row',
+                      gap: 5
+                    }}
+                  >
+                    <View style={styles.column}>
+                      <Text key={`verse1_${index}`}>
+                        <Text style={{ fontWeight: 'bold', fontSize: 16 }}>
+                          {index}
+                        </Text>
+                        {` ${verse}`}
+                      </Text>
+                    </View>
+
+                    <View style={styles.column}>
+                      <Text key={`verse2_${index}`}>
+                        <Text style={{ fontWeight: 'bold', fontSize: 16 }}>
+                          {index}
+                        </Text>
+                        {` ${eachVerseOfPortugueseChapter[index]}`}
+                      </Text>
+                    </View>
+                  </View>
+                )
+            )}
+          </View>
         </View>
       </ScrollView>
 
@@ -190,6 +230,11 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     gap: 5
   },
+  column: {
+    flex: 1,
+    width: '100%',
+    flexDirection: 'row'
+  },
   caretLeft: {
     position: 'absolute',
     top: height - 200,
@@ -209,9 +254,9 @@ const styles = StyleSheet.create({
   text: {
     fontFamily: 'Poppins-Regular',
     fontWeight: 'semibold',
-    fontSize: 14,
     textAlign: 'left',
-    width: '47%'
+    width: '100%',
+    fontSize: 14
   },
   pdf: {
     flex: 1,
