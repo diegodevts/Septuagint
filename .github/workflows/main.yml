@@ -28,10 +28,15 @@ jobs:
       - name: Set EXPO_TOKEN environment variable
         run: echo "EXPO_TOKEN=${{ secrets.EXPO_TOKEN }}" >> $GITHUB_ENV
 
-      - name: Debug EXPO_TOKEN
-        run: echo $EXPO_TOKEN
+      - name: Verify EXPO_TOKEN secret
+        run: echo "EXPO_TOKEN is set"
         env:
           EXPO_TOKEN: ${{ secrets.EXPO_TOKEN }}
+          if: ${{ secrets.EXPO_TOKEN != '' }}
+
+      # Debug step to print environment variables (caution: sensitive information)
+      - name: Print environment variables
+        run: printenv
 
       - name: Build
         env:
