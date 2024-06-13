@@ -1,5 +1,6 @@
 import {
   Dimensions,
+  LayoutChangeEvent,
   NativeScrollEvent,
   NativeSyntheticEvent,
   PermissionsAndroid,
@@ -36,8 +37,9 @@ export const Bible = () => {
   } = useContext(MyContext)
   const [voiceMode, setVoiceMode] = useState(false)
   const [voiceResults, setVoiceResults] = useState<string[] | undefined>([])
-  const greekRef = useRef(0)
-  const portugueseRef = useRef(0)
+  const greekRef = useRef<number[]>([])
+
+  const scrollRef = useRef<ScrollView>(null)
 
   const formatedGreekChapter = greekChapter
     .replaceAll(/Chapter \d+/g, '')
@@ -94,18 +96,24 @@ export const Bible = () => {
     return () => Voice.destroy().then(Voice.removeAllListeners)
   }, [])
 
+  const handleVerseLayout = (e: LayoutChangeEvent) => {
+    greekRef.current.push(e.nativeEvent.layout.y)
+  }
+
   useEffect(() => {
     ;(async () => {
       if (voiceResults && voiceResults.length > 0) {
         const formattedResults = voiceResults[0].split(' ')
         let book = capitalizeFirstLetter(
           formattedResults
-            .slice(0, formattedResults.length - 1)
+            .slice(0, formattedResults.indexOf('verso') - 1)
             .toString()
             .split(',')
             .join(' ')
         )
-        const chapter = formattedResults[formattedResults.length - 1]
+
+        const chapter = formattedResults[formattedResults.indexOf('verso') - 1]
+        const verse = formattedResults[formattedResults.length - 1]
 
         if (book.includes('Primeira')) {
           book = book.replace(/Primeira/i, '1')
@@ -121,6 +129,12 @@ export const Bible = () => {
           setCurrentBookIndex(currentBookIndex)
           setBookPage(+chapter)
 
+          scrollRef.current?.scrollTo({
+            y: greekRef.current[+verse - 1],
+            animated: true
+          })
+
+          greekRef.current.length = 0
           return
         }
 
@@ -131,7 +145,7 @@ export const Bible = () => {
 
   return (
     <View style={styles.mainContainer}>
-      <ScrollView style={{ height: '100%' }}>
+      <ScrollView style={{ height: '100%' }} ref={scrollRef}>
         <View
           style={{
             padding: 5,
@@ -147,6 +161,7 @@ export const Bible = () => {
                       flexDirection: 'row',
                       gap: 5
                     }}
+                    onLayout={handleVerseLayout}
                   >
                     <View style={styles.column}>
                       <Text key={`verse1_${index}`}>

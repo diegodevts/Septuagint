@@ -1,4 +1,4 @@
-export const portuguese: string = `                                  GÊNESIS
+export const portuguese: string = `                                  Gênesis
 
  Capítulo 1
     
@@ -3572,7 +3572,7 @@ export const portuguese: string = `                                  GÊNESIS
     
     
     
-                                       ÊXODO
+                                       Êxodo
     
  Capítulo 1
     
@@ -6411,7 +6411,7 @@ export const portuguese: string = `                                  GÊNESIS
     
     
     
-                                     LEVÍTICO
+                                     Levítico
     
  Capítulo 1
     
@@ -8582,7 +8582,7 @@ export const portuguese: string = `                                  GÊNESIS
     
     
     
-                                    NÚMEROS
+                                    Números
     
  Capítulo 1
     
@@ -11609,7 +11609,7 @@ export const portuguese: string = `                                  GÊNESIS
     13 Estes são os mandamentos, as ordenanças e os juízos que o Senhor
     ordenou pela mão de Moisés, ao oeste de Moabe, junto ao Jordão, na altura de
     Jericó.
-                                DEUTERONÔMIO
+                                Deuteronômio
     
  Capítulo 1
     
@@ -14129,7 +14129,7 @@ eis como sinal na vossa mão, e elas deverão estar fixadas diante dos vossos
     fazer no Egito, em Faraó e seus servos, e em toda a sua terra;
     12 e com respeito as grandes maravilhas e a mão poderosa que Moisés exibiu
     perante todo o Israel.
-                                        JOSUÉ
+                                        Josué
     
  Capítulo 1
     
@@ -15754,7 +15754,7 @@ Capítulo 24
     
     
     
-                                       JUÍZES
+                                       Juízes
     
  Capítulo 1
     
@@ -17408,7 +17408,7 @@ se os homens de Israel, e novamente envolveram-se em
     
     
     
-                                       RUTE
+                                       Rute
     
  Capítulo 1
     
@@ -17639,7 +17639,7 @@ se os homens de Israel, e novamente envolveram-se em
     
     
     
-                               1 SAMUEL
+                               1 Samuel
     
  Capítulo 1
     
@@ -19766,7 +19766,7 @@ se os homens de Israel, e novamente envolveram-se em
     trazendo-os para Jabes; e queimaram-nos lá.
     13 Depois, levaram os seus ossos, enterrando-os no campo que está em Jabes.
     E jejuaram por sete dias.
-                              2 SAMUEL
+                              2 Samuel
     
  Capítulo 1
     
@@ -21606,7 +21606,7 @@ se os homens de Israel, e novamente envolveram-se em
     
     
     
-                                   1 REIS
+                                   1 Reis
     
  Capítulo 1
     
@@ -23702,7 +23702,7 @@ se os homens de Israel, e novamente envolveram-se em
     
     
     
-                                   2 REIS
+                                   2 Reis
     
  Capítulo 1
     
@@ -25688,7 +25688,7 @@ se os homens de Israel, e novamente envolveram-se em
     dele, todos os dias da sua vida.
     30 Sua porção, uma porção contínua, era dada a ele da casa do rei; uma
     pensão diária, por todos os dias da sua vida.
-                                   1 CRÔNICAS
+                                   1 Crônicas
     
  Capítulo 1
     
@@ -27590,7 +27590,7 @@ se os homens de Israel, e novamente envolveram-se em
     
     
     
-                                   2 CRÔNICAS
+                                   2 Crônicas
  Capítulo 1
     
     1 Ora, Salomão, filho de Davi, foi estabelecido no seu reino; e o Senhor, seu
@@ -29938,7 +29938,7 @@ se os homens de Israel, e novamente envolveram-se em
     
     
     
-                                      ESDRAS
+                                      Esdras
     
  Capítulo 1
     
@@ -30614,7 +30614,7 @@ se os homens de Israel, e novamente envolveram-se em
     
     
     
-                                     NEEMIAS
+                                     Neemias
     
  Capítulo 1
     
@@ -31541,7 +31541,7 @@ se os homens de Israel, e novamente envolveram-se em
     
     
     
-                                       ESTER
+                                       Ester
     
  Capítulo 1
     
@@ -32018,7 +32018,7 @@ se os homens de Israel, e novamente envolveram-se em
     
     
     
-                                        JÓ
+                                        Jó
     
  Capítulo 1
     
@@ -34134,8 +34134,8 @@ se os homens de Israel, e novamente envolveram-se em
     
     
     
-                                      SALMOS
- Salmo 1
+                                      Salmos
+ Capítulo 1
     
     1 Feliz é o homem que não anda no conselho dos ímpios, nem permanece no
     caminho dos pecadores, e na cadeira dos maus não se assenta.
@@ -34152,7 +34152,7 @@ se os homens de Israel, e novamente envolveram-se em
     será aniquilado.
     
     
- Salmo 2
+ Capítulo 2
     
     1 Por que se exaltaram as nações, e os povos imaginaram coisas vãs?
     2 Os reis das nações se apresentaram, ajuntaram-se os seus líderes, em comum
@@ -34175,7 +34175,7 @@ se os homens de Israel, e novamente envolveram-se em
     aventurados os que nele confiam.
     
     
- Salmo 3
+ Capítulo 3
     
     Salmo de Davi, quando fugiu da face de Absalão, seu filho
     
@@ -34192,7 +34192,7 @@ se os homens de Israel, e novamente envolveram-se em
     8 Ao Senhor pertence a salvação. E sobre o teu povo permanece a tua benção.
     
     
- Salmo 4
+ Capítulo 4
     
     Ao chefe dos músicos, em instrumentos de corda. Ode de Davi
     
@@ -34213,7 +34213,7 @@ se os homens de Israel, e novamente envolveram-se em
     fazes viver.
     
     
- Salmo 5
+ Capítulo 5
     
     Ao mestre de canto. Um salmo de Davi acerca da herdeira.
     
@@ -34243,7 +34243,7 @@ se os homens de Israel, e novamente envolveram-se em
     favor.
     
     
- Salmo 6
+ Capítulo 6
     Ao mestre de canto. Um salmo de Davi com os hinos, em tom de oitava.
     
     1 Ó Senhor, não me repreendas na tua ira, nem me castigues no teu furor.
@@ -34266,7 +34266,7 @@ se os homens de Israel, e novamente envolveram-se em
     angustiados; que eles se retirem apressadamente, cobertos de vergonha.
     
     
- Salmo 7
+ Capítulo 7
     
     Salmo de Davi, que ele cantou para o Senhor por causa das palavras de Cuxe,
     o benjamita.
@@ -34303,7 +34303,7 @@ se os homens de Israel, e novamente envolveram-se em
     Altíssimo.
     
     
- Salmo 8
+ Capítulo 8
     
     Ao mestre de canto. Com a melodia Os Lagares. Um salmo de Davi.
     
@@ -34324,7 +34324,7 @@ se os homens de Israel, e novamente envolveram-se em
     9 Ó Senhor, Senhor nosso, quão maravilhoso é o teu nome em toda a terra!
     
     
- Salmo 9
+ Capítulo 9
     
     Ao mestre de canto. Um salmo de Davi. Com a melodia Os Segredos do
     Filho.
@@ -34369,7 +34369,7 @@ se os homens de Israel, e novamente envolveram-se em
     são apenas homens.
     
     
- Salmo 10
+ Capítulo 10
     
     1 Por que te conservas de longe, ó Senhor? Por que nos esqueces em tempos
     de necessidade, em aflição?
@@ -34410,7 +34410,7 @@ se os homens de Israel, e novamente envolveram-se em
     
     
     
- Salmo 11
+ Capítulo 11
     
     Ao mestre de canto. Um salmo de Davi.
     
@@ -34427,7 +34427,7 @@ se os homens de Israel, e novamente envolveram-se em
     6 Ele fará chover sobre os pecadores brasas de fogo e enxofre, e um vento
     tempestuoso será a porção de seu copo.
     7 Porque o Senhor é justo e ama a justiça; seu rosto contempla a retidão.
- Salmo 12
+ Capítulo 12
     
     Ao mestre de canto. Salmo de Davi, em tom de oitava.
     
@@ -34449,7 +34449,7 @@ se os homens de Israel, e novamente envolveram-se em
     extraordináriamente exaltaste aos filhos dos homens.
     
     
- Salmo 13
+ Capítulo 13
     
     Ao mestre de canto. Um salmo de Davi.
     
@@ -34467,7 +34467,7 @@ se os homens de Israel, e novamente envolveram-se em
     salmos ao nome do Senhor Altíssimo.
     
     
- Salmo 14
+ Capítulo 14
     
     Ao mestre de canto. Salmo de Davi
     
@@ -34492,7 +34492,7 @@ se os homens de Israel, e novamente envolveram-se em
     volta os cativos do seu povo, exulte Jacó e alegre-se Israel.
     
     
- Salmo 15
+ Capítulo 15
     
     Salmo de Davi.
     
@@ -34508,7 +34508,7 @@ se os homens de Israel, e novamente envolveram-se em
     contra o inocente. Aquele que age desta maneira nunca será abalado.
     
     
- Salmo 16
+ Capítulo 16
     
     Um escrito de Davi.
     
@@ -34536,7 +34536,7 @@ se os homens de Israel, e novamente envolveram-se em
     presença. Na tua mão direita há delícias para sempre.
     
     
- Salmo 17
+ Capítulo 17
     1 Escuta, ó Senhor da minha justiça, atenta para a minha petição; dá ouvidos à
     minha oração não pronunciada com lábios enganosos.
     2 Que o meu julgamento venha da tua presença; que os meus olhos
@@ -34569,7 +34569,7 @@ se os homens de Israel, e novamente envolveram-se em
     surgir a tua glória.
     
     
- Salmo 18
+ Capítulo 18
     
     Ao Mestre de canto. Um salmo de Davi, servo do Senhor. As palavras que ele
     falou ao Senhor, com este cântico, no dia em que ele o livrou das mãos de
@@ -34665,7 +34665,7 @@ se os homens de Israel, e novamente envolveram-se em
     ungido, Davi, e a sua posteridade, para sempre.
     
     
- Salmo 19
+ Capítulo 19
     
     Ao mestre de canto. Um salmo de Davi.
     
@@ -34699,7 +34699,7 @@ se os homens de Israel, e novamente envolveram-se em
     redentor.
     
     
- Salmo 20
+ Capítulo 20
     
     Ao mestre de canto. Um salmo de Davi.
     
@@ -34717,7 +34717,7 @@ se os homens de Israel, e novamente envolveram-se em
     9 Ó Senhor, salva o teu rei, e ouve-nos no dia em que clamarmos a ti.
     
     
- Salmo 21
+ Capítulo 21
     
     Ao mestre de canto. Um salmo de Davi.
     
@@ -34747,7 +34747,7 @@ se os homens de Israel, e novamente envolveram-se em
     poderosos.
     
     
- Salmo 22
+ Capítulo 22
     
     Ao mestre de canto. Por causa do auxílio pela manhã. Um salmo de Davi.
     
@@ -34807,7 +34807,7 @@ se os homens de Israel, e novamente envolveram-se em
     31 Anunciarão a sua justiça ao povo que vai nascer, a quem o Senhor fez.
     
     
- Salmo 23
+ Capítulo 23
     
     Salmo de Davi.
     
@@ -34825,7 +34825,7 @@ se os homens de Israel, e novamente envolveram-se em
     minha morada na casa do Senhor será por dias sem fim.
     
     
- Salmo 24
+ Capítulo 24
     
     Um salmo de Davi, no primeiro dia da semana.
     
@@ -34847,7 +34847,7 @@ se os homens de Israel, e novamente envolveram-se em
     10 Quem é este Rei da glória? O Senhor dos Exércitos, ele é o Rei da Glória.
     
     
- Salmo 25
+ Capítulo 25
     
     Salmo de Davi.
     
@@ -34892,7 +34892,7 @@ se os homens de Israel, e novamente envolveram-se em
     22 Livra Israel, ó Deus, de todas as suas aflições.
     
     
- Salmo 26
+ Capítulo 26
     
     Salmo de Davi.
     
@@ -34920,7 +34920,7 @@ se os homens de Israel, e novamente envolveram-se em
     Senhor.
     
     
- Salmo 27
+ Capítulo 27
     
     Salmo de Davi, antes de ele ser ungido.
     
@@ -34957,7 +34957,7 @@ se os homens de Israel, e novamente envolveram-se em
     Sim, espera no Senhor.
     
     
- Salmo 28
+ Capítulo 28
     
     Salmo de Davi.
     
@@ -34982,7 +34982,7 @@ se os homens de Israel, e novamente envolveram-se em
     para sempre.
     
     
- Salmo 29
+ Capítulo 29
     
     Salmo de Davi, por ocasião da solenidade do Tabernáculo.
     1 Trazei ao Senhor, vós, filhos de Deus, trazei ao Senhor carneirinhos; trazei
@@ -35007,7 +35007,7 @@ se os homens de Israel, e novamente envolveram-se em
     paz.
     
     
- Salmo 30
+ Capítulo 30
     
     Ao mestre de canto. Um salmo e canção na dedicação da casa de Davi.
     
@@ -35034,7 +35034,7 @@ se os homens de Israel, e novamente envolveram-se em
     tristeza. Senhor, meu Deus, dar-te-ei graças para sempre.
     
     
- Salmo 31
+ Capítulo 31
     
     1 Ó Senhor, tenho esperado em ti. Não me deixes ser envergonhado jamais;
     livra-me pela tua justiça, e resgata-me.
@@ -35087,7 +35087,7 @@ se os homens de Israel, e novamente envolveram-se em
     esperais no Senhor.
     
     
- Salmo 32
+ Capítulo 32
     
     Salmo de Instrução, por Davi.
     
@@ -35117,7 +35117,7 @@ se os homens de Israel, e novamente envolveram-se em
     retos de coração.
     
     
- Salmo 33
+ Capítulo 33
     
     Salmo de Davi.
     
@@ -35158,7 +35158,7 @@ se os homens de Israel, e novamente envolveram-se em
     22 Seja a tua benignidade, Senhor, sobre nós, conforme temos esperado em ti.
     
     
- Salmo 34
+ Capítulo 34
     
     Salmo de Davi, quando mudou o seu semblante perante Abimeleque, e este
     deixou-o partir. E ele partiu.
@@ -35199,7 +35199,7 @@ se os homens de Israel, e novamente envolveram-se em
     nele verá o mal.
     
     
- Salmo 35
+ Capítulo 35
     
     Salmo de Davi.
     
@@ -35259,7 +35259,7 @@ se os homens de Israel, e novamente envolveram-se em
     28 A minha língua discorrerá sobre a tua justiça e em teu louvor, todo o dia.
     
     
- Salmo 36
+ Capítulo 36
     
     Ao mestre de canto. Por Davi, o servo do Senhor.
     
@@ -35286,7 +35286,7 @@ se os homens de Israel, e novamente envolveram-se em
     mão dos pecadores me balance.
     12 Agora, todos os que praticam a iniquidade caem. São expulsos, e não
     podem resistir.
- Salmo 37
+ Capítulo 37
     
     Salmo de Davi.
     
@@ -35359,7 +35359,7 @@ se os homens de Israel, e novamente envolveram-se em
     tempo da angústia.
     40 O Senhor ajudá-los-á e os livrará. Ele os resgatará dos pecadores e salvará,
     porque têm esperado nele.
- Salmo 38
+ Capítulo 38
     
     Salmo de Davi para lembrança, a respeito do Sábado.
     
@@ -35405,7 +35405,7 @@ se os homens de Israel, e novamente envolveram-se em
     22 Aproxima-te para socorrer-me, ó Senhor da minha salvação!
     
     
- Salmo 39
+ Capítulo 39
     
     Ao mestre de canto. Uma canção de Davi. Para Jedutum.
     
@@ -35439,7 +35439,7 @@ se os homens de Israel, e novamente envolveram-se em
     mais.
     
     
- Salmo 40
+ Capítulo 40
     
     Ao mestre de canto. Um salmo de Davi.
     
@@ -35482,7 +35482,7 @@ se os homens de Israel, e novamente envolveram-se em
     meu auxílio e o meu defensor. Ó meu Deus, não te detenhas!
     
     
- Salmo 41
+ Capítulo 41
     
     Ao mestre de canto. Um salmo de Davi.
     
@@ -35514,7 +35514,7 @@ se os homens de Israel, e novamente envolveram-se em
     seja, assim seja.
     
     
- Salmo 42
+ Capítulo 42
     
     Ao mestre de canto. Um salmo para ensino, dos filhos de Coré.
     
@@ -35543,7 +35543,7 @@ se os homens de Israel, e novamente envolveram-se em
     Deus, pois dar-lhe-ei graças. Ele é o meu socorro e o meu Deus.
     
     
- Salmo 43
+ Capítulo 43
     
     Salmo de Davi.
     1 Julga-me, ó Deus, e pleiteia a minha causa contra uma nação ímpia; livra-me
@@ -35558,7 +35558,7 @@ se os homens de Israel, e novamente envolveram-se em
     Deus, pois darei graças a ele, ele que é o meu socorro e o meu Deus.
     
     
- Salmo 44
+ Capítulo 44
     
     Ao mestre de canto. Um salmo para ensino, dos filhos de Coré.
     
@@ -35611,7 +35611,7 @@ se os homens de Israel, e novamente envolveram-se em
     26 Levanta-te, Senhor! Ajuda-nos e resgata-nos, por amor do teu nome.
     
     
- Salmo 45
+ Capítulo 45
     
     Ao mestre de canto. Com acordes alternados, dos filhos de Coré, para
     instrução. Uma canção sobre a amada.
@@ -35650,7 +35650,7 @@ se os homens de Israel, e novamente envolveram-se em
     as nações louvar-te-ão para sempre, e para sempre e sempre.
     
     
- Salmo 46
+ Capítulo 46
     
     Ao mestre de canto. Dos filhos de Coré. Um salmo a respeito de coisas
     secretas.
@@ -35676,7 +35676,7 @@ se os homens de Israel, e novamente envolveram-se em
     11 O Senhor dos Exércitos está conosco; o Deus de Jacó é o nosso ajudador.
     
     
- Salmo 47
+ Capítulo 47
     
     Ao mestre de canto. Um salmo dos filhos de Coré.
     
@@ -35693,7 +35693,7 @@ se os homens de Israel, e novamente envolveram-se em
     pois os poderosos de Deus, na terra, tem sido grandemente exaltados.
     
     
- Salmo 48
+ Capítulo 48
     
     Salmo de louvor dos Filhos de Coré, no segundo dia da semana.
     1 Grande é o Senhor. e muito digno de ser louvado na cidade do nosso Deus,
@@ -35719,7 +35719,7 @@ se os homens de Israel, e novamente envolveram-se em
     eternamente.
     
     
- Salmo 49
+ Capítulo 49
     
     Ao mestre de canto. Um salmo dos filhos de Coré.
     
@@ -35764,7 +35764,7 @@ se os homens de Israel, e novamente envolveram-se em
     insensível, e é mesmo como eles.
     
     
- Salmo 50
+ Capítulo 50
     
     Um salmo de Asafe.
     
@@ -35808,7 +35808,7 @@ se os homens de Israel, e novamente envolveram-se em
     mostrarei a salvação de Deus.
     
     
- Salmo 51
+ Capítulo 51
     Ao mestre de canto. Um salmo de Davi, quando o profeta Natã veio para ele,
     tendo ele ido ao encontro de Bateseba.
     
@@ -35846,7 +35846,7 @@ se os homens de Israel, e novamente envolveram-se em
     de Jerusalém sejam construídos.
     19 Estarás, então, satisfeito com os sacrifícios de justiça, ofertas e holocaustos.
     E oferecer-se-ão bezerros sobre o teu altar.
- Salmo 52
+ Capítulo 52
     
     Ao mestre de canto. Um salmo de instrução, de Davi. Quando Doegue, o
     edomita, veio e anunciou a Saul, dizendo: Davi entrou na casa de Abimeleque.
@@ -35869,7 +35869,7 @@ se os homens de Israel, e novamente envolveram-se em
     porque isto é bom diante dos santos.
     
     
- Salmo 53
+ Capítulo 53
     
     Ao mestre de canto. Um salmo de Davi, para cítara. Para instrução.
     
@@ -35889,7 +35889,7 @@ se os homens de Israel, e novamente envolveram-se em
     cativeiro de seu povo Jacó exultará, e alegrar-se-á Israel.
     
     
- Salmo 54
+ Capítulo 54
     
     Ao mestre de canto. Entre os hinos de instrução, de Davi. Quando os zifeus
     vieram e disseram a Saul: Não está Davi escondido conosco?
@@ -35907,7 +35907,7 @@ se os homens de Israel, e novamente envolveram-se em
     olhos tem visto aquilo que desejo ver realizado sobre os meus inimigos.
     
     
- Salmo 55
+ Capítulo 55
     
     Ao mestre de canto. Entre os hinos de instrução, por Davi.
     
@@ -35955,7 +35955,7 @@ se os homens de Israel, e novamente envolveram-se em
     23 Todavia, tu, ó Deus, os farás descer ao poço da perdição. Homens de
     sangue e astutos, não viverão a metade dos seus dias. Eu, porém, esperarei em
     ti, ó Senhor.
- Salmo 56
+ Capítulo 56
     
     Ao mestre de canto. A respeito das pessoas que foram removidas do
     santuário. De Davi, para um memorial, quando os filisteus o prenderam em
@@ -35985,7 +35985,7 @@ se os homens de Israel, e novamente envolveram-se em
     que eu me sinta a vontade diante de Deus na terra dos vivos.
     
     
- Salmo 57
+ Capítulo 57
     
     Ao mestre de canto. Não destruas! Por Davi, para um memorial, quando fugia
     da presença de Saul, indo para a caverna.
@@ -36010,7 +36010,7 @@ se os homens de Israel, e novamente envolveram-se em
     11 Sê exaltado, ó Deus, acima dos céus, e a tua glória sobre toda a terra.
     
     
- Salmo 58
+ Capítulo 58
     
     Ao mestre de canto. Não destruas! Por Davi, para um memorial.
     
@@ -36037,7 +36037,7 @@ se os homens de Israel, e novamente envolveram-se em
     deveras, há um Deus que os julga na terra!
     
     
- Salmo 59
+ Capítulo 59
     
     Ao mestre de canto. Não destruas! Por Davi, para um memorial, quando Saul
     mandou que vigiassem a sua casa para matá-lo.
@@ -36078,7 +36078,7 @@ se os homens de Israel, e novamente envolveram-se em
     Deus, e a minha misericórdia.
     
     
- Salmo 60
+ Capítulo 60
     
     Ao mestre de canto, para aqueles que ainda deverão ser transformados. Uma
     inscrição de Davi, para instrução, quando ele tinha queimado a Síria
@@ -36106,7 +36106,7 @@ se os homens de Israel, e novamente envolveram-se em
     assediam.
     
     
- Salmo 61
+ Capítulo 61
     Ao mestre de canto, entre os hinos de Davi.
     
     1 Ó Deus, ouve a minha petição! atende a minha oração.
@@ -36126,7 +36126,7 @@ se os homens de Israel, e novamente envolveram-se em
     cumprir, diariamente, os meus votos.
     
     
- Salmo 62
+ Capítulo 62
     
     Ao mestre de canto; um Salmo de Davi, para Jedutum.
     
@@ -36158,7 +36158,7 @@ se os homens de Israel, e novamente envolveram-se em
     segundo as suas obras.
     
     
- Salmo 63
+ Capítulo 63
     
     Salmo de Davi, quando estava no deserto de Edom.
     
@@ -36185,7 +36185,7 @@ se os homens de Israel, e novamente envolveram-se em
     tapada.
     
     
- Salmo 64
+ Capítulo 64
     
     Ao mestre de canto. Um salmo de Davi.
     
@@ -36211,7 +36211,7 @@ se os homens de Israel, e novamente envolveram-se em
     serão louvados.
     
     
- Salmo 65
+ Capítulo 65
     
     Ao mestre de canto. Um salmo e cântico de Davi.
     
@@ -36241,7 +36241,7 @@ se os homens de Israel, e novamente envolveram-se em
     cereal. Clamarão, sim, cantarão hinos!
     
     
- Salmo 66
+ Capítulo 66
     
     Ao mestre de canto. Uma canção do salmo de ressurreição.
     
@@ -36279,7 +36279,7 @@ se os homens de Israel, e novamente envolveram-se em
     sua misericórdia!
     
     
- Salmo 67
+ Capítulo 67
     
     Ao mestre de canto. Um Salmo de Davi, junto com os hinos.
     
@@ -36297,7 +36297,7 @@ se os homens de Israel, e novamente envolveram-se em
     7 Que Deus nos abençoe, e que todos os confins da terra o temam.
     
     
- Salmo 68
+ Capítulo 68
     
     Ao mestre de canto. Salmo para um cântico de Davi.
     
@@ -36371,7 +36371,7 @@ se os homens de Israel, e novamente envolveram-se em
     poder e força ao seu povo. Bendito seja Deus!
     
     
- Salmo 69
+ Capítulo 69
     
     Ao mestre de canto. Um salmo de Davi para acordes alternados.
     
@@ -36438,7 +36438,7 @@ se os homens de Israel, e novamente envolveram-se em
     habitarão.
     
     
- Salmo 70
+ Capítulo 70
     Ao mestre de canto. De Davi, para lembrança. Que o Senhor possa me salvar.
     
     1 Aproxima-te, ó Deus, em meu auxílio.
@@ -36452,7 +36452,7 @@ se os homens de Israel, e novamente envolveram-se em
     e libertador. Senhor, não te demores.
     
     
- Salmo 71
+ Capítulo 71
     
     Por Davi, salmo cantado pelos filhos de Jonadabe e pelos primeiros que
     foram levados cativos.
@@ -36509,7 +36509,7 @@ se os homens de Israel, e novamente envolveram-se em
     confundidos.
     
     
- Salmo 72
+ Capítulo 72
     
     Para Salomão.
     
@@ -36549,7 +36549,7 @@ se os homens de Israel, e novamente envolveram-se em
     20 Encerram-se aqui os hinos de Davi, filho de Jessé.
     
     
- Salmo 73
+ Capítulo 73
     
     Um salmo de Asafe.
     1 Como Deus é bom para com Israel, para com os retos de coração!
@@ -36603,7 +36603,7 @@ se os homens de Israel, e novamente envolveram-se em
     portas da filha de Sião.
     
     
- Salmo 74
+ Capítulo 74
     
     Salmo de instrução, de Asafe.
     
@@ -36651,7 +36651,7 @@ se os homens de Israel, e novamente envolveram-se em
     odeiam ascende, continuamente, para diante de ti.
     
     
- Salmo 75
+ Capítulo 75
     
     Ao mestre de canto. Não destruas. Salmo de uma música, por Asafe.
     
@@ -36673,7 +36673,7 @@ se os homens de Israel, e novamente envolveram-se em
     exaltados.
     
     
- Salmo 76
+ Capítulo 76
     
     Ao mestre de canto. Um Salmo de Asafe, entre os hinos. Uma canção para os
     assírios.
@@ -36698,7 +36698,7 @@ se os homens de Israel, e novamente envolveram-se em
     reis da terra.
     
     
- Salmo 77
+ Capítulo 77
     
     Ao mestre de canto. Para Jedutum, um Salmo de Asafe.
     1 Clamo ao Senhor com a minha voz. Sim, a minha voz foi dirigida a Deus, e
@@ -36738,7 +36738,7 @@ se os homens de Israel, e novamente envolveram-se em
     20 Como ovelhas guiaste o teu povo, pelas mãos de Moisés e de Arão.
     
     
- Salmo 78
+ Capítulo 78
     Salmo de instrução, de Asafe.
     
     1 Atende, ó meu povo, à minha lei. Às palavras de minha boca inclina o teu
@@ -36867,7 +36867,7 @@ se os homens de Israel, e novamente envolveram-se em
     suas mãos.
     
     
- Salmo 79
+ Capítulo 79
     
     Um Salmo de Asafe.
     
@@ -36899,7 +36899,7 @@ se os homens de Israel, e novamente envolveram-se em
     para sempre; declararemos o teu louvor por todas as gerações.
     
     
- Salmo 80
+ Capítulo 80
     
     Ao mestre de canto. Para acordes alternados. Um testemunho de Asafe.
     Salmo a respeito dos assírios.
@@ -36940,7 +36940,7 @@ se os homens de Israel, e novamente envolveram-se em
     rosto; e seremos salvos.
     
     
- Salmo 81
+ Capítulo 81
     
     Ao mestre de canto. Um Salmo de Asafe. A respeito dos lagares.
     
@@ -36972,7 +36972,7 @@ se os homens de Israel, e novamente envolveram-se em
     rocha.
     
     
- Salmo 82
+ Capítulo 82
     
     Um Salmo de Asafe.
     
@@ -36987,7 +36987,7 @@ se os homens de Israel, e novamente envolveram-se em
     8 Levanta-te, ó Deus; julga a terra! pois tu herdas todas as nações.
     
     
- Salmo 83
+ Capítulo 83
     
     Canção de um salmo, de Asafe.
     
@@ -37027,7 +37027,7 @@ se os homens de Israel, e novamente envolveram-se em
     toda a terra.
     
     
- Salmo 84
+ Capítulo 84
     
     Ao mestre de canto. Um salmo dos filhos de Coré, a respeito dos lagares.
     
@@ -37053,7 +37053,7 @@ se os homens de Israel, e novamente envolveram-se em
     12 Ó Senhor dos exércitos, bem-aventurado o homem que confia em ti!
     
     
- Salmo 85
+ Capítulo 85
     
     Ao mestre de canto; Um Salmo dos filhos de Coré.
     
@@ -37076,7 +37076,7 @@ se os homens de Israel, e novamente envolveram-se em
     12 pois o Senhor concederá o que é bom, e a nossa terra produzirá o seu
     fruto.
     13 A justiça irá adiante dele, e firmará os seus passos no caminho.
- Salmo 86
+ Capítulo 86
     
     Uma oração de Davi.
     
@@ -37113,7 +37113,7 @@ se os homens de Israel, e novamente envolveram-se em
     confortado.
     
     
- Salmo 87
+ Capítulo 87
     Salmo de uma canção, dos filhos de Coré.
     
     1 Seus fundamentos estão nas montanhas sagradas,
@@ -37128,7 +37128,7 @@ se os homens de Israel, e novamente envolveram-se em
     7 Como aqueles que se regozijam são todo os que em ti habitam.
     
     
- Salmo 88
+ Capítulo 88
     
     Canção de um salmo, dos filhos de Coré. Ao mestre de canto. Para ser
     cantada com cítara. Para instrução, por Hemã, o ezraíta.
@@ -37170,7 +37170,7 @@ se os homens de Israel, e novamente envolveram-se em
     por causa da minha miséria.
     
     
- Salmo 89
+ Capítulo 89
     
     Salmo de instrução, de Etã, o ezraíta.
     
@@ -37262,7 +37262,7 @@ se os homens de Israel, e novamente envolveram-se em
     52 Bendito seja o Senhor, para sempre. Assim seja, assim seja.
     
     
- Salmo 90
+ Capítulo 90
     
     Oração de Moisés, homem de Deus.
     1 Senhor, tu tens sido o nosso refúgio em todas as gerações.
@@ -37298,7 +37298,7 @@ se os homens de Israel, e novamente envolveram-se em
     as obras de nossas mãos.
     
     
- Salmo 91
+ Capítulo 91
     
     Louvor, para uma melodia; de Davi
     1 Aquele que confia no socorro do Altíssimo andará debaixo do abrigo do
@@ -37327,7 +37327,7 @@ se os homens de Israel, e novamente envolveram-se em
     16 satisfazê-lo-ei com abundância de dias e mostrar-lhe-ei a minha salvação.
     
     
- Salmo 92
+ Capítulo 92
     
     Salmo de uma melodia. Para o dia de sábado.
     
@@ -37358,7 +37358,7 @@ se os homens de Israel, e novamente envolveram-se em
     nenhuma iniquidade.
     
     
- Salmo 93
+ Capítulo 93
     
     Para a véspera do sábado, quando a terra foi primeiramente habitada. Louvor
     para uma música, de Davi.
@@ -37373,7 +37373,7 @@ se os homens de Israel, e novamente envolveram-se em
     tua casa, Senhor, para sempre.
     
     
- Salmo 94
+ Capítulo 94
     
     Salmo de Davi, para o quarto dia da semana.
     1 O Senhor é um Deus de vingança, o Deus da vingança manifestou-se.
@@ -37412,7 +37412,7 @@ se os homens de Israel, e novamente envolveram-se em
     da minha esperança.
     23 Ele lhes retribuirá a sua maldade e a sua iniquidade. O Senhor, nosso Deus,
     os destruirá completamente.
- Salmo 95
+ Capítulo 95
     
     Louvor. Para uma melodia, de Davi.
     
@@ -37436,7 +37436,7 @@ se os homens de Israel, e novamente envolveram-se em
     11 Assim, jurei na minha ira: Não entrarão no meu descanso.
     
     
- Salmo 96
+ Capítulo 96
     
     Quando a casa foi construída, depois do cativeiro. Uma canção de Davi.
     
@@ -37464,7 +37464,7 @@ se os homens de Israel, e novamente envolveram-se em
     povos com a sua verdade.
     
     
- Salmo 97
+ Capítulo 97
     
     Por Davi, quando a sua terra foi estabelecida.
     
@@ -37487,7 +37487,7 @@ se os homens de Israel, e novamente envolveram-se em
     11 A luz raiou para o justo, e a alegria para os retos de coração.
     12 Alegrai-vos no Senhor, vós justos; dai graças, em memória da sua
     santidade.
- Salmo 98
+ Capítulo 98
     
     Salmo de Davi.
     
@@ -37508,7 +37508,7 @@ se os homens de Israel, e novamente envolveram-se em
     com retidão.
     
     
- Salmo 99
+ Capítulo 99
     
     Salmo de Davi.
     
@@ -37530,7 +37530,7 @@ se os homens de Israel, e novamente envolveram-se em
     Senhor nosso Deus é santo.
     
     
- Salmo 100
+ Capítulo 100
     
     Um salmo de ação de graças.
     
@@ -37544,7 +37544,7 @@ se os homens de Israel, e novamente envolveram-se em
     continua de geração em geração.
     
     
- Salmo 101
+ Capítulo 101
     
     Salmo de Davi.
     
@@ -37566,7 +37566,7 @@ se os homens de Israel, e novamente envolveram-se em
     do Senhor, aos que praticam a iniquidade.
     
     
- Salmo 102
+ Capítulo 102
     
     Uma oração pelo pobre; quando ele está profundamente aflito, e derrama a
     sua súplica diante do Senhor.
@@ -37621,7 +37621,7 @@ se os homens de Israel, e novamente envolveram-se em
     para sempre.
     
     
- Salmo 103
+ Capítulo 103
     
     Salmo de Davi.
     
@@ -37668,7 +37668,7 @@ se os homens de Israel, e novamente envolveram-se em
     domínio. Bendizei ao Senhor, ó minha alma.
     
     
- Salmo 104
+ Capítulo 104
     
     Salmo de Davi.
     
@@ -37734,7 +37734,7 @@ se os homens de Israel, e novamente envolveram-se em
     alma!
     
     
- Salmo 105
+ Capítulo 105
     
     Aleluia.
     
@@ -37805,7 +37805,7 @@ se os homens de Israel, e novamente envolveram-se em
     sua lei.
     
     
- Salmo 106
+ Capítulo 106
     
     Aleluia.
     
@@ -37891,7 +37891,7 @@ se os homens de Israel, e novamente envolveram-se em
     povo dirá: Amém! Amém!
     
     
- Salmo 107
+ Capítulo 107
     
     Aleluia.
     
@@ -37971,7 +37971,7 @@ se os homens de Israel, e novamente envolveram-se em
     do Senhor?
     
     
- Salmo 108
+ Capítulo 108
     
     Canção de um Salmo, de Davi.
     1 Ó Deus, meu coração está pronto, meu coração está pronto! Cantarei e
@@ -37996,7 +37996,7 @@ se os homens de Israel, e novamente envolveram-se em
     13 Em Deus faremos proezas. Ele irá reduzir a nada os nossos inimigos.
     
     
- Salmo 109
+ Capítulo 109
     
     Ao mestre de canto, um salmo de Davi.
     
@@ -38056,7 +38056,7 @@ se os homens de Israel, e novamente envolveram-se em
     perseguem a minha alma.
     
     
- Salmo 110
+ Capítulo 110
     
     Salmo de Davi.
     
@@ -38074,7 +38074,7 @@ se os homens de Israel, e novamente envolveram-se em
     7 Beberá do riacho no caminho; portanto, erguerá a sua cabeça.
     
     
- Salmo 111
+ Capítulo 111
     
     Aleluia.
     
@@ -38100,7 +38100,7 @@ se os homens de Israel, e novamente envolveram-se em
     todo o sempre.
     
     
- Salmo 112
+ Capítulo 112
     
     Aleluia.
     
@@ -38125,7 +38125,7 @@ se os homens de Israel, e novamente envolveram-se em
     O desejo do pecador deverá perecer.
     
     
- Salmo 113
+ Capítulo 113
     Aleluia.
     
     1 Louvai ao Senhor, servos seus; louvai o nome do Senhor!
@@ -38142,7 +38142,7 @@ se os homens de Israel, e novamente envolveram-se em
     com os seus filhos.
     
     
- Salmo 114
+ Capítulo 114
     
     Aleluia.
     
@@ -38158,7 +38158,7 @@ se os homens de Israel, e novamente envolveram-se em
     8 que converteu a rocha em lagos de águas, e o seixo em mananciais.
     
     
- Salmo 115
+ Capítulo 115
     
     1 Não a nós, Senhor, não a nós, mas ao teu nome dá glória, por causa da tua
     misericórdia e da tua verdade.
@@ -38189,7 +38189,7 @@ se os homens de Israel, e novamente envolveram-se em
     sempre.
     
     
- Salmo 116
+ Capítulo 116
     
     Aleluia.
     
@@ -38219,7 +38219,7 @@ se os homens de Israel, e novamente envolveram-se em
     19 nos átrios da casa do Senhor, no meio de ti, Jerusalém!
     
     
- Salmo 117
+ Capítulo 117
     
     Aleluia.
     
@@ -38228,7 +38228,7 @@ se os homens de Israel, e novamente envolveram-se em
     Senhor permanece para sempre.
     
     
- Salmo 118
+ Capítulo 118
     
     Aleluia.
     
@@ -38279,7 +38279,7 @@ se os homens de Israel, e novamente envolveram-se em
     para sempre!
     
     
- Salmo 119
+ Capítulo 119
     
     Aleluia!
     
@@ -38570,7 +38570,7 @@ se os homens de Israel, e novamente envolveram-se em
     esquecido dos teus mandamentos.
     
     
- Salmo 120
+ Capítulo 120
     
     Canção dos degraus.
     
@@ -38586,7 +38586,7 @@ se os homens de Israel, e novamente envolveram-se em
     contra mim sem causa.
     
     
- Salmo 121
+ Capítulo 121
     
     Canção dos degraus.
     
@@ -38600,7 +38600,7 @@ se os homens de Israel, e novamente envolveram-se em
     8 O Senhor guardará o teu entrar e o teu sair, desde agora e para sempre.
     
     
- Salmo 122
+ Capítulo 122
     
     Canção dos degraus.
     
@@ -38620,7 +38620,7 @@ se os homens de Israel, e novamente envolveram-se em
     buscado o teu bem.
     
     
- Salmo 123
+ Capítulo 123
     
     Canção dos degraus.
     
@@ -38636,7 +38636,7 @@ se os homens de Israel, e novamente envolveram-se em
     orgulhosos.
     
     
- Salmo 124
+ Capítulo 124
     
     Canção dos degraus.
     
@@ -38653,7 +38653,7 @@ se os homens de Israel, e novamente envolveram-se em
     8 O nosso socorro está no nome do Senhor, que fez o céu e a terra.
     
     
- Salmo 125
+ Capítulo 125
     
     Canção dos degraus.
     
@@ -38668,7 +38668,7 @@ se os homens de Israel, e novamente envolveram-se em
     longe, junto com os que praticam a iniquidade. E que haja paz sobre Israel.
     
     
- Salmo 126
+ Capítulo 126
     
     Canção dos degraus.
     
@@ -38684,7 +38684,7 @@ se os homens de Israel, e novamente envolveram-se em
     certamente retornarão com júbilo, trazendo consigo os seus feixes.
     
     
- Salmo 127
+ Capítulo 127
     
     Canção dos degraus.
     1 Se o Senhor não edificar a casa, os que a constroem trabalham em vão; se o
@@ -38698,7 +38698,7 @@ se os homens de Israel, e novamente envolveram-se em
     será envergonhado, quando pleitear com os seus inimigos nos portões.
     
     
- Salmo 128
+ Capítulo 128
     
     Canção dos degraus.
     
@@ -38714,7 +38714,7 @@ se os homens de Israel, e novamente envolveram-se em
     6 e para que possas ver os filhos de teus filhos. A paz esteja sobre Israel.
     
     
- Salmo 129
+ Capítulo 129
     
     Canção dos degraus.
     
@@ -38733,7 +38733,7 @@ se os homens de Israel, e novamente envolveram-se em
     nós vos bendizemos em nome do Senhor!
     
     
- Salmo 130
+ Capítulo 130
     
     Canção dos degraus.
     
@@ -38750,7 +38750,7 @@ se os homens de Israel, e novamente envolveram-se em
     8 Ele remirá a Israel de todas as suas iniquidades.
     
     
- Salmo 131
+ Capítulo 131
     
     Canção dos degraus.
     
@@ -38761,7 +38761,7 @@ se os homens de Israel, e novamente envolveram-se em
     alma. Como uma criança desmamada recebe de sua mãe, da mesma forma
     recompensarás a minha alma.
     3 Espere Israel no Senhor, desde agora e para sempre.
- Salmo 132
+ Capítulo 132
     
     Canção dos degraus.
     
@@ -38797,7 +38797,7 @@ se os homens de Israel, e novamente envolveram-se em
     santidade irá florescer.
     
     
- Salmo 133
+ Capítulo 133
     Canção dos degraus.
     
     1 Vede, agora! O que é tão bom ou tão agradável como os irmãos viverem
@@ -38808,7 +38808,7 @@ se os homens de Israel, e novamente envolveram-se em
     Senhor ordena a bênção e a vida, para sempre.
     
     
- Salmo 134
+ Capítulo 134
     
     Canção dos degraus.
     
@@ -38818,7 +38818,7 @@ se os homens de Israel, e novamente envolveram-se em
     3 O Senhor, que fez o céu e a terra, te abençoe desde Sião.
     
     
- Salmo 135
+ Capítulo 135
     
     Aleluia.
     
@@ -38857,7 +38857,7 @@ se os homens de Israel, e novamente envolveram-se em
     21 Bem-aventurado em Sião seja o Senhor, que habita em Jerusalém.
     
     
- Salmo 136
+ Capítulo 136
     
     Aleluia.
     
@@ -38907,7 +38907,7 @@ se os homens de Israel, e novamente envolveram-se em
     26 Dai graças ao Deus dos céus, porque a sua benignidade dura para sempre!
     
     
- Salmo 137
+ Capítulo 137
     
     Para Davi; um salmo de Jeremias.
     1 Junto aos rios da Babilônia, ali nos assentamos e choramos, quando nos
@@ -38928,7 +38928,7 @@ se os homens de Israel, e novamente envolveram-se em
     9 bendito aquele que apanhar e esmagar os teus pequeninos contra a rocha!
     
     
- Salmo 138
+ Capítulo 138
     
     Um Salmo para Davi; de Ageu e Zacarias.
     
@@ -38948,7 +38948,7 @@ se os homens de Israel, e novamente envolveram-se em
     mãos contra a ira dos meus inimigos, e a tua destra me salvou.
     8 Ó Senhor, tu lhes retribuirás por mim. A tua benignidade, ó Senhor, dura
     para sempre. Não ignores as obras de tuas mãos.
- Salmo 139
+ Capítulo 139
     
     Ao mestre de canto. Um salmo de Davi.
     
@@ -38998,7 +38998,7 @@ se os homens de Israel, e novamente envolveram-se em
     eterno.
     
     
- Salmo 140
+ Capítulo 140
     
     Ao mestre de canto. Um salmo de Davi.
     
@@ -39029,7 +39029,7 @@ se os homens de Israel, e novamente envolveram-se em
     presença.
     
     
- Salmo 141
+ Capítulo 141
     
     Salmo de Davi.
     
@@ -39057,7 +39057,7 @@ se os homens de Israel, e novamente envolveram-se em
     escaparei.
     
     
- Salmo 142
+ Capítulo 142
     Salmo de instrução; de Davi, quando ele estava na caverna. Uma oração.
     
     1 Clamei ao Senhor com a minha voz; com a minha voz supliquei ao Senhor.
@@ -39077,7 +39077,7 @@ se os homens de Israel, e novamente envolveram-se em
     Senhor. Em mim esperarão os justos, quando me recompensares.
     
     
- Salmo 143
+ Capítulo 143
     
     Salmo de Davi, quando seu filho o perseguiu.
     
@@ -39108,7 +39108,7 @@ se os homens de Israel, e novamente envolveram-se em
     que angustiam a minha alma, porque eu sou teu servo.
     
     
- Salmo 144
+ Capítulo 144
     
     Salmo de Davi, a respeito de Golias.
     
@@ -39141,7 +39141,7 @@ se os homens de Israel, e novamente envolveram-se em
     entretanto, é o povo cujo Deus é o Senhor.
     
     
- Salmo 145
+ Capítulo 145
     
     Salmo de louvor, de Davi.
     
@@ -39184,7 +39184,7 @@ se os homens de Israel, e novamente envolveram-se em
     santo nome pelos séculos dos séculos.
     
     
- Salmo 146
+ Capítulo 146
     
     Aleluia. Um salmo de Ageu e Zacarias.
     
@@ -39206,7 +39206,7 @@ se os homens de Israel, e novamente envolveram-se em
     9 Ele amparará o órfão e a viúva, contudo irá remover, totalmente, o caminho
     dos pecadores.
     10 O Senhor reinará eternamente; o teu Deus, ó Sião, de geração em geração.
- Salmo 147
+ Capítulo 147
     
     Aleluia. Um salmo de Ageu e Zacarias.
     
@@ -39243,7 +39243,7 @@ se os homens de Israel, e novamente envolveram-se em
     juízos.
     
     
- Salmo 148
+ Capítulo 148
     Aleluia. Um salmo de Ageu e Zacarias.
     
     1 Louvai ao Senhor desde os céus, louvai-o nas alturas.
@@ -39267,7 +39267,7 @@ se os homens de Israel, e novamente envolveram-se em
     filhos de Israel, povo que o busca.
     
     
- Salmo 149
+ Capítulo 149
     
     Aleluia.
     
@@ -39288,7 +39288,7 @@ se os homens de Israel, e novamente envolveram-se em
     os seus santos.
     
     
- Salmo 150
+ Capítulo 150
     
     Aleluia.
     
@@ -39305,7 +39305,7 @@ se os homens de Israel, e novamente envolveram-se em
     
     
     
-                                    PROVÉRBIOS
+                                    Provérbios
     
  Capítulo 1
     
@@ -41162,7 +41162,7 @@ se os homens de Israel, e novamente envolveram-se em
     
     
     
-                                  ECLESIASTES
+                                  Eclesiastes
     
  Capítulo 1
     
@@ -41729,7 +41729,7 @@ se os homens de Israel, e novamente envolveram-se em
     
     
     
-                           CANTARES
+                           Cantares
     
  Capítulo 1
     
@@ -42026,7 +42026,7 @@ se os homens de Israel, e novamente envolveram-se em
     
     
     
-                                       ISAÍAS
+                                       Isaías
     
  Capítulo 1
     
@@ -45437,7 +45437,7 @@ se os homens de Israel, e novamente envolveram-se em
     
     
     
-                                    JEREMIAS
+                                    Jeremias
     
  Capítulo 1
     1 Palavra de Deus que veio a Jeremias, filho de Hilquias, um dos sacerdotes, o
@@ -48839,7 +48839,7 @@ se os homens de Israel, e novamente envolveram-se em
     
     
     
-                        LAMENTAÇÕES DE JEREMIAS
+                        Lamentações de Jeremias
     
  Capítulo 1
     
@@ -49191,7 +49191,7 @@ se os homens de Israel, e novamente envolveram-se em
     
     
     
-                                    EZEQUIEL
+                                    Ezequiel
     
  Capítulo 1
     1 Aconteceu no trigésimo ano, no quarto mês, no quinto dia do mês, que eu
@@ -52522,7 +52522,7 @@ se os homens de Israel, e novamente envolveram-se em
     Gade, a porta de Aser e a porta de Naftali.
     35 Ao redor dela haverá dezoito mil canas. E o nome da cidade, desde o dia
     em que ela for completada, deverá ser: o Senhor está ali.
-                                      DANIEL
+                                      Daniel
     
  Capítulo 1
     
@@ -53532,7 +53532,7 @@ se os homens de Israel, e novamente envolveram-se em
     
     
     
-                                       OSÉIAS
+                                       Oséias
     
  Capítulo 1
     
@@ -54063,7 +54063,7 @@ se os homens de Israel, e novamente envolveram-se em
     
     
     
-                                         JOEL
+                                         Joel
     
  Capítulo 1
     
@@ -54257,7 +54257,7 @@ se os homens de Israel, e novamente envolveram-se em
     
     
     
-                                       AMÓS
+                                       Amós
     
  Capítulo 1
     1 As palavras de Amós, que vieram para ele em Acarim de Tecoa; o que ele
@@ -54654,7 +54654,7 @@ se os homens de Israel, e novamente envolveram-se em
     
     
     
-                                      OBADIAS
+                                      Obadias
     
  Capítulo 1
     
@@ -54717,7 +54717,7 @@ se os homens de Israel, e novamente envolveram-se em
     
     
     
-                                       JONAS
+                                       Jonas
     
  Capítulo 1
     
@@ -54819,7 +54819,7 @@ se os homens de Israel, e novamente envolveram-se em
     enquanto ainda estava na minha terra? por este motivo apressei-me a fugir
     para Társis, porque eu sabia que tu és misericordioso e compassivo,
     longânimo e abundante em benignidade, e te arrependes do mal.
-    3 E agora, Senhor Deus, toma a minha vida; pois é melhor para mim morrer
+    3 E agora, Senhor Deus, toma a minha vida; pois é melhor para mim morrer
     do que viver.
     4 E o Senhor disse a Jonas: Por que estás tão entristecido?
     5 E Jonas saiu da cidade, permanecendo defronte dela; e fez ele, para si
@@ -54845,7 +54845,7 @@ se os homens de Israel, e novamente envolveram-se em
     
     
     
-                                    MIQUÉIAS
+                                    Miquéias
     
  Capítulo 1
     
@@ -55139,7 +55139,7 @@ se os homens de Israel, e novamente envolveram-se em
     
     
     
-                                       NAUM
+                                       Naum
     
  Capítulo 1
     
@@ -55263,7 +55263,7 @@ se os homens de Israel, e novamente envolveram-se em
     19 Não há cura para a tua ferida; tua ferida tornou-se incurável. Todos os que
     ouvirem a teu respeito baterão palmas contra ti. Pois sobre quem não tem
     passado, continuamente, a tua malícia?
-                                  HABACUQUE
+                                  Habacuque
     
  Capítulo 1
     
@@ -55409,7 +55409,7 @@ se os homens de Israel, e novamente envolveram-se em
     19 O Senhor Deus é a minha força, e irá fortalecer os meus pés grandemente.
     Ele me assenta em lugares altos, a fim de que eu possa conquistar com a sua
     canção.
-                                     SOFONIAS
+                                     Sofonias
     
  Capítulo 1
     
@@ -55556,7 +55556,7 @@ se os homens de Israel, e novamente envolveram-se em
     bem convosco, no momento em que vos receber. Porquanto vos farei
     honrados e um louvor entre todos os povos da terra, quando eu mudar o
     vosso cativeiro diante de vós, diz o Senhor.
-                                        AGEU
+                                        Ageu
     
  Capítulo 1
     
@@ -55664,7 +55664,7 @@ se os homens de Israel, e novamente envolveram-se em
     
     
     
-                                     ZACARIAS
+                                     Zacarias
  Capítulo 1
     
     1 No oitavo mês, no segundo ano do reinado de Dario, a palavra do Senhor
@@ -56245,7 +56245,7 @@ se os homens de Israel, e novamente envolveram-se em
     
     
     
-                                    MALAQUIAS
+                                    Malaquias
     
  Capítulo 1
     
@@ -56260,7 +56260,7 @@ se os homens de Israel, e novamente envolveram-se em
     e reconstruir as suas ruínas. Assim diz o Senhor dos exércitos: Eles edificarão,
     porém eu destruirei; e serão chamados fronteiras da impiedade, povo contra
     quem o Senhor se indispôs para sempre.
-    5 Os vossos olhos o verão, e direis: O Senhor tem sido engrandecido sobre os
+    5 Os vossos olhos o verão, e direis: O Senhor tem sido engrandecido sobre os
     termos de Israel.
     6 O filho honra ao pai, e o servo ao seu amo. Se eu sou pai, onde está a minha
     honra? e se sou senhor, onde está o meu temor? diz o Senhor Todo-
@@ -56297,7 +56297,7 @@ se os homens de Israel, e novamente envolveram-se em
     
     
  Capítulo 2
-    1 E agora, ó sacerdotes, este mandamento é para vós.
+    1 E agora, ó sacerdotes, este mandamento é para vós.
     2 Se não derdes ouvidos, e se não aplicardes o vosso coração para dar glória
     ao meu nome, diz o Senhor Todo-Poderoso, então farei brotar a maldição
     contra vós, e amadiçoarei a vossa bênção. Sim, eu vos amaldiçoarei, espalharei
@@ -56334,7 +56334,7 @@ se os homens de Israel, e novamente envolveram-se em
     ao Senhor Todo-Poderoso.
     13 E estas coisas que eu odiava vós fizestes: cobristes de lágrimas o altar do
     Senhor, com choro e gemidos, por causa dos vossos problemas. Deveria eu
-    atender aos vossos sacrifícios, ou receber de bom grado qualquer coisa de
+    atender aos vossos sacrifícios, ou receber de bom grado qualquer coisa de
     vossas mãos?
     14 Todavia vós dissestes: Por quê? Porque o Senhor foi testemunha entre ti e
     a mulher da tua mocidade, a quem abandonastes, ainda que ela era a tua
@@ -56371,7 +56371,7 @@ se os homens de Israel, e novamente envolveram-se em
     os órfãos e torcem o direito do estrangeiro, mas não me temem, diz o Senhor
     Todo-Poderoso.
     6 Pois eu sou o Senhor, teu Deus, e não tenho mudado.
-    7 Porém vós, filhos de Jacó, não vos abstivestes das iniquidades de vossos
+    7 Porém vós, filhos de Jacó, não vos abstivestes das iniquidades de vossos
     pais. Torcestes os meus estatutos, e não os guardastes. Voltai-vos para mim, e
     eu me tornarei para vós, diz o Senhor Todo-Poderoso. Mas vós dizeis: Em
     que havemos de voltar?
@@ -56403,11 +56403,14 @@ se os homens de Israel, e novamente envolveram-se em
     como uma possessão peculiar. Eu os escolherei como um homem escolhe a
     seu filho que o serve.
     18 Então, vos convertereis e ireis discernir entre o justo e o ímpio, entre o que
-    serve a Deus e o que não o serve.
-    
-    
- Capítulo 4
-    1 Pois eis que o dia do Senhor vem, ardendo como um forno, e irá consumi-
+    serve a Deus e o que não o serve.`
+
+
+
+
+
+    /*Capítulo 4
+    1 Pois eis que o dia do Senhor vem, ardendo como um forno, e irá consumi-
     los. Todos os estranhos e todos os que cometem impiedade serão como
     restolho; o dia que está chegando os lançará no fogo, diz o Senhor Todo-
     Poderoso, e não será deixado deles raiz ou ramo.
@@ -56421,4 +56424,4 @@ se os homens de Israel, e novamente envolveram-se em
     glorioso dia do Senhor, e a sua manifestação;
     6 aquele que fará voltar-se, outra vez, o coração do pai para o filho, e o
     coração de um homem para o seu próximo, a fim de que eu não venha e fira a
-    terra gravemente.`
+    terra gravemente. */

@@ -59,14 +59,21 @@ export const MyProvider = ({ children }: MyProviderProps) => {
     booksNames[currentBookIndex]
   )
 
+  const [currentBookStart, currentBookEnd] = [
+    booksNames[currentBookIndex],
+    booksNames[currentBookIndex + 1]
+  ]
+
   const greekCurrentBook = greek.slice(
-    greek.indexOf(booksNames[currentBookIndex]),
-    greek.indexOf(booksNames[currentBookIndex + 1])
+    greek.indexOf(currentBookStart),
+    greek.indexOf(currentBookEnd)
   )
 
+  const totalChapters = greekCurrentBook.split('Chapter').length - 1
+
   const portugueseCurrentBook = portuguese.slice(
-    portuguese.indexOf(booksNames[currentBookIndex].toUpperCase()),
-    portuguese.indexOf(booksNames[currentBookIndex + 1].toUpperCase())
+    portuguese.indexOf(currentBookStart),
+    portuguese.indexOf(currentBookEnd)
   )
 
   useEffect(() => {
@@ -92,9 +99,15 @@ export const MyProvider = ({ children }: MyProviderProps) => {
     setPortugueseChapter(portugueseCurrentChapter)
   }, [bookPage, currentBookIndex])
 
-  const totalChapters = greekCurrentBook.split('Chapter').length - 1
-
   const handleBookPage = (direction: string) => {
+    if (direction == 'right' && bookPage == totalChapters) {
+      setLastBookChapter(bookPage)
+      setCurrentBookIndex(0)
+      setBookPage(1)
+
+      return
+    }
+
     if (
       bookPage == totalChapters &&
       currentBookIndex < 39 &&
