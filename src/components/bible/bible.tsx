@@ -33,10 +33,13 @@ export const Bible = () => {
     portugueseChapter,
     setCurrentBookIndex,
     setBookPage,
-    portugueseBooksNames
+    portugueseBooksNames,
+    currentBookIndex,
+    bookPage
   } = useContext(MyContext)
   const [voiceMode, setVoiceMode] = useState(false)
   const [voiceResults, setVoiceResults] = useState<string[] | undefined>([])
+  const [verse, setVerse] = useState(0)
   const greekRef = useRef<number[]>([])
 
   const scrollRef = useRef<ScrollView>(null)
@@ -113,7 +116,7 @@ export const Bible = () => {
         )
 
         const chapter = formattedResults[formattedResults.indexOf('verso') - 1]
-        const verse = formattedResults[formattedResults.length - 1]
+        setVerse(+formattedResults[formattedResults.length - 1])
 
         if (book.includes('Primeira')) {
           book = book.replace(/Primeira/i, '1')
@@ -129,18 +132,21 @@ export const Bible = () => {
           setCurrentBookIndex(currentBookIndex)
           setBookPage(+chapter)
 
-          scrollRef.current?.scrollTo({
-            y: greekRef.current[+verse - 1],
-            animated: true
-          })
-
-          greekRef.current.length = 0
           return
         }
 
         Toast.error(`Não encontramos nenhum livro chamado ${book}`, 'top')
       }
     })()
+  }, [voiceResults])
+
+  useMemo(() => {
+    scrollRef.current?.scrollTo({
+      y: greekRef.current[+verse - 1],
+      animated: true
+    })
+
+    greekRef.current.length = 0
   }, [voiceResults])
 
   return (
