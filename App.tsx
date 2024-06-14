@@ -40,6 +40,7 @@ export default function App() {
   return (
     <>
       <MyProvider>
+        <StatusBar backgroundColor="#313131" />
         <NavigationContainer
           theme={{
             colors: {
