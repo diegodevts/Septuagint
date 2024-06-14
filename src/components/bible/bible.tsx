@@ -147,7 +147,7 @@ export const Bible = () => {
     })
 
     greekRef.current.length = 0
-  }, [currentBookIndex, bookPage])
+  }, [verse])
 
   return (
     <View style={styles.mainContainer}>
