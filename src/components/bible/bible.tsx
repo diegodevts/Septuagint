@@ -40,7 +40,7 @@ export const Bible = () => {
   const [voiceMode, setVoiceMode] = useState(false)
   const [voiceResults, setVoiceResults] = useState<string[] | undefined>([])
   const [verse, setVerse] = useState(0)
-  const greekRef = useRef<number[]>([])
+  const [versePositions, setVersePositions] = useState<any>({})
 
   const scrollRef = useRef<ScrollView>(null)
 
@@ -99,8 +99,19 @@ export const Bible = () => {
     return () => Voice.destroy().then(Voice.removeAllListeners)
   }, [])
 
-  const handleVerseLayout = (e: LayoutChangeEvent) => {
-    greekRef.current.push(e.nativeEvent.layout.y)
+  const handleVerseLayout = (index: number, event: LayoutChangeEvent) => {
+    const { y } = event.nativeEvent.layout
+    setVersePositions((prevPositions: any) => ({
+      ...prevPositions,
+      [index]: y
+    }))
+  }
+
+  const scrollToVerse = (chapter: number, verse: number) => {
+    const position = versePositions[verse]
+    if (position !== undefined && scrollRef.current) {
+      scrollRef.current.scrollTo({ y: position, animated: true })
+    }
   }
 
   useEffect(() => {
@@ -116,7 +127,6 @@ export const Bible = () => {
         )
 
         const chapter = formattedResults[formattedResults.indexOf('verso') - 1]
-        setVerse(+formattedResults[formattedResults.length - 1])
 
         if (book.includes('Primeira')) {
           book = book.replace(/Primeira/i, '1')
@@ -131,6 +141,7 @@ export const Bible = () => {
         if (currentBookIndex != -1 && !isNaN(+chapter)) {
           setCurrentBookIndex(currentBookIndex)
           setBookPage(+chapter)
+          setVerse(+formattedResults[formattedResults.length - 1])
 
           return
         }
@@ -141,12 +152,7 @@ export const Bible = () => {
   }, [voiceResults])
 
   useMemo(() => {
-    scrollRef.current?.scrollTo({
-      y: greekRef.current[+verse - 1],
-      animated: true
-    })
-
-    greekRef.current.length = 0
+    scrollToVerse(bookPage, verse)
   }, [verse])
 
   return (
@@ -163,11 +169,12 @@ export const Bible = () => {
               (verse, index) =>
                 verse != '' && (
                   <View
+                    key={index}
                     style={{
                       flexDirection: 'row',
                       gap: 5
                     }}
-                    onLayout={handleVerseLayout}
+                    onLayout={(event) => handleVerseLayout(index, event)}
                   >
                     <View style={styles.column}>
                       <Text key={`verse1_${index}`}>
