@@ -132,12 +132,12 @@ export const Bible = () => {
         const hasVerse =
           formattedResults.indexOf('verso') != -1
             ? formattedResults.indexOf('verso') - 1
-            : formattedResults.length
+            : formattedResults.length - 1
 
         let book = capitalizeFirstLetter(
           formattedResults.slice(0, hasVerse).toString().split(',').join(' ')
         )
-        const chapter = formattedResults[formattedResults.indexOf('verso') - 1]
+        const chapter = formattedResults[hasVerse]
 
         if (book.includes('Primeira')) {
           book = book.replace(/Primeira/i, '1')
