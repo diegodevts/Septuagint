@@ -54,7 +54,6 @@ export const MyProvider = ({ children }: MyProviderProps) => {
   const [currentBookIndex, setCurrentBookIndex] = useState(0)
   const [greekChapter, setGreekChapter] = useState('1')
   const [portugueseChapter, setPortugueseChapter] = useState('1')
-  const [lastBookChapter, setLastBookChapter] = useState(50)
   const [currentBookName, setCurrentBookName] = useState(
     booksNames[currentBookIndex]
   )
@@ -68,8 +67,6 @@ export const MyProvider = ({ children }: MyProviderProps) => {
     greek.indexOf(currentBookStart),
     greek.indexOf(currentBookEnd)
   )
-
-  const totalChapters = greekCurrentBook.split('Chapter').length - 1
 
   const portugueseCurrentBook = portuguese.slice(
     portuguese.indexOf(currentBookStart),
@@ -99,45 +96,11 @@ export const MyProvider = ({ children }: MyProviderProps) => {
     setPortugueseChapter(portugueseCurrentChapter)
   }, [bookPage, currentBookIndex])
 
-  const handleBookPage = (direction: string) => {
-    if (direction == 'right' && bookPage == totalChapters) {
-      setLastBookChapter(bookPage)
-      setCurrentBookIndex(0)
-      setBookPage(1)
-
-      return
-    }
-
-    if (
-      bookPage == totalChapters &&
-      currentBookIndex < 39 &&
-      direction == 'right'
-    ) {
-      setLastBookChapter(bookPage)
-      setCurrentBookIndex((current) => current + 1)
-      setBookPage(1)
-    }
-
-    if (bookPage == 1 && currentBookIndex > 0 && direction == 'left') {
-      setCurrentBookIndex((current) => current - 1)
-      setBookPage(lastBookChapter)
-    }
-
-    if (direction == 'left' && bookPage > 1) {
-      setBookPage((current) => current - 1)
-    }
-
-    if (direction == 'right' && bookPage < totalChapters) {
-      setBookPage((current) => current + 1)
-    }
-  }
-
   return (
     <MyContext.Provider
       value={{
         greekChapter,
         portugueseChapter,
-        handleBookPage,
         bookPage,
         currentBookIndex,
         setBookPage,

@@ -11,10 +11,8 @@ import {
   View
 } from 'react-native'
 import { FontAwesome6, Entypo, MaterialIcons } from '@expo/vector-icons'
-import { useContext, useMemo, useState } from 'react'
+import { useContext, useMemo } from 'react'
 import MyContext from '@/src/contexts/items-context'
-import { Picker } from '@react-native-picker/picker'
-import { Toast } from 'toastify-react-native'
 
 const Drawer = createDrawerNavigator()
 
@@ -33,20 +31,13 @@ export const Menu = () => {
   const {
     bookPage,
     currentBookIndex,
-    setBookPage,
-    setCurrentBookIndex,
     portugueseBooksNames,
     setCurrentBookName,
     currentBookName
   } = useContext(MyContext)
 
-  const handleChapter = (value: string) => {
-    setBookPage(+value)
-  }
-
   useMemo(() => {
     setCurrentBookName(portugueseBooksNames[currentBookIndex])
-  
   }, [currentBookIndex])
 
   return (
@@ -83,34 +74,23 @@ export const Menu = () => {
                 gap: 10
               }}
             >
-              <Picker
-                style={styles.picker}
-                selectedValue={currentBookName}
-                onValueChange={(itemValue, itemIndex) =>
-                  setCurrentBookIndex(itemIndex)
-                }
-                mode="dropdown"
-              >
-                {portugueseBooksNames.map((value, index) => (
-                  <Picker.Item
-                    style={styles.pickerItem}
-                    key={index}
-                    label={value}
-                    value={value}
-                    fontFamily="Poppins-Regular"
-                  />
-                ))}
-              </Picker>
-              <TextInput
+              <Text
                 style={{
                   color: '#fff',
                   fontFamily: 'Poppins-Regular',
                   fontSize: 18
                 }}
-                onChangeText={(e) => handleChapter(e)}
-                value={`${bookPage}`}
-                keyboardType="numeric"
-              />
+              >
+                {currentBookName}
+              </Text>
+
+              <Text
+                style={{
+                  color: '#fff',
+                  fontFamily: 'Poppins-Regular',
+                  fontSize: 18
+                }}
+              >{`${bookPage}`}</Text>
             </View>
           )
         }}
@@ -132,23 +112,3 @@ export const Menu = () => {
     </Drawer.Navigator>
   )
 }
-
-const styles = StyleSheet.create({
-  label: {
-    fontSize: 18,
-    marginBottom: 10,
-    color: '#fff'
-  },
-  picker: {
-    height: 50,
-    width: 160,
-    color: '#fff',
-    backgroundColor: '#313131',
-    fontFamily: 'Poppins-Regular',
-    fontSize: 18
-  },
-  pickerItem: {
-    color: '#fff',
-    backgroundColor: '#313131'
-  }
-})

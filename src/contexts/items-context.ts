@@ -3,7 +3,6 @@ import { Dispatch, SetStateAction, createContext } from 'react'
 type MyContextProps = {
   greekChapter: string
   portugueseChapter: string
-  handleBookPage: (direction: string) => void
   bookPage: number
   currentBookIndex: number
   setBookPage: Dispatch<SetStateAction<number>>
