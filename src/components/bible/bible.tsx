@@ -115,9 +115,10 @@ export const Bible = () => {
   }
 
   useEffect(() => {
-    ;(async () => {
+    ;(() => {
       if (voiceResults && voiceResults.length > 0) {
         const formattedResults = voiceResults[0].split(' ')
+
         let book = capitalizeFirstLetter(
           formattedResults
             .slice(0, formattedResults.indexOf('verso') - 1)
@@ -153,7 +154,7 @@ export const Bible = () => {
 
   useMemo(() => {
     scrollToVerse(bookPage, verse)
-  }, [verse])
+  }, [versePositions])
 
   return (
     <View style={styles.mainContainer}>
@@ -261,7 +262,8 @@ const styles = StyleSheet.create({
   column: {
     flex: 1,
     width: '100%',
-    flexDirection: 'row'
+    flexDirection: 'row',
+    height: '100%'
   },
   caretLeft: {
     position: 'absolute',
@@ -284,6 +286,7 @@ const styles = StyleSheet.create({
     fontWeight: 'semibold',
     textAlign: 'left',
     width: '100%',
+    height: '100%',
     fontSize: 14
   },
   pdf: {
