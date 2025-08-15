@@ -1,14 +1,18 @@
 {
-  "extends": "expo/tsconfig.base",
-  "compilerOptions": {
-    "strict": true,
-    "paths": {
-      "@/*": ["./*"]
-    }
-  },
-  "include": [
-    "**/*.ts",
-    "**/*.tsx",
-    "src/config/septuagint-versions/portuguese-version.ts"
-  ]
+    "extends": "expo/tsconfig.base",
+    "compilerOptions": {
+        "esModuleInterop": true,
+        "jsx": "react",
+        "strict": false,
+        "paths": {
+            "@/*": ["./*"]
+        }
+    },
+    "include": [
+        "**/*.ts",
+        "**/*.tsx",
+        "src/config/septuagint-versions/portuguese-version.ts",
+        "src/config/septuagint-versions/greek-version.ts",
+        "src/Routes.tsx"
+    ]
 }

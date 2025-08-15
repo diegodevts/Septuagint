@@ -1,17 +1,23 @@
-import { Dispatch, SetStateAction, createContext } from 'react'
+import { Dispatch, SetStateAction, createContext } from "react";
 
 type MyContextProps = {
-  greekChapter: string
-  portugueseChapter: string
-  bookPage: number
-  currentBookIndex: number
-  setBookPage: Dispatch<SetStateAction<number>>
-  setCurrentBookIndex: Dispatch<SetStateAction<number>>
-  portugueseBooksNames: string[]
-  currentBookName: string
-  setCurrentBookName: Dispatch<SetStateAction<string>>
-}
+    greekChapter: number;
+    setGreekChapter: Dispatch<SetStateAction<number>>;
+    portugueseBooksNames: string[];
+    greekCurrentBook: {
+        name: string;
+        chapters: (string[] | null)[];
+    };
+    bookPage: number;
+    currentBookIndex: number;
+    setBookPage: Dispatch<SetStateAction<number>>;
+    setCurrentBookIndex: Dispatch<SetStateAction<number>>;
+    currentBookName: string;
+    setCurrentBookName: Dispatch<SetStateAction<string>>;
+    setLang: Dispatch<SetStateAction<"PT" | "EN">>;
+    lang: "PT" | "EN";
+};
 
-const MyContext = createContext({} as MyContextProps)
+const MyContext = createContext({} as MyContextProps);
 
-export default MyContext
+export default MyContext;
