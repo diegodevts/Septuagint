@@ -16,6 +16,10 @@ type MyContextProps = {
     setCurrentBookName: Dispatch<SetStateAction<string>>;
     setLang: Dispatch<SetStateAction<"PT" | "EN">>;
     lang: "PT" | "EN";
+    popupVisible: boolean;
+    setPopupVisible: Dispatch<SetStateAction<boolean>>;
+    verse: number;
+    setVerse: Dispatch<SetStateAction<number>>;
 };
 
 const MyContext = createContext({} as MyContextProps);

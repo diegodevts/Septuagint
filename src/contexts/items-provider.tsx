@@ -15,10 +15,11 @@ export const MyProvider = ({ children }: MyProviderProps) => {
     const [currentBookIndex, setCurrentBookIndex] = useState(0);
     const [greekChapter, setGreekChapter] = useState(1);
     const [currentBookName, setCurrentBookName] = useState(
-        booksNames[currentBookIndex],
+        booksNames[currentBookIndex]
     );
-
+    const [popupVisible, setPopupVisible] = useState(false);
     const greekCurrentBook = greek[currentBookIndex];
+    const [verse, setVerse] = useState(1);
 
     return (
         <MyContext.Provider
@@ -35,6 +36,10 @@ export const MyProvider = ({ children }: MyProviderProps) => {
                 lang,
                 setLang,
                 setCurrentBookName,
+                popupVisible,
+                setPopupVisible,
+                verse,
+                setVerse
             }}
         >
             {children}

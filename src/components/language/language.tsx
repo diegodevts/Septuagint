@@ -3,13 +3,13 @@ import { View, TouchableOpacity, Image, StyleSheet } from "react-native";
 
 export default function LanguageSelector({
     selectedLanguage,
-    onSelectLanguage,
+    onSelectLanguage
 }) {
     const [showAllFlags, setShowAllFlags] = useState(false);
 
     const flags = {
         PT: require("../../../assets/flag-brazil.png"),
-        EN: require("../../../assets/flag-usa.png"),
+        EN: require("../../../assets/flag-usa.png")
     };
 
     const handleFlagPress = (lang) => {
@@ -50,16 +50,16 @@ export default function LanguageSelector({
 const styles = StyleSheet.create({
     container: {
         alignItems: "center",
-        marginVertical: 10,
+        marginVertical: 15
     },
     flag: {
-        width: 50,
-        height: 30,
+        width: 35,
+        height: 25,
         resizeMode: "contain",
-        marginHorizontal: 5,
+        marginHorizontal: 3
     },
     flagRow: {
         flexDirection: "row",
-        justifyContent: "center",
-    },
+        justifyContent: "center"
+    }
 });

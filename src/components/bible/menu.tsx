@@ -7,9 +7,9 @@ import { FontAwesome6, Entypo, MaterialIcons } from "@expo/vector-icons";
 import { useContext, useEffect, useMemo, useState } from "react";
 import MyContext from "@/src/contexts/items-context";
 import React from "react";
-import { Icon } from "react-native-vector-icons/Icon";
 import LanguageSelector from "../../components/language/language";
 import { Picker } from "@react-native-picker/picker";
+import { Toast } from "toastify-react-native";
 const Drawer = createDrawerNavigator();
 
 function CustomDrawerToggleButton({ navigation }: any) {
@@ -33,8 +33,47 @@ export const Menu = () => {
         setCurrentBookIndex,
         setBookPage,
         lang,
-        setLang
+        setLang,
+        setPopupVisible,
+        setVerse,
+        verse,
+        greekCurrentBook
     } = useContext(MyContext);
+    const [inputText, setInputText] = useState(`${bookPage}:${verse}`);
+    const handleChangeText = (text: string) => {
+        setInputText(text); // atualiza o input sempre
+    };
+
+    useEffect(() => {
+        setInputText("1:1");
+        setVerse(1);
+        setBookPage(1);
+    }, [greekCurrentBook]);
+
+    const handleInputSubmit = () => {
+        if (/[^\d:]/.test(inputText)) {
+            Toast.error(
+                "Não existe capítulo e versículo para o valor informado",
+                "top"
+            );
+            return;
+        }
+        if (inputText.includes(":")) {
+            const [chapter, verseNum] = inputText.split(":").map((v) => +v);
+            if (!isNaN(chapter)) {
+                setBookPage(chapter);
+                if (!isNaN(verseNum)) {
+                    setVerse(verseNum);
+                }
+            }
+        } else {
+            const num = +inputText;
+            if (!isNaN(num)) {
+                setBookPage(num);
+                setVerse(1);
+            }
+        }
+    };
 
     useEffect(() => {
         setCurrentBookName(portugueseBooksNames[currentBookIndex]);
@@ -91,7 +130,7 @@ export const Menu = () => {
                             <Picker
                                 style={{
                                     color: "#fff",
-                                    width: 150,
+                                    width: 125,
                                     backgroundColor: "#313131",
                                     height: "100%",
                                     borderColor: "#313131"
@@ -124,12 +163,19 @@ export const Menu = () => {
                             <TextInput
                                 style={{
                                     color: "#fff",
+                                    borderRadius: 2,
+                                    borderColor: "#fff",
+                                    borderBottomWidth: 1,
                                     fontFamily: "Poppins-Regular",
-                                    fontSize: 18
+                                    fontSize: 18,
+                                    width: 75,
+                                    textAlign: "center",
+                                    marginBottom: 5
                                 }}
-                                value={`${bookPage > 0 ? bookPage : ""}`}
-                                keyboardType="numeric"
-                                onChangeText={(e) => setBookPage(+e)}
+                                value={inputText}
+                                onChangeText={handleChangeText}
+                                onBlur={handleInputSubmit}
+                                onFocus={() => setPopupVisible(false)}
                             />
                             <LanguageSelector
                                 selectedLanguage={lang}
@@ -143,7 +189,7 @@ export const Menu = () => {
                 options={{
                     drawerLabel: ({ focused }) => (
                         <Text style={{ color: focused ? "#313131" : "#fff" }}>
-                            {lang == "PT" ? "Léxico" : "Lexicon"}
+                            {lang == "PT" ? "Dicionário" : "Dictionary"}
                         </Text>
                     ),
                     drawerIcon: ({ focused }) => (
@@ -153,7 +199,7 @@ export const Menu = () => {
                         />
                     )
                 }}
-                name={lang == "PT" ? "Léxico" : "Lexicon"}
+                name={lang == "PT" ? "Dicionário" : "Dictionary"}
                 component={Dictionary}
             />
         </Drawer.Navigator>

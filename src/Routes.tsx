@@ -21,26 +21,26 @@ export const Routes = () => {
                     card: "#313131",
                     notification: "#313131",
                     primary: "#313131",
-                    text: "#fff",
+                    text: "#fff"
                 },
                 fonts: {
                     regular: {
                         fontFamily: "System",
-                        fontWeight: "normal",
+                        fontWeight: "normal"
                     },
                     medium: {
                         fontFamily: "System",
-                        fontWeight: "500",
+                        fontWeight: "500"
                     },
                     bold: {
                         fontFamily: "System",
-                        fontWeight: "700",
+                        fontWeight: "700"
                     },
                     heavy: {
                         fontFamily: "System",
-                        fontWeight: "900",
-                    },
-                },
+                        fontWeight: "900"
+                    }
+                }
             }}
         >
             <Stack.Navigator id={undefined}>

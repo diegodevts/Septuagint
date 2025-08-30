@@ -50,11 +50,14 @@ export const Bible = () => {
         portugueseBooksNames,
         bookPage,
         currentBookName,
-        lang
+        lang,
+        popupVisible,
+        setPopupVisible,
+        verse,
+        setVerse
     } = useContext(MyContext);
     const [voiceMode, setVoiceMode] = useState(false);
     const [voiceResults, setVoiceResults] = useState<string[] | undefined>([]);
-    const [verse, setVerse] = useState(0);
     const [versePositions, setVersePositions] = useState<any>({});
 
     const [isSearchButtonVisible, setSearchButtonVisible] =
@@ -65,7 +68,6 @@ export const Bible = () => {
     const insets = useSafeAreaInsets();
     const currentChapter = greekCurrentBook.chapters[greekChapter - 1];
     const [backgroundVerseColor, setBackgroundVerseColor] = useState("#fff");
-    const [popupVisible, setPopupVisible] = useState(false);
     const [popupPosition, setPopupPosition] = useState({ x: 0, y: 0 });
     const [selectedWord, setSelectedWord] = useState<{
         word: string;
@@ -134,7 +136,8 @@ export const Bible = () => {
     };
 
     const scrollToVerse = (chapter: number, verse: number) => {
-        const position = versePositions[verse];
+        console.log(verse);
+        const position = versePositions[verse - 1];
         if (position !== undefined && scrollRef.current) {
             scrollRef.current.scrollTo({ y: position, animated: true });
         }
@@ -203,7 +206,9 @@ export const Bible = () => {
     }, [voiceResults]);
 
     useMemo(() => {
-        scrollToVerse(bookPage, verse);
+        if (greekChapter) {
+            scrollToVerse(bookPage, verse);
+        }
     }, [versePositions, verse]);
 
     const [selectedVerses, setSelectedVerses] = useState<
@@ -218,7 +223,7 @@ export const Bible = () => {
     ) => {
         if (backgroundVerseColor == "#fff" && event == "press") {
             setSearchButtonVisible((prevState) => !prevState);
-
+            setPopupVisible(false);
             return;
         }
 
@@ -252,6 +257,8 @@ export const Bible = () => {
         try {
             await Clipboard.setStringAsync(
                 `${currentBookName} ${greekChapter}\n\n${selectedVerses
+                    .slice() // cria uma cópia para não alterar o original
+                    .sort((a, b) => a.index - b.index) // ordena pelos índices
                     .map(({ text, index }) => `${index + 1}: ${text}`)
                     .join("\n")}`
             );
@@ -259,7 +266,7 @@ export const Bible = () => {
             setSelectedVerses([]);
             setBackgroundVerseColor("#fff");
         } catch (err) {
-            console.error(`Erro ao copiar`);
+            console.error(`Erro ao copiar`, err);
         }
     };
 
@@ -532,7 +539,8 @@ export const Bible = () => {
                     <TouchableOpacity
                         onPress={() =>
                             navigation.navigate("Lexicon", {
-                                wordSearch: selectedWord
+                                wordSearch: selectedWord,
+                                lang
                             })
                         }
                         style={{
@@ -543,9 +551,7 @@ export const Bible = () => {
                         }}
                     >
                         <Text style={{ color: "#fff", fontWeight: "bold" }}>
-                            {lang == "PT"
-                                ? "Ver no dicionário"
-                                : "See in dictionary"}
+                            {lang == "PT" ? "Ver no léxico" : "See in lexicon"}
                         </Text>
                     </TouchableOpacity>
                 </View>
