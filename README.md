@@ -50,3 +50,5 @@ Join our community of developers creating universal apps.
 -   [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
 
 R1-GK e R2-GK sao as duas raizes lá do strong po...
+
+subir na expo: npx eas build -p android --profile preview

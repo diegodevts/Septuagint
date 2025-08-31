@@ -13,12 +13,12 @@ export const MyProvider = ({ children }: MyProviderProps) => {
     const [lang, setLang] = useState<"PT" | "EN">("PT");
     const booksNames = booksStrategy.map((book) => book[lang]);
     const [currentBookIndex, setCurrentBookIndex] = useState(0);
-    const [greekChapter, setGreekChapter] = useState(1);
     const [currentBookName, setCurrentBookName] = useState(
         booksNames[currentBookIndex]
     );
     const [popupVisible, setPopupVisible] = useState(false);
     const greekCurrentBook = greek[currentBookIndex];
+    const [greekChapter, setGreekChapter] = useState(1);
     const [verse, setVerse] = useState(1);
 
     return (

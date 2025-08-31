@@ -4,6 +4,7 @@ import {
     NativeScrollEvent,
     NativeSyntheticEvent,
     PermissionsAndroid,
+    Pressable,
     ScrollView,
     StyleSheet,
     Text,
@@ -135,13 +136,33 @@ export const Bible = () => {
         }));
     };
 
+    const [hasScrolled, setHasScrolled] = useState(false);
+
     const scrollToVerse = (chapter: number, verse: number) => {
-        console.log(verse);
         const position = versePositions[verse - 1];
         if (position !== undefined && scrollRef.current) {
-            scrollRef.current.scrollTo({ y: position, animated: true });
+            scrollRef.current.scrollTo({ y: position });
+            setHasScrolled(true);
         }
     };
+
+    // sempre que mudar de versículo, reseta o "gatilho"
+    useEffect(() => {
+        if (verse) {
+            setHasScrolled(false);
+        }
+    }, [verse]);
+
+    // dispara só se ainda não rolou
+    useEffect(() => {
+        if (
+            !hasScrolled &&
+            greekChapter &&
+            versePositions[verse - 1] !== undefined
+        ) {
+            scrollToVerse(bookPage, verse);
+        }
+    }, [versePositions, verse, greekChapter, hasScrolled]);
 
     useEffect(() => {
         (() => {
@@ -205,11 +226,14 @@ export const Bible = () => {
         })();
     }, [voiceResults]);
 
-    useMemo(() => {
-        if (greekChapter) {
-            scrollToVerse(bookPage, verse);
+    useEffect(() => {
+        if (greekChapter && versePositions[0] !== undefined) {
+            scrollRef.current?.scrollTo({
+                y: versePositions[0]
+            });
+            setVerse(1);
         }
-    }, [versePositions, verse]);
+    }, [greekChapter, versePositions]);
 
     const [selectedVerses, setSelectedVerses] = useState<
         { index: number; text: string }[]
@@ -223,7 +247,6 @@ export const Bible = () => {
     ) => {
         if (backgroundVerseColor == "#fff" && event == "press") {
             setSearchButtonVisible((prevState) => !prevState);
-            setPopupVisible(false);
             return;
         }
 
@@ -311,18 +334,11 @@ export const Bible = () => {
                 padding: 5
             }}
         >
-            <ScrollView
-                ref={scrollRef}
-                scrollEventThrottle={16}
-                onScroll={() => setPopupVisible(false)}
-            >
+            <ScrollView ref={scrollRef} scrollEventThrottle={100}>
                 {currentChapter?.map((a, index) => (
                     <TouchableWithoutFeedback
                         key={`verse_${index}`}
-                        onPress={() => {
-                            handleText(index, a, "press");
-                            setPopupVisible(false);
-                        }}
+                        onPress={() => handleText(index, a, "press")}
                         onLongPress={() => handleText(index, a, "longpress")}
                         style={{
                             backgroundColor: selectedVerses.find(
@@ -471,90 +487,104 @@ export const Bible = () => {
                 />
             </TouchableOpacity>
             {popupVisible && selectedWord && (
-                <View
+                <Pressable
                     style={{
                         position: "absolute",
-                        top: Math.min(
-                            popupPosition.y - 60,
-                            // limita para não ultrapassar a barra inferior
-                            // 20 é um padding extra opcional
-                            // insets.bottom dá a altura da barra de ações/navegação
-                            // Dimensions.get('window').height é a altura da tela
-                            // mas se vc não quer que encoste no bottom, subtraia insets.bottom + margem
-                            require("react-native").Dimensions.get("window")
-                                .height -
-                                insets.bottom -
-                                60 * 5
-                        ),
-                        left: Math.max(
-                            8,
-                            Math.min(
-                                width - 220 - 8,
-                                popupPosition.x - wordWidth / 2
-                            )
-                        ),
-                        backgroundColor: "#fff",
-                        paddingHorizontal: 12,
-                        paddingVertical: 8,
-                        borderRadius: 8,
-                        borderWidth: 1,
-                        borderColor: "#ccc",
-                        shadowColor: "#000",
-                        shadowOffset: { width: 0, height: 2 },
-                        shadowOpacity: 0.3,
-                        shadowRadius: 4,
-                        zIndex: 999,
-                        elevation: 5,
-                        minWidth: 80,
-                        maxWidth: 220,
-                        alignItems: "center"
+                        top: 0,
+                        left: 0,
+                        right: 0,
+                        bottom: 0,
+                        zIndex: 998 // atrás do popup
                     }}
+                    onPress={() => setPopupVisible(false)}
                 >
-                    {/* Seta para cima */}
                     <View
                         style={{
                             position: "absolute",
-                            bottom: -8,
-                            left: "50%",
-                            marginLeft: -8,
-                            width: 0,
-                            height: 0,
-                            borderLeftWidth: 8,
-                            borderRightWidth: 8,
-                            borderBottomWidth: 8,
-                            borderLeftColor: "transparent",
-                            borderRightColor: "transparent",
-                            borderBottomColor: "#fff"
-                        }}
-                    />
-                    <Text
-                        style={{
-                            fontSize: 14,
-                            textAlign: "center",
-                            marginBottom: 6
-                        }}
-                    >
-                        {`${selectedWord.word}\n\n${selectedWord.pos}`}
-                    </Text>
-                    <TouchableOpacity
-                        onPress={() =>
-                            navigation.navigate("Lexicon", {
-                                wordSearch: selectedWord,
-                                lang
-                            })
-                        }
-                        style={{
-                            backgroundColor: "#313131",
+                            top: Math.min(
+                                popupPosition.y - 60,
+                                // limita para não ultrapassar a barra inferior
+                                // 20 é um padding extra opcional
+                                // insets.bottom dá a altura da barra de ações/navegação
+                                // Dimensions.get('window').height é a altura da tela
+                                // mas se vc não quer que encoste no bottom, subtraia insets.bottom + margem
+                                require("react-native").Dimensions.get("window")
+                                    .height -
+                                    insets.bottom -
+                                    60 * 5
+                            ),
+                            left: Math.max(
+                                8,
+                                Math.min(
+                                    width - 220 - 8,
+                                    popupPosition.x - wordWidth / 2
+                                )
+                            ),
+                            backgroundColor: "#fff",
                             paddingHorizontal: 12,
-                            paddingVertical: 6,
-                            borderRadius: 5
+                            paddingVertical: 8,
+                            borderRadius: 8,
+                            borderWidth: 1,
+                            borderColor: "#ccc",
+                            shadowColor: "#000",
+                            shadowOffset: { width: 0, height: 2 },
+                            shadowOpacity: 0.3,
+                            shadowRadius: 4,
+                            zIndex: 999,
+                            elevation: 5,
+                            minWidth: 80,
+                            maxWidth: 220,
+                            alignItems: "center"
                         }}
                     >
-                        <Text style={{ color: "#fff", fontWeight: "bold" }}>
-                            {lang == "PT" ? "Ver no léxico" : "See in lexicon"}
+                        {/* Seta para cima */}
+                        <View
+                            style={{
+                                position: "absolute",
+                                bottom: -8,
+                                left: "50%",
+                                marginLeft: -8,
+                                width: 0,
+                                height: 0,
+                                borderLeftWidth: 8,
+                                borderRightWidth: 8,
+                                borderBottomWidth: 8,
+                                borderLeftColor: "transparent",
+                                borderRightColor: "transparent",
+                                borderBottomColor: "#fff"
+                            }}
+                        />
+                        <Text
+                            style={{
+                                fontSize: 14,
+                                textAlign: "center",
+                                marginBottom: 6
+                            }}
+                        >
+                            {`${selectedWord.word}\n\n${selectedWord.pos}`}
                         </Text>
-                    </TouchableOpacity>
-                </View>
+                        <TouchableOpacity
+                            onPress={() =>
+                                navigation.navigate("Lexicon", {
+                                    wordSearch: selectedWord,
+                                    lang
+                                })
+                            }
+                            style={{
+                                backgroundColor: "#313131",
+                                paddingHorizontal: 12,
+                                paddingVertical: 6,
+                                borderRadius: 5
+                            }}
+                        >
+                            <Text style={{ color: "#fff", fontWeight: "bold" }}>
+                                {lang == "PT"
+                                    ? "Ver no léxico"
+                                    : "See in lexicon"}
+                            </Text>
+                        </TouchableOpacity>
+                    </View>
+                </Pressable>
             )}
         </View>
     );

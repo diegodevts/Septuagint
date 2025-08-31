@@ -1,7 +1,7 @@
 import { createDrawerNavigator } from "@react-navigation/drawer";
 import "react-native-gesture-handler";
 import { Bible } from "./bible";
-import { Dictionary } from "../dictionary/dictionary";
+import { Search } from "../search/search";
 import { Text, TextInput, TouchableOpacity, View } from "react-native";
 import { FontAwesome6, Entypo, MaterialIcons } from "@expo/vector-icons";
 import { useContext, useEffect, useMemo, useState } from "react";
@@ -46,8 +46,6 @@ export const Menu = () => {
 
     useEffect(() => {
         setInputText("1:1");
-        setVerse(1);
-        setBookPage(1);
     }, [greekCurrentBook]);
 
     const handleInputSubmit = () => {
@@ -137,8 +135,8 @@ export const Menu = () => {
                                 }}
                                 dropdownIconColor="white"
                                 selectedValue={currentBookName}
-                                onValueChange={(_, index) =>
-                                    setCurrentBookIndex(index - 1)
+                                onValueChange={
+                                    (_, index) => setCurrentBookIndex(index - 1) //
                                 }
                             >
                                 <Picker.Item
@@ -189,7 +187,7 @@ export const Menu = () => {
                 options={{
                     drawerLabel: ({ focused }) => (
                         <Text style={{ color: focused ? "#313131" : "#fff" }}>
-                            {lang == "PT" ? "Dicionário" : "Dictionary"}
+                            {lang == "PT" ? "Pesquisa" : "Search"}
                         </Text>
                     ),
                     drawerIcon: ({ focused }) => (
@@ -199,8 +197,8 @@ export const Menu = () => {
                         />
                     )
                 }}
-                name={lang == "PT" ? "Dicionário" : "Dictionary"}
-                component={Dictionary}
+                name={lang == "PT" ? "Pesquisa" : "Search"}
+                component={Search}
             />
         </Drawer.Navigator>
     );

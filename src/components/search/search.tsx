@@ -1,5 +1,6 @@
 import { strong } from "@/src/config/dictionaries/strong";
-import { useState } from "react";
+import { greek } from "@/src/config/septuagint-versions/greek-version";
+import { useEffect, useState } from "react";
 import React, {
     Dimensions,
     FlatList,
@@ -7,51 +8,68 @@ import React, {
     Switch,
     Text,
     TextInput,
-    View,
+    View
 } from "react-native";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 
-export const Dictionary = () => {
+type SearchResult = {
+    book: string;
+    chapterIndex: number;
+    verseIndex: number;
+    verse: string;
+};
+
+export const Search = () => {
     const [word, setWord] = useState("");
     const [isEnabled, setIsEnabled] = useState(false);
 
     const toggleSwitch = () => setIsEnabled((previousState) => !previousState);
 
-    const removeGreekAccents = (text) => {
-        if (!text) return "";
-
-        const normalized = text.normalize("NFD");
-        const withoutDiacritics = normalized.replace(/[\u0300-\u036f]/g, "");
-
-        return withoutDiacritics
-            .replace(/\u1FBD/g, "")
-            .replace(/\u1FFE/g, "")
-            .replace(/\u0345/g, "")
+    const removeGreekAccents = (text: string) =>
+        text
+            .normalize("NFD")
+            .replace(/[\u0300-\u036f\u1FBD\u1FFE\u0345]/g, "")
             .normalize("NFC");
-    };
 
     const renderItem = ({ item }) => (
         <View style={styles.item}>
-            <Text style={styles.title}>{item.Word}</Text>
+            <Text style={styles.title} numberOfLines={0} ellipsizeMode="tail">
+                {`${item.book} ${item.chapterIndex}:${item.verseIndex}: "${item.verse}'`}
+            </Text>
         </View>
     );
-    const insets = useSafeAreaInsets();
-    const filteredData = strong.filter((data) => {
-        if (isEnabled) {
-            return (
-                data.Word.toLowerCase().includes(word.toLowerCase()) ||
-                removeGreekAccents(data.Word.toLowerCase().trim()).includes(
-                    removeGreekAccents(word.toLowerCase().trim()),
-                )
-            );
-        }
 
-        return (
-            data.Word.toLowerCase() == word.toLowerCase() ||
-            removeGreekAccents(data.Word.toLowerCase().trim()) ==
-                removeGreekAccents(word.toLowerCase().trim())
-        );
-    });
+    const insets = useSafeAreaInsets();
+
+    const searchWordInBooks = (
+        word: string,
+        books: { name: string; chapters: string[][] }[]
+    ): SearchResult[] => {
+        const results: SearchResult[] = [];
+        if (!word) return results;
+
+        const regex = new RegExp(removeGreekAccents(word), "i");
+
+        books.forEach((book) => {
+            book.chapters?.forEach((chapter, chapterIndex) => {
+                chapter?.forEach((verse, verseIndex) => {
+                    if (regex.test(removeGreekAccents(verse))) {
+                        results.push({
+                            book: book.name,
+                            chapterIndex: chapterIndex + 1,
+                            verseIndex: verseIndex + 1,
+                            verse
+                        });
+                    }
+                });
+            });
+        });
+
+        return results;
+    };
+
+    // Uso
+    const filteredResults = searchWordInBooks(word, greek);
 
     return (
         <View
@@ -62,7 +80,7 @@ export const Dictionary = () => {
                     flexDirection: "column",
                     gap: 3,
                     marginTop: 10,
-                    flex: 1,
+                    flex: 1
                 }}
             >
                 <TextInput
@@ -76,7 +94,7 @@ export const Dictionary = () => {
                         height: 45,
                         paddingHorizontal: 10,
                         width: Dimensions.get("screen").width - 20,
-                        textAlign: "left",
+                        textAlign: "left"
                     }}
                     value={word}
                     placeholder="Digite algo para pesquisar"
@@ -87,14 +105,14 @@ export const Dictionary = () => {
                         flex: 1,
                         alignItems: "center",
                         flexDirection: "row",
-                        justifyContent: "flex-start",
+                        justifyContent: "flex-start"
                     }}
                 >
                     <Text
                         style={{
                             color: "#313131",
                             marginBottom: 10,
-                            fontSize: 15,
+                            fontSize: 15
                         }}
                     >
                         {"Buscar por fragmentos"}
@@ -112,11 +130,11 @@ export const Dictionary = () => {
             <FlatList
                 style={{
                     marginBottom: 60,
-                    height: Dimensions.get("screen").height / 1.6,
+                    height: Dimensions.get("screen").height / 1.6
                 }}
-                data={filteredData}
+                data={filteredResults}
                 renderItem={renderItem}
-                keyExtractor={(item) => item["#"]}
+                keyExtractor={(item, index) => item["#"] ?? index.toString()}
             />
         </View>
     );
@@ -128,11 +146,10 @@ const styles = StyleSheet.create({
         padding: 15,
         marginVertical: 2,
         borderRadius: 8,
-        height: 51,
-        width: Dimensions.get("screen").width - 20,
+        width: Dimensions.get("screen").width - 20
     },
     title: {
         color: "#fff",
-        fontSize: 16,
-    },
+        fontSize: 16
+    }
 });
