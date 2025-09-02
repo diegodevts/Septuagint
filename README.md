@@ -52,3 +52,7 @@ Join our community of developers creating universal apps.
 R1-GK e R2-GK sao as duas raizes lá do strong po...
 
 subir na expo: npx eas build -p android --profile preview
+
+gerar apk local: cd android; ./gradlew assembleRelease
+
+vai gerar no caminho: android/app/build/outputs/apk/release/app-release.apk

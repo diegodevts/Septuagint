@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import React, {
     Dimensions,
     FlatList,
+    KeyboardAvoidingView,
     StyleSheet,
     Switch,
     Text,
@@ -53,7 +54,26 @@ export const Search = () => {
         books.forEach((book) => {
             book.chapters?.forEach((chapter, chapterIndex) => {
                 chapter?.forEach((verse, verseIndex) => {
-                    if (regex.test(removeGreekAccents(verse))) {
+                    if (!isEnabled) {
+                        verse.split(" ").forEach((_word) => {
+                            if (
+                                removeGreekAccents(_word.toLowerCase()) ===
+                                removeGreekAccents(word.toLowerCase())
+                            ) {
+                                results.push({
+                                    book: book.name,
+                                    chapterIndex: chapterIndex + 1,
+                                    verseIndex: verseIndex + 1,
+                                    verse
+                                });
+                                return;
+                            }
+                        });
+                    }
+                    if (
+                        isEnabled &&
+                        regex.test(removeGreekAccents(verse.toLowerCase()))
+                    ) {
                         results.push({
                             book: book.name,
                             chapterIndex: chapterIndex + 1,
@@ -100,7 +120,7 @@ export const Search = () => {
                     placeholder="Digite algo para pesquisar"
                     onChangeText={setWord}
                 />
-                <View
+                <KeyboardAvoidingView
                     style={{
                         flex: 1,
                         alignItems: "center",
@@ -111,25 +131,26 @@ export const Search = () => {
                     <Text
                         style={{
                             color: "#313131",
-                            marginBottom: 10,
-                            fontSize: 15
+                            marginTop: 10,
+                            fontSize: 15,
+                            fontFamily: "Poppins-Regular"
                         }}
                     >
                         {"Buscar por fragmentos"}
                     </Text>
                     <Switch
-                        style={{ marginLeft: 10 }}
+                        style={{ marginLeft: 10, marginTop: 10 }}
                         trackColor={{ false: "#767577", true: "#f4f3f4" }}
                         thumbColor={isEnabled ? "#767577" : "#f4f3f4"}
                         ios_backgroundColor="#3e3e3e"
                         onValueChange={toggleSwitch}
                         value={isEnabled}
                     />
-                </View>
+                </KeyboardAvoidingView>
             </View>
             <FlatList
                 style={{
-                    marginBottom: 60,
+                    marginTop: 30,
                     height: Dimensions.get("screen").height / 1.6
                 }}
                 data={filteredResults}

@@ -231,7 +231,6 @@ export const Bible = () => {
             scrollRef.current?.scrollTo({
                 y: versePositions[0]
             });
-            setVerse(1);
         }
     }, [greekChapter, versePositions]);
 
@@ -334,7 +333,11 @@ export const Bible = () => {
                 padding: 5
             }}
         >
-            <ScrollView ref={scrollRef} scrollEventThrottle={100}>
+            <ScrollView
+                ref={scrollRef}
+                scrollEventThrottle={100}
+                style={{ height: "100%" }}
+            >
                 {currentChapter?.map((a, index) => (
                     <TouchableWithoutFeedback
                         key={`verse_${index}`}
