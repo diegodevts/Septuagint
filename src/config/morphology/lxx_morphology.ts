@@ -471,7 +471,7 @@ export const morphology: Morphology[] = [
     },
     {
         word: "οὕτως",
-        lemma: "οὕτως",
+        lemma: "οὗτος",
         pos: {
             PT: "advérbio",
             EN: "adverb"
@@ -522002,4 +522002,3 @@ export const morphology: Morphology[] = [
         double_lemma: ""
     }
 ];
-

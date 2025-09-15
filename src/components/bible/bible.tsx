@@ -244,11 +244,6 @@ export const Bible = () => {
         text: string,
         event: "press" | "longpress"
     ) => {
-        if (backgroundVerseColor == "#fff" && event == "press") {
-            setSearchButtonVisible((prevState) => !prevState);
-            return;
-        }
-
         const isSelected = selectedVerses.find(
             (verse) => verse.index === index
         );
@@ -327,108 +322,116 @@ export const Bible = () => {
     };
 
     return (
-        <View
-            style={{
-                height: Dimensions.get("window").height - insets.bottom * 2.7,
-                padding: 5
-            }}
+        <Pressable
+            style={{ height: insets.bottom, flex: 1 }}
+            onPress={() => setSearchButtonVisible((prevState) => !prevState)}
         >
-            <ScrollView
-                ref={scrollRef}
-                scrollEventThrottle={100}
-                style={{ height: "100%" }}
+            <View
+                style={{
+                    height: Dimensions.get("screen").height - insets.bottom * 4,
+                    padding: 5
+                }}
             >
-                {currentChapter?.map((a, index) => (
-                    <TouchableWithoutFeedback
-                        key={`verse_${index}`}
-                        onPress={() => handleText(index, a, "press")}
-                        onLongPress={() => handleText(index, a, "longpress")}
-                        style={{
-                            backgroundColor: selectedVerses.find(
-                                (verse) => verse.index === index
-                            )
-                                ? "#f0f0f0"
-                                : "#fff"
-                        }}
-                    >
-                        <View
-                            onLayout={(e) => handleVerseLayout(index, e)}
+                <ScrollView
+                    ref={scrollRef}
+                    scrollEventThrottle={100}
+                    style={{ height: "100%" }}
+                >
+                    {currentChapter?.map((a, index) => (
+                        <TouchableWithoutFeedback
+                            key={`verse_${index}`}
+                            onPress={() => handleText(index, a, "press")}
+                            onLongPress={() =>
+                                handleText(index, a, "longpress")
+                            }
                             style={{
                                 backgroundColor: selectedVerses.find(
                                     (verse) => verse.index === index
                                 )
                                     ? "#f0f0f0"
-                                    : "#fff",
-                                paddingVertical: 4,
-                                flexDirection: "row",
-                                alignItems: "flex-start"
+                                    : "#fff"
                             }}
                         >
-                            <Text
-                                style={{
-                                    fontWeight: "bold",
-                                    fontSize: 16,
-                                    marginRight: 6,
-                                    marginTop: 2
-                                }}
-                            >
-                                {index + 1}
-                            </Text>
-
                             <View
+                                onLayout={(e) => handleVerseLayout(index, e)}
                                 style={{
+                                    backgroundColor: selectedVerses.find(
+                                        (verse) => verse.index === index
+                                    )
+                                        ? "#f0f0f0"
+                                        : "#fff",
+                                    paddingVertical: 4,
                                     flexDirection: "row",
-                                    flexWrap: "wrap",
-                                    flexShrink: 1,
-                                    flex: 1
+                                    alignItems: "flex-start"
                                 }}
                             >
-                                {a
-                                    .trim()
-                                    .split(" ")
-                                    .map((word, wordIndex) => {
-                                        const wordKey = `${index}_${wordIndex}`;
-                                        const isSelected =
-                                            selectedWord?.word === word;
+                                <Text
+                                    style={{
+                                        fontWeight: "bold",
+                                        fontSize: 16,
+                                        marginRight: 6,
+                                        marginTop: 2
+                                    }}
+                                >
+                                    {index + 1}
+                                </Text>
 
-                                        return (
-                                            <TouchableOpacity
-                                                key={wordKey}
-                                                ref={(ref) => {
-                                                    wordRefs.current[wordKey] =
-                                                        ref;
-                                                }}
-                                                onPress={() =>
-                                                    handleMorphology(
-                                                        wordKey,
-                                                        word
-                                                    )
-                                                }
-                                                activeOpacity={0.6}
-                                            >
-                                                <Text
-                                                    style={styles.text}
-                                                    onLayout={(e) => {
-                                                        if (isSelected) {
-                                                            setWordWidth(
-                                                                e.nativeEvent
-                                                                    .layout
-                                                                    .width
-                                                            );
-                                                        }
+                                <View
+                                    style={{
+                                        flexDirection: "row",
+                                        flexWrap: "wrap",
+                                        flexShrink: 1,
+                                        flex: 1
+                                    }}
+                                >
+                                    {a
+                                        .trim()
+                                        .split(" ")
+                                        .map((word, wordIndex) => {
+                                            const wordKey = `${index}_${wordIndex}`;
+                                            const isSelected =
+                                                selectedWord?.word === word;
+
+                                            return (
+                                                <TouchableOpacity
+                                                    key={wordKey}
+                                                    ref={(ref) => {
+                                                        wordRefs.current[
+                                                            wordKey
+                                                        ] = ref;
                                                     }}
+                                                    onPress={() =>
+                                                        handleMorphology(
+                                                            wordKey,
+                                                            word
+                                                        )
+                                                    }
+                                                    activeOpacity={0.6}
                                                 >
-                                                    {word}
-                                                </Text>
-                                            </TouchableOpacity>
-                                        );
-                                    })}
+                                                    <Text
+                                                        style={styles.text}
+                                                        onLayout={(e) => {
+                                                            if (isSelected) {
+                                                                setWordWidth(
+                                                                    e
+                                                                        .nativeEvent
+                                                                        .layout
+                                                                        .width
+                                                                );
+                                                            }
+                                                        }}
+                                                    >
+                                                        {word}
+                                                    </Text>
+                                                </TouchableOpacity>
+                                            );
+                                        })}
+                                </View>
                             </View>
-                        </View>
-                    </TouchableWithoutFeedback>
-                ))}
-            </ScrollView>
-
+                        </TouchableWithoutFeedback>
+                    ))}
+                </ScrollView>
+            </View>
             <TouchableOpacity
                 style={{
                     display: isSearchButtonVisible ? "flex" : "none",
@@ -436,7 +439,7 @@ export const Bible = () => {
                     position: "absolute",
                     width: 50,
                     borderRadius: 50,
-                    top: height - 200,
+                    top: height - 190,
                     left: width / 2.4,
                     zIndex: 1,
                     alignItems: "center",
@@ -471,7 +474,7 @@ export const Bible = () => {
                     position: "absolute",
                     width: 50,
                     borderRadius: 50,
-                    top: height - 200,
+                    top: height - 190,
                     left: width / 4.8,
                     zIndex: 1,
                     alignItems: "center",
@@ -580,7 +583,12 @@ export const Bible = () => {
                                 borderRadius: 5
                             }}
                         >
-                            <Text style={{ color: "#fff", fontWeight: "bold" }}>
+                            <Text
+                                style={{
+                                    color: "#fff",
+                                    fontWeight: "bold"
+                                }}
+                            >
                                 {lang == "PT"
                                     ? "Ver no léxico"
                                     : "See in lexicon"}
@@ -589,7 +597,7 @@ export const Bible = () => {
                     </View>
                 </Pressable>
             )}
-        </View>
+        </Pressable>
     );
 };
 

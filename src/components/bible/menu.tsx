@@ -80,6 +80,7 @@ export const Menu = () => {
     return (
         <Drawer.Navigator
             id={undefined}
+            useLegacyImplementation={false}
             initialRouteName="Bible"
             screenOptions={({ navigation }) => ({
                 headerLeft: () => (
