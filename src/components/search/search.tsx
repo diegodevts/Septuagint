@@ -1,4 +1,5 @@
 import { strong } from "@/src/config/dictionaries/strong";
+import { morphology } from "@/src/config/morphology/lxx_morphology";
 import { greek } from "@/src/config/septuagint-versions/greek-version";
 import { MaterialIcons } from "@expo/vector-icons";
 import { useCallback, useEffect, useState } from "react";
@@ -29,7 +30,29 @@ export const Search = () => {
     const [isFragment, setIsFragment] = useState(false);
     const [searchMode, setSearchMode] = useState("word");
     const [searchWord, setSearchWord] = useState("");
+    const [wordsWithSameLemma, setWordsWithSameLemma] = useState([]);
+    const [occurrences, setOcurrences] = useState(0);
+    const [filteredResults, setFilteredResults] = useState<SearchResult[]>([]);
     const toggleSwitch = () => setIsFragment((previousState) => !previousState);
+
+    useEffect(() => {
+        // limpa sempre que mudar o modo ou a palavra
+        setFilteredResults([]);
+        setOcurrences(0);
+
+        if (!searchWord) return;
+
+        let results: SearchResult[] = [];
+
+        if (searchMode === "word") {
+            results = searchWordInBooks(searchWord, greek);
+        } else if (searchMode === "lemma") {
+            results = searchLemma(searchWord, greek);
+        }
+
+        setFilteredResults(results);
+        setOcurrences(results.length);
+    }, [searchWord, searchMode, isFragment, wordsWithSameLemma]);
 
     const removeGreekAccents = (text: string) =>
         text
@@ -40,10 +63,8 @@ export const Search = () => {
     const highlightWord = (verse: string, word: string) => {
         if (!word) return <Text style={styles.title}>{verse}</Text>;
 
-        // Remove acentos da palavra pesquisada
         const cleanWord = removeGreekAccents(word);
 
-        // Quando busca por fragmento
         if (isFragment) {
             const regex = new RegExp(`(${cleanWord})`, "gi");
             const parts = removeGreekAccents(verse).split(regex);
@@ -71,28 +92,57 @@ export const Search = () => {
         }
 
         // Quando busca por palavra exata
-        const parts = verse.split(" ");
+        const parts = verse?.split(" ");
         return (
             <Text style={styles.title}>
-                {parts.map((part, index) => {
-                    if (
-                        removeGreekAccents(part.toLowerCase()) ===
-                        cleanWord.toLowerCase()
-                    ) {
-                        return (
-                            <Text
-                                id={`word-${index}`}
-                                style={{ color: "red", fontSize: 16 }}
-                            >
-                                {part + " "}
-                            </Text>
-                        );
-                    }
-                    return <Text id={`word-${index}`}>{part + " "}</Text>;
+                {parts &&
+                    parts.map((part, index) => {
+                        if (
+                            removeGreekAccents(part.toLowerCase()) ===
+                            cleanWord.toLowerCase()
+                        ) {
+                            return (
+                                <Text
+                                    id={`word-${index}`}
+                                    style={{ color: "red", fontSize: 16 }}
+                                >
+                                    {part + " "}
+                                </Text>
+                            );
+                        }
+                        return <Text id={`word-${index}`}>{part + " "}</Text>;
+                    })}
+            </Text>
+        );
+    };
+
+    const highlightLemma = (verse: string, words: string[]) => {
+        if (!words || words.length === 0)
+            return <Text style={styles.title}>{verse}</Text>;
+
+        const parts = verse?.split(" ");
+        return (
+            <Text style={styles.title}>
+                {parts?.map((part, index) => {
+                    const cleanPart = removeGreekAccents(part.toLowerCase());
+                    const isLemma = words.includes(cleanPart);
+
+                    return (
+                        <Text
+                            id={`lemma-${index}`}
+                            style={{
+                                color: isLemma ? "red" : "#fff",
+                                fontSize: 16
+                            }}
+                        >
+                            {part + " "}
+                        </Text>
+                    );
                 })}
             </Text>
         );
     };
+
     const renderItem = useCallback(
         ({ item }) => (
             <View style={styles.item}>
@@ -102,11 +152,13 @@ export const Search = () => {
                     ellipsizeMode="tail"
                 >
                     {`${item.book} ${item.chapterIndex}:${item.verseIndex}: `}
-                    {highlightWord(item.verse, word)}
+                    {searchMode == "word"
+                        ? highlightWord(item.verse, word)
+                        : highlightLemma(item.verse, wordsWithSameLemma)}
                 </Text>
             </View>
         ),
-        [word]
+        [word, searchWord]
     );
 
     const insets = useSafeAreaInsets();
@@ -154,6 +206,7 @@ export const Search = () => {
             });
         });
 
+        setOcurrences(results.length);
         return results;
     };
 
@@ -161,15 +214,57 @@ export const Search = () => {
         word: string,
         books: { name: string; chapters: string[][] }[]
     ) => {
-        //1. pesquiso a palavra digitada na morfologia.
-        // 2. vejo as palavras que tem aquele lemma na morfologia.
-        // 3. procuro aquelas palavras na bíblia
+        const results: SearchResult[] = [];
+        if (!word) return results;
+
+        books.forEach((book) => {
+            book.chapters?.forEach((chapter, chapterIndex) => {
+                chapter?.forEach((verse, verseIndex) => {
+                    verse.split(" ").forEach((_word) => {
+                        if (
+                            wordsWithSameLemma.includes(
+                                removeGreekAccents(_word.toLowerCase())
+                            )
+                        ) {
+                            results.push({
+                                book: book.name,
+                                chapterIndex: chapterIndex + 1,
+                                verseIndex: verseIndex + 1,
+                                verse
+                            });
+                            return;
+                        }
+                    });
+                });
+            });
+        });
+
+        setOcurrences(results.length);
+        return results;
     };
 
-    // Uso
-    const filteredResults =
-        searchMode == "word" ? searchWordInBooks(searchWord, greek) : ""; //searchLemma(searchWord, greek); implementar dps
+    const setWordAndWordsLemmas = (word: string) => {
+        setSearchWord(word);
+        const getMorphology = morphology.find(
+            (data) =>
+                data.word.toLowerCase().trim() === word.toLowerCase().trim() ||
+                removeGreekAccents(data.word.toLowerCase().trim()) ===
+                    removeGreekAccents(word.toLowerCase().trim())
+        );
 
+        if (getMorphology) {
+            const lemma = removeGreekAccents(getMorphology.lemma.toLowerCase());
+
+            const wordsLemmas = morphology
+                .filter(
+                    (data) =>
+                        removeGreekAccents(data.lemma.toLowerCase()) === lemma
+                )
+                .map(({ word }) => removeGreekAccents(word.toLowerCase()));
+
+            setWordsWithSameLemma(wordsLemmas);
+        }
+    };
     return (
         <View
             style={{ flex: 1, alignItems: "center", justifyContent: "center" }}
@@ -193,7 +288,12 @@ export const Search = () => {
                         borderWidth: searchMode === "word" ? 0 : 2,
                         borderColor: "#313131"
                     }}
-                    onPress={() => setSearchMode("word")}
+                    onPress={() => {
+                        setSearchMode("word");
+                        setWord("");
+                        setSearchWord("");
+                        setWordsWithSameLemma([]);
+                    }}
                 >
                     <Icon
                         name="search"
@@ -224,7 +324,12 @@ export const Search = () => {
                         borderWidth: searchMode === "lemma" ? 0 : 2,
                         borderColor: "#313131"
                     }}
-                    onPress={() => setSearchMode("lemma")}
+                    onPress={() => {
+                        setSearchMode("lemma");
+                        setWord("");
+                        setSearchWord("");
+                        setWordsWithSameLemma([]);
+                    }}
                 >
                     <Icon
                         name="book-open"
@@ -264,7 +369,7 @@ export const Search = () => {
                     }}
                     value={word}
                     placeholder="Digite algo para pesquisar"
-                    onEndEditing={() => setSearchWord(word)}
+                    onEndEditing={() => setWordAndWordsLemmas(word)}
                     onChangeText={setWord}
                 />
                 <KeyboardAvoidingView
@@ -278,6 +383,7 @@ export const Search = () => {
                 >
                     <Text
                         style={{
+                            display: searchMode === "word" ? "flex" : "none",
                             color: "#313131",
                             fontSize: 15,
                             fontFamily: "Poppins-Regular"
@@ -286,7 +392,10 @@ export const Search = () => {
                         {"Buscar por fragmentos"}
                     </Text>
                     <Switch
-                        style={{ marginLeft: 10 }}
+                        style={{
+                            marginLeft: 10,
+                            display: searchMode === "word" ? "flex" : "none"
+                        }}
                         trackColor={{ false: "#767577", true: "#f4f3f4" }}
                         thumbColor={isFragment ? "#767577" : "#f4f3f4"}
                         ios_backgroundColor="#3e3e3e"
@@ -301,7 +410,7 @@ export const Search = () => {
                             fontWeight: "bold"
                         }}
                     >
-                        {`Ocorrências: ${filteredResults.length}`}
+                        {`Ocorrências: ${occurrences}`}
                     </Text>
                 </KeyboardAvoidingView>
             </View>
