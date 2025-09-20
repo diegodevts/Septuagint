@@ -13,5 +13,8 @@ type Langs = {
 export type RootStackParamList = {
     Menu: any | undefined;
     Bible: any | undefined;
+    Biblia: any | undefined;
     Lexicon: any | undefined;
+    Search: any | undefined;
+    Pesquisa: any | undefined;
 };

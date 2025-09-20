@@ -2,11 +2,13 @@ import { strong } from "@/src/config/dictionaries/strong";
 import { morphology } from "@/src/config/morphology/lxx_morphology";
 import { greek } from "@/src/config/septuagint-versions/greek-version";
 import { MaterialIcons } from "@expo/vector-icons";
-import { useCallback, useEffect, useState } from "react";
+import { useNavigation } from "@react-navigation/native";
+import { useCallback, useContext, useEffect, useState } from "react";
 import React, {
     Dimensions,
     FlatList,
     KeyboardAvoidingView,
+    Pressable,
     StyleSheet,
     Switch,
     Text,
@@ -16,6 +18,8 @@ import React, {
 } from "react-native";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 import Icon from "react-native-vector-icons/FontAwesome5";
+import { NavigationProp } from "../bible/bible";
+import MyContext from "@/src/contexts/items-context";
 
 type SearchResult = {
     book: string;
@@ -25,6 +29,7 @@ type SearchResult = {
 };
 
 export const Search = () => {
+    const navigation = useNavigation<NavigationProp>();
     const width = Dimensions.get("screen").width;
     const [word, setWord] = useState("");
     const [isFragment, setIsFragment] = useState(false);
@@ -34,6 +39,8 @@ export const Search = () => {
     const [occurrences, setOcurrences] = useState(0);
     const [filteredResults, setFilteredResults] = useState<SearchResult[]>([]);
     const toggleSwitch = () => setIsFragment((previousState) => !previousState);
+
+    const { lang } = useContext(MyContext);
 
     useEffect(() => {
         // limpa sempre que mudar o modo ou a palavra
@@ -53,6 +60,19 @@ export const Search = () => {
         setFilteredResults(results);
         setOcurrences(results.length);
     }, [searchWord, searchMode, isFragment, wordsWithSameLemma]);
+
+    const setTextToScroll = (data: {
+        book: string;
+        chapter: number;
+        verse: number;
+    }) => {
+        navigation.navigate(lang == "PT" ? "Biblia" : "Bible", {
+            bookToScroll: data.book,
+            chapterToScroll: data.chapter,
+            verseToScroll: data.verse,
+            fromSearch: true
+        });
+    };
 
     const removeGreekAccents = (text: string) =>
         text
@@ -145,7 +165,16 @@ export const Search = () => {
 
     const renderItem = useCallback(
         ({ item }) => (
-            <View style={styles.item}>
+            <TouchableOpacity
+                style={styles.item}
+                onPress={() =>
+                    setTextToScroll({
+                        book: item.book,
+                        chapter: item.chapterIndex,
+                        verse: item.verseIndex
+                    })
+                }
+            >
                 <Text
                     style={styles.title}
                     numberOfLines={0}
@@ -156,7 +185,7 @@ export const Search = () => {
                         ? highlightWord(item.verse, word)
                         : highlightLemma(item.verse, wordsWithSameLemma)}
                 </Text>
-            </View>
+            </TouchableOpacity>
         ),
         [word, searchWord]
     );

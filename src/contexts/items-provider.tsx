@@ -17,7 +17,9 @@ export const MyProvider = ({ children }: MyProviderProps) => {
         booksNames[currentBookIndex]
     );
     const [popupVisible, setPopupVisible] = useState(false);
-    const greekCurrentBook = greek[currentBookIndex];
+    const [greekCurrentBook, setGreekCurrentBook] = useState(
+        greek[currentBookIndex]
+    );
     const [greekChapter, setGreekChapter] = useState(1);
     const [verse, setVerse] = useState(1);
 
@@ -31,6 +33,7 @@ export const MyProvider = ({ children }: MyProviderProps) => {
                 setBookPage,
                 setCurrentBookIndex,
                 greekCurrentBook,
+                setGreekCurrentBook,
                 portugueseBooksNames: booksNames,
                 currentBookName,
                 lang,

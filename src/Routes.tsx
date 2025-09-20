@@ -5,6 +5,7 @@ import { Menu } from "./components/bible/menu";
 import { Bible } from "./components/bible/bible";
 import { Lexicon } from "./components/lexicon/lexicon";
 import { RootStackParamList } from "./@types/types";
+import { Search } from "./components/search/search";
 
 export const Routes = () => {
     const Stack = createNativeStackNavigator<RootStackParamList>();
@@ -57,6 +58,11 @@ export const Routes = () => {
                 <Stack.Screen
                     name="Lexicon"
                     component={Lexicon}
+                    options={{ headerTransparent: true, headerShown: false }}
+                />
+                <Stack.Screen
+                    name="Search"
+                    component={Search}
                     options={{ headerTransparent: true, headerShown: false }}
                 />
             </Stack.Navigator>

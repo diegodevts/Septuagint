@@ -1,4 +1,5 @@
 import {
+    BackHandler,
     Dimensions,
     LayoutChangeEvent,
     NativeScrollEvent,
@@ -12,7 +13,7 @@ import {
     TouchableWithoutFeedback,
     View
 } from "react-native";
-import React, { SyntheticEvent } from "react";
+import React, { SyntheticEvent, useCallback } from "react";
 import Icon from "react-native-vector-icons/FontAwesome";
 import { useContext, useEffect, useMemo, useRef, useState } from "react";
 import MyContext from "@/src/contexts/items-context";
@@ -28,20 +29,35 @@ import { Toast } from "toastify-react-native";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 import * as Clipboard from "expo-clipboard";
 import { morphology } from "@/src/config/morphology/lxx_morphology";
-import { useNavigation } from "@react-navigation/native";
+import {
+    RouteProp,
+    useFocusEffect,
+    useNavigation,
+    useRoute
+} from "@react-navigation/native";
 import { NativeStackNavigationProp } from "@react-navigation/native-stack";
 import { RootStackParamList } from "@/src/@types/types";
 import { removeGreekAccents } from "@/src/utils/remove-accents";
+import { greek } from "@/src/config/septuagint-versions/greek-version";
 
 const height = Dimensions.get("screen").height;
 const width = Dimensions.get("screen").width;
 
-type BibleNavigationProp = NativeStackNavigationProp<
+export type NavigationProp = NativeStackNavigationProp<
     RootStackParamList,
-    "Bible"
+    "Bible" | "Biblia"
 >;
+type BibleRouteProp = RouteProp<RootStackParamList, "Bible" | "Biblia">;
 export const Bible = () => {
-    const navigation = useNavigation<BibleNavigationProp>();
+    const route = useRoute<BibleRouteProp>();
+    const {
+        chapterToScroll = null,
+        verseToScroll = null,
+        bookToScroll = null,
+        fromSearch
+    } = route.params ?? {};
+
+    const navigation = useNavigation<NavigationProp>();
     const {
         greekChapter,
         greekCurrentBook,
@@ -55,7 +71,8 @@ export const Bible = () => {
         popupVisible,
         setPopupVisible,
         verse,
-        setVerse
+        setVerse,
+        setGreekCurrentBook
     } = useContext(MyContext);
     const [voiceMode, setVoiceMode] = useState(false);
     const [voiceResults, setVoiceResults] = useState<string[] | undefined>([]);
@@ -83,11 +100,54 @@ export const Bible = () => {
     //     setPopupVisible(true);
     // };
 
+    useFocusEffect(
+        useCallback(() => {
+            const onBackPress = () => {
+                if (fromSearch) {
+                    if (navigation.canGoBack()) {
+                        navigation.goBack();
+                    } else {
+                        navigation.navigate(
+                            lang == "PT" ? "Pesquisa" : "Search"
+                        );
+                    }
+                    return true;
+                }
+                return false;
+            };
+
+            const subscription = BackHandler.addEventListener(
+                "hardwareBackPress",
+                onBackPress
+            );
+
+            return () => subscription.remove();
+        }, [fromSearch])
+    );
+
+    useEffect(() => {
+        if (chapterToScroll && verseToScroll && bookToScroll) {
+            const hasBookToScroll = greek.find((book, index) => {
+                if (book.name === bookToScroll) {
+                    setCurrentBookIndex(index);
+                    return true;
+                }
+                return false;
+            });
+
+            setBookPage(chapterToScroll);
+            setGreekCurrentBook(hasBookToScroll);
+            setGreekChapter(chapterToScroll);
+            setVerse(verseToScroll);
+        }
+    }, [chapterToScroll, verseToScroll, bookToScroll]);
+
     useEffect(() => {
         if (bookPage) {
             setGreekChapter(bookPage);
         }
     }, [bookPage]);
+
     const onSpeechError = (error: SpeechErrorEvent) => {
         console.log(error);
     };
@@ -136,34 +196,24 @@ export const Bible = () => {
         }));
     };
 
-    const [hasScrolled, setHasScrolled] = useState(false);
-
     const scrollToVerse = (chapter: number, verse: number) => {
         const position = versePositions[verse - 1];
         if (position !== undefined && scrollRef.current) {
             scrollRef.current.scrollTo({ y: position });
-            setHasScrolled(true);
         }
     };
 
-    // sempre que mudar de versículo, reseta o "gatilho"
     useEffect(() => {
-        if (verse) {
-            setHasScrolled(false);
-        }
-    }, [verse]);
+        if (!greekChapter || !versePositions) return;
 
-    // dispara só se ainda não rolou
-    useEffect(() => {
-        if (
-            !hasScrolled &&
-            greekChapter &&
-            versePositions[verse - 1] !== undefined
-        ) {
+        if (verse && versePositions[verse - 1] !== undefined) {
+            // Se há um verso específico
             scrollToVerse(bookPage, verse);
+        } else if (versePositions[0] !== undefined) {
+            // Se só quer ir pro início do capítulo
+            scrollRef.current?.scrollTo({ y: versePositions[0] });
         }
-    }, [versePositions, verse, greekChapter, hasScrolled]);
-
+    }, [versePositions, verse, greekChapter]);
     useEffect(() => {
         (() => {
             if (voiceResults && voiceResults.length > 0) {
@@ -225,14 +275,6 @@ export const Bible = () => {
             }
         })();
     }, [voiceResults]);
-
-    useEffect(() => {
-        if (greekChapter && versePositions[0] !== undefined) {
-            scrollRef.current?.scrollTo({
-                y: versePositions[0]
-            });
-        }
-    }, [greekChapter, versePositions]);
 
     const [selectedVerses, setSelectedVerses] = useState<
         { index: number; text: string }[]
@@ -393,37 +435,47 @@ export const Bible = () => {
                                                 selectedWord?.word === word;
 
                                             return (
-                                                <TouchableOpacity
-                                                    key={wordKey}
-                                                    ref={(ref) => {
-                                                        wordRefs.current[
-                                                            wordKey
-                                                        ] = ref;
-                                                    }}
-                                                    onPress={() =>
-                                                        handleMorphology(
-                                                            wordKey,
-                                                            word
-                                                        )
+                                                <View
+                                                    pointerEvents={
+                                                        isCopyButtonVisible
+                                                            ? "none"
+                                                            : "auto"
                                                     }
-                                                    activeOpacity={0.6}
                                                 >
-                                                    <Text
-                                                        style={styles.text}
-                                                        onLayout={(e) => {
-                                                            if (isSelected) {
-                                                                setWordWidth(
-                                                                    e
-                                                                        .nativeEvent
-                                                                        .layout
-                                                                        .width
-                                                                );
-                                                            }
+                                                    <TouchableOpacity
+                                                        key={wordKey}
+                                                        ref={(ref) => {
+                                                            wordRefs.current[
+                                                                wordKey
+                                                            ] = ref;
                                                         }}
+                                                        onPress={() =>
+                                                            handleMorphology(
+                                                                wordKey,
+                                                                word
+                                                            )
+                                                        }
+                                                        activeOpacity={0.6}
                                                     >
-                                                        {word}
-                                                    </Text>
-                                                </TouchableOpacity>
+                                                        <Text
+                                                            style={styles.text}
+                                                            onLayout={(e) => {
+                                                                if (
+                                                                    isSelected
+                                                                ) {
+                                                                    setWordWidth(
+                                                                        e
+                                                                            .nativeEvent
+                                                                            .layout
+                                                                            .width
+                                                                    );
+                                                                }
+                                                            }}
+                                                        >
+                                                            {word}
+                                                        </Text>
+                                                    </TouchableOpacity>
+                                                </View>
                                             );
                                         })}
                                 </View>
@@ -476,7 +528,7 @@ export const Bible = () => {
                     borderRadius: 50,
                     top: height - 190,
                     left: width / 4.8,
-                    zIndex: 1,
+                    zIndex: isCopyButtonVisible ? 100 : 1,
                     alignItems: "center",
                     justifyContent: "center",
                     backgroundColor: "#313131"

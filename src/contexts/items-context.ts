@@ -8,6 +8,12 @@ type MyContextProps = {
         name: string;
         chapters: (string[] | null)[];
     };
+    setGreekCurrentBook: Dispatch<
+        SetStateAction<{
+            name: string;
+            chapters: (string[] | null)[];
+        }>
+    >;
     bookPage: number;
     currentBookIndex: number;
     setBookPage: Dispatch<SetStateAction<number>>;

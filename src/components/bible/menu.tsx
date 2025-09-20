@@ -10,6 +10,8 @@ import React from "react";
 import LanguageSelector from "../../components/language/language";
 import { Picker } from "@react-native-picker/picker";
 import { Toast } from "toastify-react-native";
+import { greek } from "@/src/config/septuagint-versions/greek-version";
+
 const Drawer = createDrawerNavigator();
 
 function CustomDrawerToggleButton({ navigation }: any) {
@@ -30,23 +32,23 @@ export const Menu = () => {
         portugueseBooksNames,
         setCurrentBookName,
         currentBookName,
-        setCurrentBookIndex,
+        setGreekCurrentBook,
         setBookPage,
         lang,
         setLang,
         setPopupVisible,
         setVerse,
         verse,
-        greekCurrentBook
+        setGreekChapter
     } = useContext(MyContext);
     const [inputText, setInputText] = useState(`${bookPage}:${verse}`);
     const handleChangeText = (text: string) => {
         setInputText(text); // atualiza o input sempre
     };
 
-    useEffect(() => {
-        setInputText("1:1");
-    }, [greekCurrentBook]);
+    useMemo(() => {
+        setInputText(`${bookPage}:${verse}`);
+    }, [bookPage, verse]);
 
     const handleInputSubmit = () => {
         if (/[^\d:]/.test(inputText)) {
@@ -77,6 +79,13 @@ export const Menu = () => {
         setCurrentBookName(portugueseBooksNames[currentBookIndex]);
     }, [currentBookIndex, portugueseBooksNames, setCurrentBookName]);
 
+    const setPickedBook = (index: number) => {
+        setBookPage(1);
+        setGreekChapter(1);
+        setVerse(1);
+        setGreekCurrentBook(greek[index - 1]);
+    };
+
     return (
         <Drawer.Navigator
             id={undefined}
@@ -95,7 +104,7 @@ export const Menu = () => {
             })}
         >
             <Drawer.Screen
-                name="Bible"
+                name={lang == "PT" ? "Biblia" : "Bible"}
                 component={Bible}
                 options={{
                     drawerLabel: ({ focused }) => (
@@ -136,8 +145,8 @@ export const Menu = () => {
                                 }}
                                 dropdownIconColor="white"
                                 selectedValue={currentBookName}
-                                onValueChange={
-                                    (_, index) => setCurrentBookIndex(index - 1) //
+                                onValueChange={(_, index) =>
+                                    setPickedBook(index)
                                 }
                             >
                                 <Picker.Item
