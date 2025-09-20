@@ -49,10 +49,21 @@ Join our community of developers creating universal apps.
 -   [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
 -   [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
 
-R1-GK e R2-GK sao as duas raizes lá do strong po...
+## Gerar o app na expo:
 
-subir na expo: npx eas build -p android --profile preview
+```bash
+npx eas build -p android --profile preview
+```
 
-gerar apk local: cd android; ./gradlew assembleRelease
+## Gerar o app localmente:
 
-vai gerar no caminho: android/app/build/outputs/apk/release/app-release.apk
+```bash
+cd android
+./gradlew assembleRelease
+```
+
+-   O app é gerado no caminho:
+
+```bash
+android/app/build/outputs/apk/release/app-release.apk
+```
