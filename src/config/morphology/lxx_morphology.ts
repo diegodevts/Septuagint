@@ -246,7 +246,7 @@ export const morphology: Morphology[] = [
     },
     {
         word: "γενηθήτω",
-        lemma: "γίγνομαι",
+        lemma: "γίνομαι",
         pos: {
             PT: "aoristo #1 e futuro passivo (tipo q) aoristo passivo imperativo",
             EN: "aorist #1 and future passive (type q) aorist passive imperative"
@@ -264,7 +264,7 @@ export const morphology: Morphology[] = [
     },
     {
         word: "ἐγένετο",
-        lemma: "γίγνομαι",
+        lemma: "γίνομαι",
         pos: {
             PT: "segundo aoristo ativo aoristo médio indicativo",
             EN: "second aorist active #1 aorist middle indicative"
@@ -912,7 +912,7 @@ export const morphology: Morphology[] = [
     },
     {
         word: "γενηθήτωσαν",
-        lemma: "γίγνομαι",
+        lemma: "γίνομαι",
         pos: {
             PT: "aoristo #1 e futuro passivo (tipo q) aoristo passivo imperativo",
             EN: "aorist #1 and future passive (type q) aorist passive imperative"
@@ -2235,7 +2235,7 @@ export const morphology: Morphology[] = [
     },
     {
         word: "γενέσθαι",
-        lemma: "γίγνομαι",
+        lemma: "γίνομαι",
         pos: {
             PT: "segundo aoristo ativo aoristo médio infinitivo",
             EN: "second aorist active #1 aorist middle infinitive"
@@ -4710,7 +4710,7 @@ export const morphology: Morphology[] = [
     },
     {
         word: "γέγονεν",
-        lemma: "γίγνομαι",
+        lemma: "γίνομαι",
         pos: {
             PT: "perfeito ativo perfeito ativo indicativo",
             EN: "perfect active perfect active indicative"
@@ -5205,7 +5205,7 @@ export const morphology: Morphology[] = [
     },
     {
         word: "ἐγένου",
-        lemma: "γίγνομαι",
+        lemma: "γίνομαι",
         pos: {
             PT: "segundo aoristo ativo aoristo médio indicativo",
             EN: "second aorist active #1 aorist middle indicative"
@@ -5808,7 +5808,7 @@ export const morphology: Morphology[] = [
     },
     {
         word: "ἐγενήθη",
-        lemma: "γίγνομαι",
+        lemma: "γίνομαι",
         pos: {
             PT: "aoristo #1 e futuro passivo (tipo q) aoristo passivo indicativo",
             EN: "aorist #1 and future passive (type q) aorist passive indicative"
@@ -6474,7 +6474,7 @@ export const morphology: Morphology[] = [
     },
     {
         word: "ἐγένοντο",
-        lemma: "γίγνομαι",
+        lemma: "γίνομαι",
         pos: {
             PT: "segundo aoristo ativo aoristo médio indicativo",
             EN: "second aorist active #1 aorist middle indicative"
@@ -7077,7 +7077,7 @@ export const morphology: Morphology[] = [
     },
     {
         word: "γίνεσθαι",
-        lemma: "γίγνομαι",
+        lemma: "γίνομαι",
         pos: {
             PT: "verbo, presente regular presente médio infinitivo",
             EN: "regular present verb present middle infinitive"
@@ -7095,7 +7095,7 @@ export const morphology: Morphology[] = [
     },
     {
         word: "ἐγενήθησαν",
-        lemma: "γίγνομαι",
+        lemma: "γίνομαι",
         pos: {
             PT: "aoristo #1 e futuro passivo (tipo q) aoristo passivo indicativo",
             EN: "aorist #1 and future passive (type q) aorist passive indicative"
@@ -12882,7 +12882,7 @@ export const morphology: Morphology[] = [
     },
     {
         word: "γένηται",
-        lemma: "γίγνομαι",
+        lemma: "γίνομαι",
         pos: {
             PT: "segundo aoristo ativo aoristo médio subjuntivo",
             EN: "second aorist active #1 aorist middle subjunctive"
@@ -14502,7 +14502,7 @@ export const morphology: Morphology[] = [
     },
     {
         word: "παραγενόμενος",
-        lemma: "παραγίγνομαι",
+        lemma: "παραγίνομαι",
         pos: {
             PT: "segundo aoristo ativo aoristo médio particípio",
             EN: "second aorist active #1 aorist middle participle"
@@ -15942,7 +15942,7 @@ export const morphology: Morphology[] = [
     },
     {
         word: "ἐγίνετο",
-        lemma: "γίγνομαι",
+        lemma: "γίνομαι",
         pos: {
             PT: "verbo, presente regular imperfeito médio indicativo",
             EN: "regular present verb imperfect middle indicative"
@@ -16725,7 +16725,7 @@ export const morphology: Morphology[] = [
     },
     {
         word: "γίνου",
-        lemma: "γίγνομαι",
+        lemma: "γίνομαι",
         pos: {
             PT: "verbo, presente regular presente médio imperativo",
             EN: "regular present verb present middle imperative"
@@ -17112,7 +17112,7 @@ export const morphology: Morphology[] = [
     },
     {
         word: "γενήσεται",
-        lemma: "γίγνομαι",
+        lemma: "γίνομαι",
         pos: {
             PT: "futuro regular futuro médio indicativo",
             EN: "regular future future middle indicative"
@@ -18066,7 +18066,7 @@ export const morphology: Morphology[] = [
     },
     {
         word: "γινόμενος",
-        lemma: "γίγνομαι",
+        lemma: "γίνομαι",
         pos: {
             PT: "verbo, presente regular presente médio particípio",
             EN: "regular present verb present middle participle"
@@ -18795,7 +18795,7 @@ export const morphology: Morphology[] = [
     },
     {
         word: "συγγενώμεθα",
-        lemma: "συνγίγνομαι",
+        lemma: "συνγίνομαι",
         pos: {
             PT: "segundo aoristo ativo aoristo médio subjuntivo",
             EN: "second aorist active #1 aorist middle subjunctive"
@@ -20838,7 +20838,7 @@ export const morphology: Morphology[] = [
     },
     {
         word: "γενομένου",
-        lemma: "γίγνομαι",
+        lemma: "γίνομαι",
         pos: {
             PT: "segundo aoristo ativo aoristo médio particípio",
             EN: "second aorist active #1 aorist middle participle"
@@ -22845,7 +22845,7 @@ export const morphology: Morphology[] = [
     },
     {
         word: "γενοῦ",
-        lemma: "γίγνομαι",
+        lemma: "γίνομαι",
         pos: {
             PT: "segundo aoristo ativo aoristo médio imperativo",
             EN: "second aorist active #1 aorist middle imperative"
@@ -23187,7 +23187,7 @@ export const morphology: Morphology[] = [
     },
     {
         word: "ἐγενόμην",
-        lemma: "γίγνομαι",
+        lemma: "γίνομαι",
         pos: {
             PT: "segundo aoristo ativo aoristo médio indicativo",
             EN: "second aorist active #1 aorist middle indicative"
@@ -23268,7 +23268,7 @@ export const morphology: Morphology[] = [
     },
     {
         word: "ἐγενήθην",
-        lemma: "γίγνομαι",
+        lemma: "γίνομαι",
         pos: {
             PT: "aoristo #1 e futuro passivo (tipo q) aoristo passivo indicativo",
             EN: "aorist #1 and future passive (type q) aorist passive indicative"
@@ -26634,7 +26634,7 @@ export const morphology: Morphology[] = [
     },
     {
         word: "γενέσθω",
-        lemma: "γίγνομαι",
+        lemma: "γίνομαι",
         pos: {
             PT: "segundo aoristo ativo aoristo médio imperativo",
             EN: "second aorist active #1 aorist middle imperative"
@@ -26751,7 +26751,7 @@ export const morphology: Morphology[] = [
     },
     {
         word: "παραγενόμενοι",
-        lemma: "παραγίγνομαι",
+        lemma: "παραγίνομαι",
         pos: {
             PT: "segundo aoristo ativo aoristo médio particípio",
             EN: "second aorist active #1 aorist middle participle"
@@ -31755,7 +31755,7 @@ export const morphology: Morphology[] = [
     },
     {
         word: "ἐγινόμην",
-        lemma: "γίγνομαι",
+        lemma: "γίνομαι",
         pos: {
             PT: "verbo, presente regular imperfeito médio indicativo",
             EN: "regular present verb imperfect middle indicative"
@@ -32313,7 +32313,7 @@ export const morphology: Morphology[] = [
     },
     {
         word: "ἐγένοντό",
-        lemma: "γίγνομαι",
+        lemma: "γίνομαι",
         pos: {
             PT: "segundo aoristo ativo aoristo médio indicativo",
             EN: "second aorist active #1 aorist middle indicative"
@@ -32493,7 +32493,7 @@ export const morphology: Morphology[] = [
     },
     {
         word: "γέγονα",
-        lemma: "γίγνομαι",
+        lemma: "γίνομαι",
         pos: {
             PT: "perfeito ativo perfeito ativo indicativo",
             EN: "perfect active perfect active indicative"
@@ -32727,7 +32727,7 @@ export const morphology: Morphology[] = [
     },
     {
         word: "παραγίνεται",
-        lemma: "παραγίγνομαι",
+        lemma: "παραγίνομαι",
         pos: {
             PT: "verbo, presente regular presente médio indicativo",
             EN: "regular present verb present middle indicative"
@@ -33969,7 +33969,7 @@ export const morphology: Morphology[] = [
     },
     {
         word: "γένησθε",
-        lemma: "γίγνομαι",
+        lemma: "γίνομαι",
         pos: {
             PT: "segundo aoristo ativo aoristo médio subjuntivo",
             EN: "second aorist active #1 aorist middle subjunctive"
@@ -34761,7 +34761,7 @@ export const morphology: Morphology[] = [
     },
     {
         word: "παρεγένετο",
-        lemma: "παραγίγνομαι",
+        lemma: "παραγίνομαι",
         pos: {
             PT: "segundo aoristo ativo aoristo médio indicativo",
             EN: "second aorist active #1 aorist middle indicative"
@@ -38046,7 +38046,7 @@ export const morphology: Morphology[] = [
     },
     {
         word: "γενομένη",
-        lemma: "γίγνομαι",
+        lemma: "γίνομαι",
         pos: {
             PT: "segundo aoristo ativo aoristo médio particípio",
             EN: "second aorist active #1 aorist middle participle"
@@ -38613,7 +38613,7 @@ export const morphology: Morphology[] = [
     },
     {
         word: "συγγενέσθαι",
-        lemma: "συνγίγνομαι",
+        lemma: "συνγίνομαι",
         pos: {
             PT: "segundo aoristo ativo aoristo médio infinitivo",
             EN: "second aorist active #1 aorist middle infinitive"
@@ -43086,7 +43086,7 @@ export const morphology: Morphology[] = [
     },
     {
         word: "γένοιτο",
-        lemma: "γίγνομαι",
+        lemma: "γίνομαι",
         pos: {
             PT: "segundo aoristo ativo aoristo médio optativo",
             EN: "second aorist active #1 aorist middle optative"
@@ -44148,7 +44148,7 @@ export const morphology: Morphology[] = [
     },
     {
         word: "παραγίνεσθε",
-        lemma: "παραγίγνομαι",
+        lemma: "παραγίνομαι",
         pos: {
             PT: "verbo, presente regular presente médio imperativo",
             EN: "regular present verb present middle imperative"
@@ -45039,7 +45039,7 @@ export const morphology: Morphology[] = [
     },
     {
         word: "γενόμενοι",
-        lemma: "γίγνομαι",
+        lemma: "γίνομαι",
         pos: {
             PT: "segundo aoristo ativo aoristo médio particípio",
             EN: "second aorist active #1 aorist middle participle"
@@ -45336,7 +45336,7 @@ export const morphology: Morphology[] = [
     },
     {
         word: "γεγόνασιν",
-        lemma: "γίγνομαι",
+        lemma: "γίνομαι",
         pos: {
             PT: "perfeito ativo perfeito ativo indicativo",
             EN: "perfect active perfect active indicative"
@@ -45894,7 +45894,7 @@ export const morphology: Morphology[] = [
     },
     {
         word: "γενόμενοί",
-        lemma: "γίγνομαι",
+        lemma: "γίνομαι",
         pos: {
             PT: "segundo aoristo ativo aoristo médio particípio",
             EN: "second aorist active #1 aorist middle participle"
@@ -47784,7 +47784,7 @@ export const morphology: Morphology[] = [
     },
     {
         word: "παρεγένοντο",
-        lemma: "παραγίγνομαι",
+        lemma: "παραγίνομαι",
         pos: {
             PT: "segundo aoristo ativo aoristo médio indicativo",
             EN: "second aorist active #1 aorist middle indicative"
@@ -48045,7 +48045,7 @@ export const morphology: Morphology[] = [
     },
     {
         word: "γενηθῇ",
-        lemma: "γίγνομαι",
+        lemma: "γίνομαι",
         pos: {
             PT: "aoristo #1 e futuro passivo (tipo q) aoristo passivo subjuntivo",
             EN: "aorist #1 and future passive (type q) aorist passive subjunctive"
@@ -48441,7 +48441,7 @@ export const morphology: Morphology[] = [
     },
     {
         word: "ἐγίνοντο",
-        lemma: "γίγνομαι",
+        lemma: "γίνομαι",
         pos: {
             PT: "verbo, presente regular imperfeito médio indicativo",
             EN: "regular present verb imperfect middle indicative"
@@ -49080,7 +49080,7 @@ export const morphology: Morphology[] = [
     },
     {
         word: "γενόμενος",
-        lemma: "γίγνομαι",
+        lemma: "γίνομαι",
         pos: {
             PT: "segundo aoristo ativo aoristo médio particípio",
             EN: "second aorist active #1 aorist middle participle"
@@ -49287,7 +49287,7 @@ export const morphology: Morphology[] = [
     },
     {
         word: "παραγενόμεναι",
-        lemma: "παραγίγνομαι",
+        lemma: "παραγίνομαι",
         pos: {
             PT: "segundo aoristo ativo aoristo médio particípio",
             EN: "second aorist active #1 aorist middle participle"
@@ -49368,7 +49368,7 @@ export const morphology: Morphology[] = [
     },
     {
         word: "παραγενέσθαι",
-        lemma: "παραγίγνομαι",
+        lemma: "παραγίνομαι",
         pos: {
             PT: "segundo aoristo ativo aoristo médio infinitivo",
             EN: "second aorist active #1 aorist middle infinitive"
@@ -53958,7 +53958,7 @@ export const morphology: Morphology[] = [
     },
     {
         word: "γεγένηται",
-        lemma: "γίγνομαι",
+        lemma: "γίνομαι",
         pos: {
             PT: "perfeito médio perfeito médio indicativo",
             EN: "perfect middle perfect middle indicative"
@@ -54003,7 +54003,7 @@ export const morphology: Morphology[] = [
     },
     {
         word: "γενηθῆναι",
-        lemma: "γίγνομαι",
+        lemma: "γίνομαι",
         pos: {
             PT: "aoristo #1 e futuro passivo (tipo q) aoristo passivo infinitivo",
             EN: "aorist #1 and future passive (type q) aorist passive infinitive"
@@ -54696,7 +54696,7 @@ export const morphology: Morphology[] = [
     },
     {
         word: "κατεγίνοντο",
-        lemma: "καταγίγνομαι",
+        lemma: "καταγίνομαι",
         pos: {
             PT: "verbo, presente regular imperfeito médio indicativo",
             EN: "regular present verb imperfect middle indicative"
@@ -56496,7 +56496,7 @@ export const morphology: Morphology[] = [
     },
     {
         word: "γένηταί",
-        lemma: "γίγνομαι",
+        lemma: "γίνομαι",
         pos: {
             PT: "segundo aoristo ativo aoristo médio subjuntivo",
             EN: "second aorist active #1 aorist middle subjunctive"
@@ -57540,7 +57540,7 @@ export const morphology: Morphology[] = [
     },
     {
         word: "ἐγένετό",
-        lemma: "γίγνομαι",
+        lemma: "γίνομαι",
         pos: {
             PT: "segundo aoristo ativo aoristo médio indicativo",
             EN: "second aorist active #1 aorist middle indicative"
@@ -59997,7 +59997,7 @@ export const morphology: Morphology[] = [
     },
     {
         word: "γενόμενον",
-        lemma: "γίγνομαι",
+        lemma: "γίνομαι",
         pos: {
             PT: "segundo aoristo ativo aoristo médio particípio",
             EN: "second aorist active #1 aorist middle participle"
@@ -60618,7 +60618,7 @@ export const morphology: Morphology[] = [
     },
     {
         word: "παραγίνομαι",
-        lemma: "παραγίγνομαι",
+        lemma: "παραγίνομαι",
         pos: {
             PT: "verbo, presente regular presente médio indicativo",
             EN: "regular present verb present middle indicative"
@@ -60807,7 +60807,7 @@ export const morphology: Morphology[] = [
     },
     {
         word: "γίνεσθε",
-        lemma: "γίγνομαι",
+        lemma: "γίνομαι",
         pos: {
             PT: "verbo, presente regular presente médio imperativo",
             EN: "regular present verb present middle imperative"
@@ -60825,7 +60825,7 @@ export const morphology: Morphology[] = [
     },
     {
         word: "γενηθέντος",
-        lemma: "γίγνομαι",
+        lemma: "γίνομαι",
         pos: {
             PT: "aoristo #1 e futuro passivo (tipo q) aoristo passivo particípio",
             EN: "aorist #1 and future passive (type q) aorist passive participle"
@@ -61356,7 +61356,7 @@ export const morphology: Morphology[] = [
     },
     {
         word: "γένῃ",
-        lemma: "γίγνομαι",
+        lemma: "γίνομαι",
         pos: {
             PT: "segundo aoristo ativo aoristo médio subjuntivo",
             EN: "second aorist active #1 aorist middle subjunctive"
@@ -61536,7 +61536,7 @@ export const morphology: Morphology[] = [
     },
     {
         word: "παρεγενήθη",
-        lemma: "παραγίγνομαι",
+        lemma: "παραγίνομαι",
         pos: {
             PT: "aoristo #1 e futuro passivo (tipo q) aoristo passivo indicativo",
             EN: "aorist #1 and future passive (type q) aorist passive indicative"
@@ -73794,7 +73794,7 @@ export const morphology: Morphology[] = [
     },
     {
         word: "παρεγίνοντο",
-        lemma: "παραγίγνομαι",
+        lemma: "παραγίνομαι",
         pos: {
             PT: "verbo, presente regular imperfeito médio indicativo",
             EN: "regular present verb imperfect middle indicative"
@@ -83379,7 +83379,7 @@ export const morphology: Morphology[] = [
     },
     {
         word: "προσγενόμενος",
-        lemma: "προσγίγνομαι",
+        lemma: "προσγίνομαι",
         pos: {
             PT: "segundo aoristo ativo aoristo médio particípio",
             EN: "second aorist active #1 aorist middle participle"
@@ -84243,7 +84243,7 @@ export const morphology: Morphology[] = [
     },
     {
         word: "ἐγενήθητε",
-        lemma: "γίγνομαι",
+        lemma: "γίνομαι",
         pos: {
             PT: "aoristo #1 e futuro passivo (tipo q) aoristo passivo indicativo",
             EN: "aorist #1 and future passive (type q) aorist passive indicative"
@@ -84315,7 +84315,7 @@ export const morphology: Morphology[] = [
     },
     {
         word: "προσγεγενημένων",
-        lemma: "προσγίγνομαι",
+        lemma: "προσγίνομαι",
         pos: {
             PT: "perfeito médio perfeito médio particípio",
             EN: "perfect middle perfect middle participle"
@@ -87429,7 +87429,7 @@ export const morphology: Morphology[] = [
     },
     {
         word: "γένωνταί",
-        lemma: "γίγνομαι",
+        lemma: "γίνομαι",
         pos: {
             PT: "segundo aoristo ativo aoristo médio subjuntivo",
             EN: "second aorist active #1 aorist middle subjunctive"
@@ -87483,7 +87483,7 @@ export const morphology: Morphology[] = [
     },
     {
         word: "γένωνται",
-        lemma: "γίγνομαι",
+        lemma: "γίνομαι",
         pos: {
             PT: "segundo aoristo ativo aoristo médio subjuntivo",
             EN: "second aorist active #1 aorist middle subjunctive"
@@ -91119,7 +91119,7 @@ export const morphology: Morphology[] = [
     },
     {
         word: "καταγίνομαι",
-        lemma: "καταγίγνομαι",
+        lemma: "καταγίνομαι",
         pos: {
             PT: "verbo, presente regular presente médio indicativo",
             EN: "regular present verb present middle indicative"
@@ -91713,7 +91713,7 @@ export const morphology: Morphology[] = [
     },
     {
         word: "γίνεται",
-        lemma: "γίγνομαι",
+        lemma: "γίνομαι",
         pos: {
             PT: "verbo, presente regular presente médio indicativo",
             EN: "regular present verb present middle indicative"
@@ -93216,7 +93216,7 @@ export const morphology: Morphology[] = [
     },
     {
         word: "παραγένωνται",
-        lemma: "παραγίγνομαι",
+        lemma: "παραγίνομαι",
         pos: {
             PT: "segundo aoristo ativo aoristo médio subjuntivo",
             EN: "second aorist active #1 aorist middle subjunctive"
@@ -95898,7 +95898,7 @@ export const morphology: Morphology[] = [
     },
     {
         word: "παραγενηθέντες",
-        lemma: "παραγίγνομαι",
+        lemma: "παραγίνομαι",
         pos: {
             PT: "aoristo #1 e futuro passivo (tipo q) aoristo passivo particípio",
             EN: "aorist #1 and future passive (type q) aorist passive participle"
@@ -96123,7 +96123,7 @@ export const morphology: Morphology[] = [
     },
     {
         word: "προσγένηται",
-        lemma: "προσγίγνομαι",
+        lemma: "προσγίνομαι",
         pos: {
             PT: "segundo aoristo ativo aoristo médio subjuntivo",
             EN: "second aorist active #1 aorist middle subjunctive"
@@ -109686,7 +109686,7 @@ export const morphology: Morphology[] = [
     },
     {
         word: "γενομένας",
-        lemma: "γίγνομαι",
+        lemma: "γίνομαι",
         pos: {
             PT: "segundo aoristo ativo aoristo médio particípio",
             EN: "second aorist active #1 aorist middle participle"
@@ -111567,7 +111567,7 @@ export const morphology: Morphology[] = [
     },
     {
         word: "κατεγινόμην",
-        lemma: "καταγίγνομαι",
+        lemma: "καταγίνομαι",
         pos: {
             PT: "verbo, presente regular imperfeito médio indicativo",
             EN: "regular present verb imperfect middle indicative"
@@ -114933,7 +114933,7 @@ export const morphology: Morphology[] = [
     },
     {
         word: "παραγένηται",
-        lemma: "παραγίγνομαι",
+        lemma: "παραγίνομαι",
         pos: {
             PT: "segundo aoristo ativo aoristo médio subjuntivo",
             EN: "second aorist active #1 aorist middle subjunctive"
@@ -117291,7 +117291,7 @@ export const morphology: Morphology[] = [
     },
     {
         word: "γενηθῶσιν",
-        lemma: "γίγνομαι",
+        lemma: "γίνομαι",
         pos: {
             PT: "aoristo #1 e futuro passivo (tipo q) aoristo passivo subjuntivo",
             EN: "aorist #1 and future passive (type q) aorist passive subjunctive"
@@ -118731,7 +118731,7 @@ export const morphology: Morphology[] = [
     },
     {
         word: "γέγονας",
-        lemma: "γίγνομαι",
+        lemma: "γίνομαι",
         pos: {
             PT: "perfeito ativo perfeito ativo indicativo",
             EN: "perfect active perfect active indicative"
@@ -125292,7 +125292,7 @@ export const morphology: Morphology[] = [
     },
     {
         word: "γενομένῳ",
-        lemma: "γίγνομαι",
+        lemma: "γίνομαι",
         pos: {
             PT: "segundo aoristo ativo aoristo médio particípio",
             EN: "second aorist active #1 aorist middle participle"
@@ -125706,7 +125706,7 @@ export const morphology: Morphology[] = [
     },
     {
         word: "γεγενῆσθαι",
-        lemma: "γίγνομαι",
+        lemma: "γίνομαι",
         pos: {
             PT: "perfeito médio perfeito médio infinitivo",
             EN: "perfect middle perfect middle infinitive"
@@ -125868,7 +125868,7 @@ export const morphology: Morphology[] = [
     },
     {
         word: "παραγέγονα",
-        lemma: "παραγίγνομαι",
+        lemma: "παραγίνομαι",
         pos: {
             PT: "perfeito ativo perfeito ativo indicativo",
             EN: "perfect active perfect active indicative"
@@ -127749,7 +127749,7 @@ export const morphology: Morphology[] = [
     },
     {
         word: "παραγεγόνατε",
-        lemma: "παραγίγνομαι",
+        lemma: "παραγίνομαι",
         pos: {
             PT: "perfeito ativo perfeito ativo indicativo",
             EN: "perfect active perfect active indicative"
@@ -133419,7 +133419,7 @@ export const morphology: Morphology[] = [
     },
     {
         word: "παραγενήθητε",
-        lemma: "παραγίγνομαι",
+        lemma: "παραγίνομαι",
         pos: {
             PT: "aoristo #1 e futuro passivo (tipo q) aoristo passivo imperativo",
             EN: "aorist #1 and future passive (type q) aorist passive imperative"
@@ -135831,7 +135831,7 @@ export const morphology: Morphology[] = [
     },
     {
         word: "γενομένους",
-        lemma: "γίγνομαι",
+        lemma: "γίνομαι",
         pos: {
             PT: "segundo aoristo ativo aoristo médio particípio",
             EN: "second aorist active #1 aorist middle participle"
@@ -136119,7 +136119,7 @@ export const morphology: Morphology[] = [
     },
     {
         word: "γενήθητε",
-        lemma: "γίγνομαι",
+        lemma: "γίνομαι",
         pos: {
             PT: "aoristo #1 e futuro passivo (tipo q) aoristo passivo imperativo",
             EN: "aorist #1 and future passive (type q) aorist passive imperative"
@@ -136722,7 +136722,7 @@ export const morphology: Morphology[] = [
     },
     {
         word: "παρεγενήθητε",
-        lemma: "παραγίγνομαι",
+        lemma: "παραγίνομαι",
         pos: {
             PT: "aoristo #1 e futuro passivo (tipo q) aoristo passivo indicativo",
             EN: "aorist #1 and future passive (type q) aorist passive indicative"
@@ -154200,7 +154200,7 @@ export const morphology: Morphology[] = [
     },
     {
         word: "παραγεγόνασιν",
-        lemma: "παραγίγνομαι",
+        lemma: "παραγίνομαι",
         pos: {
             PT: "perfeito ativo perfeito ativo indicativo",
             EN: "perfect active perfect active indicative"
@@ -156594,7 +156594,7 @@ export const morphology: Morphology[] = [
     },
     {
         word: "γίνεσθαί",
-        lemma: "γίγνομαι",
+        lemma: "γίνομαι",
         pos: {
             PT: "verbo, presente regular presente médio infinitivo",
             EN: "regular present verb present middle infinitive"
@@ -157863,7 +157863,7 @@ export const morphology: Morphology[] = [
     },
     {
         word: "γενηθῆναί",
-        lemma: "γίγνομαι",
+        lemma: "γίνομαι",
         pos: {
             PT: "aoristo #1 e futuro passivo (tipo q) aoristo passivo infinitivo",
             EN: "aorist #1 and future passive (type q) aorist passive infinitive"
@@ -158223,7 +158223,7 @@ export const morphology: Morphology[] = [
     },
     {
         word: "παρεγενήθησαν",
-        lemma: "παραγίγνομαι",
+        lemma: "παραγίνομαι",
         pos: {
             PT: "aoristo #1 e futuro passivo (tipo q) aoristo passivo indicativo",
             EN: "aorist #1 and future passive (type q) aorist passive indicative"
@@ -162228,7 +162228,7 @@ export const morphology: Morphology[] = [
     },
     {
         word: "γεγονὸς",
-        lemma: "γίγνομαι",
+        lemma: "γίνομαι",
         pos: {
             PT: "perfeito ativo perfeito ativo particípio",
             EN: "perfect active perfect active participle"
@@ -163668,7 +163668,7 @@ export const morphology: Morphology[] = [
     },
     {
         word: "παραγίνονται",
-        lemma: "παραγίγνομαι",
+        lemma: "παραγίνομαι",
         pos: {
             PT: "verbo, presente regular presente médio indicativo",
             EN: "regular present verb present middle indicative"
@@ -164154,7 +164154,7 @@ export const morphology: Morphology[] = [
     },
     {
         word: "παραγινόμενον",
-        lemma: "παραγίγνομαι",
+        lemma: "παραγίνομαι",
         pos: {
             PT: "verbo, presente regular presente médio particípio",
             EN: "regular present verb present middle participle"
@@ -166062,7 +166062,7 @@ export const morphology: Morphology[] = [
     },
     {
         word: "παρεγένου",
-        lemma: "παραγίγνομαι",
+        lemma: "παραγίνομαι",
         pos: {
             PT: "segundo aoristo ativo aoristo médio indicativo",
             EN: "second aorist active #1 aorist middle indicative"
@@ -166161,7 +166161,7 @@ export const morphology: Morphology[] = [
     },
     {
         word: "παραγενομένων",
-        lemma: "παραγίγνομαι",
+        lemma: "παραγίνομαι",
         pos: {
             PT: "segundo aoristo ativo aoristo médio particípio",
             EN: "second aorist active #1 aorist middle participle"
@@ -170139,7 +170139,7 @@ export const morphology: Morphology[] = [
     },
     {
         word: "παραγίνου",
-        lemma: "παραγίγνομαι",
+        lemma: "παραγίνομαι",
         pos: {
             PT: "verbo, presente regular presente médio imperativo",
             EN: "regular present verb present middle imperative"
@@ -170229,7 +170229,7 @@ export const morphology: Morphology[] = [
     },
     {
         word: "παραγέγονεν",
-        lemma: "παραγίγνομαι",
+        lemma: "παραγίνομαι",
         pos: {
             PT: "perfeito ativo perfeito ativo indicativo",
             EN: "perfect active perfect active indicative"
@@ -170580,7 +170580,7 @@ export const morphology: Morphology[] = [
     },
     {
         word: "γέγονε",
-        lemma: "γίγνομαι",
+        lemma: "γίνομαι",
         pos: {
             PT: "perfeito ativo perfeito ativo indicativo",
             EN: "perfect active perfect active indicative"
@@ -170940,7 +170940,7 @@ export const morphology: Morphology[] = [
     },
     {
         word: "γινέσθωσαν",
-        lemma: "γίγνομαι",
+        lemma: "γίνομαι",
         pos: {
             PT: "verbo, presente regular presente médio imperativo",
             EN: "regular present verb present middle imperative"
@@ -172740,7 +172740,7 @@ export const morphology: Morphology[] = [
     },
     {
         word: "γένοιντο",
-        lemma: "γίγνομαι",
+        lemma: "γίνομαι",
         pos: {
             PT: "segundo aoristo ativo aoristo médio optativo",
             EN: "second aorist active #1 aorist middle optative"
@@ -174315,7 +174315,7 @@ export const morphology: Morphology[] = [
     },
     {
         word: "γινέσθω",
-        lemma: "γίγνομαι",
+        lemma: "γίνομαι",
         pos: {
             PT: "verbo, presente regular presente médio imperativo",
             EN: "regular present verb present middle imperative"
@@ -175386,7 +175386,7 @@ export const morphology: Morphology[] = [
     },
     {
         word: "παραγίνῃ",
-        lemma: "παραγίγνομαι",
+        lemma: "παραγίνομαι",
         pos: {
             PT: "verbo, presente regular presente médio subjuntivo",
             EN: "regular present verb present middle subjunctive"
@@ -176790,7 +176790,7 @@ export const morphology: Morphology[] = [
     },
     {
         word: "παραγινομένου",
-        lemma: "παραγίγνομαι",
+        lemma: "παραγίνομαι",
         pos: {
             PT: "verbo, presente regular presente médio particípio",
             EN: "regular present verb present middle participle"
@@ -178536,7 +178536,7 @@ export const morphology: Morphology[] = [
     },
     {
         word: "παραγινομένης",
-        lemma: "παραγίγνομαι",
+        lemma: "παραγίνομαι",
         pos: {
             PT: "verbo, presente regular presente médio particípio",
             EN: "regular present verb present middle participle"
@@ -180453,7 +180453,7 @@ export const morphology: Morphology[] = [
     },
     {
         word: "ἐγενήθημεν",
-        lemma: "γίγνομαι",
+        lemma: "γίνομαι",
         pos: {
             PT: "aoristo #1 e futuro passivo (tipo q) aoristo passivo indicativo",
             EN: "aorist #1 and future passive (type q) aorist passive indicative"
@@ -181731,7 +181731,7 @@ export const morphology: Morphology[] = [
     },
     {
         word: "γίνεσθε",
-        lemma: "γίγνομαι",
+        lemma: "γίνομαι",
         pos: {
             PT: "verbo, presente regular presente médio indicativo",
             EN: "regular present verb present middle indicative"
@@ -182424,7 +182424,7 @@ export const morphology: Morphology[] = [
     },
     {
         word: "παραγινομένοις",
-        lemma: "παραγίγνομαι",
+        lemma: "παραγίνομαι",
         pos: {
             PT: "verbo, presente regular presente médio particípio",
             EN: "regular present verb present middle participle"
@@ -182757,7 +182757,7 @@ export const morphology: Morphology[] = [
     },
     {
         word: "παραγέγονας",
-        lemma: "παραγίγνομαι",
+        lemma: "παραγίνομαι",
         pos: {
             PT: "perfeito ativo perfeito ativo indicativo",
             EN: "perfect active perfect active indicative"
@@ -185043,7 +185043,7 @@ export const morphology: Morphology[] = [
     },
     {
         word: "γίνεσθέ",
-        lemma: "γίγνομαι",
+        lemma: "γίνομαι",
         pos: {
             PT: "verbo, presente regular presente médio indicativo",
             EN: "regular present verb present middle indicative"
@@ -189723,7 +189723,7 @@ export const morphology: Morphology[] = [
     },
     {
         word: "γέγονέν",
-        lemma: "γίγνομαι",
+        lemma: "γίνομαι",
         pos: {
             PT: "perfeito ativo perfeito ativo indicativo",
             EN: "perfect active perfect active indicative"
@@ -194745,7 +194745,7 @@ export const morphology: Morphology[] = [
     },
     {
         word: "παρεγενόμην",
-        lemma: "παραγίγνομαι",
+        lemma: "παραγίνομαι",
         pos: {
             PT: "segundo aoristo ativo aoristo médio indicativo",
             EN: "second aorist active #1 aorist middle indicative"
@@ -197175,7 +197175,7 @@ export const morphology: Morphology[] = [
     },
     {
         word: "γινόμενον",
-        lemma: "γίγνομαι",
+        lemma: "γίνομαι",
         pos: {
             PT: "verbo, presente regular presente médio particípio",
             EN: "regular present verb present middle participle"
@@ -201522,7 +201522,7 @@ export const morphology: Morphology[] = [
     },
     {
         word: "γενόμενα",
-        lemma: "γίγνομαι",
+        lemma: "γίνομαι",
         pos: {
             PT: "segundo aoristo ativo aoristo médio particípio",
             EN: "second aorist active #1 aorist middle participle"
@@ -204393,7 +204393,7 @@ export const morphology: Morphology[] = [
     },
     {
         word: "παραγίνεσθαι",
-        lemma: "παραγίγνομαι",
+        lemma: "παραγίνομαι",
         pos: {
             PT: "verbo, presente regular presente médio infinitivo",
             EN: "regular present verb present middle infinitive"
@@ -207669,7 +207669,7 @@ export const morphology: Morphology[] = [
     },
     {
         word: "γενομένοις",
-        lemma: "γίγνομαι",
+        lemma: "γίνομαι",
         pos: {
             PT: "segundo aoristo ativo aoristo médio particípio",
             EN: "second aorist active #1 aorist middle participle"
@@ -210279,7 +210279,7 @@ export const morphology: Morphology[] = [
     },
     {
         word: "γεγονότα",
-        lemma: "γίγνομαι",
+        lemma: "γίνομαι",
         pos: {
             PT: "perfeito ativo perfeito ativo particípio",
             EN: "perfect active perfect active participle"
@@ -226083,7 +226083,7 @@ export const morphology: Morphology[] = [
     },
     {
         word: "περιγενηθεῖσαν",
-        lemma: "περιγίγνομαι",
+        lemma: "περιγίνομαι",
         pos: {
             PT: "aoristo #1 e futuro passivo (tipo q) aoristo passivo particípio",
             EN: "aorist #1 and future passive (type q) aorist passive participle"
@@ -228630,7 +228630,7 @@ export const morphology: Morphology[] = [
     },
     {
         word: "γένῃ",
-        lemma: "γίγνομαι",
+        lemma: "γίνομαι",
         pos: {
             PT: "segundo aoristo ativo aoristo ativo subjuntivo",
             EN: "second aorist active #1 aorist active subjunctive"
@@ -242211,7 +242211,7 @@ export const morphology: Morphology[] = [
     },
     {
         word: "γενομένης",
-        lemma: "γίγνομαι",
+        lemma: "γίνομαι",
         pos: {
             PT: "segundo aoristo ativo aoristo médio particípio",
             EN: "second aorist active #1 aorist middle participle"
@@ -242346,7 +242346,7 @@ export const morphology: Morphology[] = [
     },
     {
         word: "γιγνόμενα",
-        lemma: "γίγνομαι",
+        lemma: "γίνομαι",
         pos: {
             PT: "verbo, presente regular presente médio particípio",
             EN: "regular present verb present middle participle"
@@ -242661,7 +242661,7 @@ export const morphology: Morphology[] = [
     },
     {
         word: "γενομένην",
-        lemma: "γίγνομαι",
+        lemma: "γίνομαι",
         pos: {
             PT: "segundo aoristo ativo aoristo médio particípio",
             EN: "second aorist active #1 aorist middle participle"
@@ -243129,7 +243129,7 @@ export const morphology: Morphology[] = [
     },
     {
         word: "γίγνεσθαι",
-        lemma: "γίγνομαι",
+        lemma: "γίνομαι",
         pos: {
             PT: "verbo, presente regular presente médio infinitivo",
             EN: "regular present verb present middle infinitive"
@@ -243903,7 +243903,7 @@ export const morphology: Morphology[] = [
     },
     {
         word: "γίγνηται",
-        lemma: "γίγνομαι",
+        lemma: "γίνομαι",
         pos: {
             PT: "verbo, presente regular presente médio subjuntivo",
             EN: "regular present verb present middle subjunctive"
@@ -245271,7 +245271,7 @@ export const morphology: Morphology[] = [
     },
     {
         word: "γίγνεται",
-        lemma: "γίγνομαι",
+        lemma: "γίνομαι",
         pos: {
             PT: "verbo, presente regular presente médio indicativo",
             EN: "regular present verb present middle indicative"
@@ -245658,7 +245658,7 @@ export const morphology: Morphology[] = [
     },
     {
         word: "παραγενηθήτωσαν",
-        lemma: "παραγίγνομαι",
+        lemma: "παραγίνομαι",
         pos: {
             PT: "aoristo #1 e futuro passivo (tipo q) aoristo passivo imperativo",
             EN: "aorist #1 and future passive (type q) aorist passive imperative"
@@ -248952,7 +248952,7 @@ export const morphology: Morphology[] = [
     },
     {
         word: "γίνονται",
-        lemma: "γίγνομαι",
+        lemma: "γίνομαι",
         pos: {
             PT: "verbo, presente regular presente médio indicativo",
             EN: "regular present verb present middle indicative"
@@ -250086,7 +250086,7 @@ export const morphology: Morphology[] = [
     },
     {
         word: "γιγνέσθω",
-        lemma: "γίγνομαι",
+        lemma: "γίνομαι",
         pos: {
             PT: "verbo, presente regular presente médio imperativo",
             EN: "regular present verb present middle imperative"
@@ -250248,7 +250248,7 @@ export const morphology: Morphology[] = [
     },
     {
         word: "γιγνόμενον",
-        lemma: "γίγνομαι",
+        lemma: "γίνομαι",
         pos: {
             PT: "verbo, presente regular presente passivo particípio",
             EN: "regular present verb present passive participle"
@@ -252885,7 +252885,7 @@ export const morphology: Morphology[] = [
     },
     {
         word: "γεγονυίας",
-        lemma: "γίγνομαι",
+        lemma: "γίνομαι",
         pos: {
             PT: "perfeito ativo perfeito ativo particípio",
             EN: "perfect active perfect active participle"
@@ -253866,7 +253866,7 @@ export const morphology: Morphology[] = [
     },
     {
         word: "ἐγίνοντό",
-        lemma: "γίγνομαι",
+        lemma: "γίνομαι",
         pos: {
             PT: "verbo, presente regular imperfeito médio indicativo",
             EN: "regular present verb imperfect middle indicative"
@@ -254028,7 +254028,7 @@ export const morphology: Morphology[] = [
     },
     {
         word: "γίνῃ",
-        lemma: "γίγνομαι",
+        lemma: "γίνομαι",
         pos: {
             PT: "verbo, presente regular presente médio indicativo",
             EN: "regular present verb present middle indicative"
@@ -254163,7 +254163,7 @@ export const morphology: Morphology[] = [
     },
     {
         word: "γένωμαι",
-        lemma: "γίγνομαι",
+        lemma: "γίνομαι",
         pos: {
             PT: "segundo aoristo ativo aoristo médio subjuntivo",
             EN: "second aorist active #1 aorist middle subjunctive"
@@ -261678,7 +261678,7 @@ export const morphology: Morphology[] = [
     },
     {
         word: "γενηθεῖσα",
-        lemma: "γίγνομαι",
+        lemma: "γίνομαι",
         pos: {
             PT: "aoristo #1 e futuro passivo (tipo q) aoristo passivo particípio",
             EN: "aorist #1 and future passive (type q) aorist passive participle"
@@ -270453,7 +270453,7 @@ export const morphology: Morphology[] = [
     },
     {
         word: "γενήθητι",
-        lemma: "γίγνομαι",
+        lemma: "γίνομαι",
         pos: {
             PT: "aoristo #1 e futuro passivo (tipo q) aoristo passivo imperativo",
             EN: "aorist #1 and future passive (type q) aorist passive imperative"
@@ -270516,7 +270516,7 @@ export const morphology: Morphology[] = [
     },
     {
         word: "γεγονέναι",
-        lemma: "γίγνομαι",
+        lemma: "γίνομαι",
         pos: {
             PT: "perfeito ativo perfeito ativo infinitivo",
             EN: "perfect active perfect active infinitive"
@@ -271191,7 +271191,7 @@ export const morphology: Morphology[] = [
     },
     {
         word: "γεγονός",
-        lemma: "γίγνομαι",
+        lemma: "γίνομαι",
         pos: {
             PT: "perfeito ativo perfeito ativo particípio",
             EN: "perfect active perfect active participle"
@@ -279723,7 +279723,7 @@ export const morphology: Morphology[] = [
     },
     {
         word: "γενώμεθα",
-        lemma: "γίγνομαι",
+        lemma: "γίνομαι",
         pos: {
             PT: "segundo aoristo ativo aoristo médio subjuntivo",
             EN: "second aorist active #1 aorist middle subjunctive"
@@ -282216,7 +282216,7 @@ export const morphology: Morphology[] = [
     },
     {
         word: "γινομένας",
-        lemma: "γίγνομαι",
+        lemma: "γίνομαι",
         pos: {
             PT: "verbo, presente regular presente médio particípio",
             EN: "regular present verb present middle participle"
@@ -284106,7 +284106,7 @@ export const morphology: Morphology[] = [
     },
     {
         word: "ἐγεγόνει",
-        lemma: "γίγνομαι",
+        lemma: "γίνομαι",
         pos: {
             PT: "perfeito ativo mais-que-perfeito ativo indicativo",
             EN: "perfect active pluperfect active indicative"
@@ -284295,7 +284295,7 @@ export const morphology: Morphology[] = [
     },
     {
         word: "γεγενημένον",
-        lemma: "γίγνομαι",
+        lemma: "γίνομαι",
         pos: {
             PT: "perfeito médio perfeito médio particípio",
             EN: "perfect middle perfect middle participle"
@@ -284457,7 +284457,7 @@ export const morphology: Morphology[] = [
     },
     {
         word: "παραγενηθῆναι",
-        lemma: "παραγίγνομαι",
+        lemma: "παραγίνομαι",
         pos: {
             PT: "aoristo #1 e futuro passivo (tipo q) aoristo passivo infinitivo",
             EN: "aorist #1 and future passive (type q) aorist passive infinitive"
@@ -284646,7 +284646,7 @@ export const morphology: Morphology[] = [
     },
     {
         word: "παραγενηθέντα",
-        lemma: "παραγίγνομαι",
+        lemma: "παραγίνομαι",
         pos: {
             PT: "aoristo #1 e futuro passivo (tipo q) aoristo passivo particípio",
             EN: "aorist #1 and future passive (type q) aorist passive participle"
@@ -295707,7 +295707,7 @@ export const morphology: Morphology[] = [
     },
     {
         word: "μεταγενομένους",
-        lemma: "μεταγίγνομαι",
+        lemma: "μεταγίνομαι",
         pos: {
             PT: "segundo aoristo ativo aoristo médio particípio",
             EN: "second aorist active #1 aorist middle participle"
@@ -295725,7 +295725,7 @@ export const morphology: Morphology[] = [
     },
     {
         word: "μεταγενομένοις",
-        lemma: "μεταγίγνομαι",
+        lemma: "μεταγίνομαι",
         pos: {
             PT: "segundo aoristo ativo aoristo médio particípio",
             EN: "second aorist active #1 aorist middle participle"
@@ -297183,7 +297183,7 @@ export const morphology: Morphology[] = [
     },
     {
         word: "παραγενηθεὶς",
-        lemma: "παραγίγνομαι",
+        lemma: "παραγίνομαι",
         pos: {
             PT: "aoristo #1 e futuro passivo (tipo q) aoristo passivo particípio",
             EN: "aorist #1 and future passive (type q) aorist passive participle"
@@ -297228,7 +297228,7 @@ export const morphology: Morphology[] = [
     },
     {
         word: "γεγονότος",
-        lemma: "γίγνομαι",
+        lemma: "γίνομαι",
         pos: {
             PT: "perfeito ativo perfeito ativo particípio",
             EN: "perfect active perfect active participle"
@@ -298785,7 +298785,7 @@ export const morphology: Morphology[] = [
     },
     {
         word: "παραγινομένους",
-        lemma: "παραγίγνομαι",
+        lemma: "παραγίνομαι",
         pos: {
             PT: "verbo, presente regular presente médio particípio",
             EN: "regular present verb present middle participle"
@@ -298830,7 +298830,7 @@ export const morphology: Morphology[] = [
     },
     {
         word: "γεγονὼς",
-        lemma: "γίγνομαι",
+        lemma: "γίνομαι",
         pos: {
             PT: "perfeito ativo perfeito ativo particípio",
             EN: "perfect active perfect active participle"
@@ -300981,7 +300981,7 @@ export const morphology: Morphology[] = [
     },
     {
         word: "γενομένων",
-        lemma: "γίγνομαι",
+        lemma: "γίνομαι",
         pos: {
             PT: "segundo aoristo ativo aoristo médio particípio",
             EN: "second aorist active #1 aorist middle participle"
@@ -302205,7 +302205,7 @@ export const morphology: Morphology[] = [
     },
     {
         word: "γεγονότων",
-        lemma: "γίγνομαι",
+        lemma: "γίνομαι",
         pos: {
             PT: "perfeito ativo perfeito ativo particípio",
             EN: "perfect active perfect active participle"
@@ -302925,7 +302925,7 @@ export const morphology: Morphology[] = [
     },
     {
         word: "γενηθεὶς",
-        lemma: "γίγνομαι",
+        lemma: "γίνομαι",
         pos: {
             PT: "aoristo #1 e futuro passivo (tipo q) aoristo passivo particípio",
             EN: "aorist #1 and future passive (type q) aorist passive participle"
@@ -306858,7 +306858,7 @@ export const morphology: Morphology[] = [
     },
     {
         word: "παραγινομένων",
-        lemma: "παραγίγνομαι",
+        lemma: "παραγίνομαι",
         pos: {
             PT: "verbo, presente regular presente médio particípio",
             EN: "regular present verb present middle participle"
@@ -307083,7 +307083,7 @@ export const morphology: Morphology[] = [
     },
     {
         word: "γινομένην",
-        lemma: "γίγνομαι",
+        lemma: "γίνομαι",
         pos: {
             PT: "verbo, presente regular presente médio particípio",
             EN: "regular present verb present middle participle"
@@ -307290,7 +307290,7 @@ export const morphology: Morphology[] = [
     },
     {
         word: "παραγεγονότων",
-        lemma: "παραγίγνομαι",
+        lemma: "παραγίνομαι",
         pos: {
             PT: "perfeito ativo perfeito ativo particípio",
             EN: "perfect active perfect active participle"
@@ -308469,7 +308469,7 @@ export const morphology: Morphology[] = [
     },
     {
         word: "παρεγίνετο",
-        lemma: "παραγίγνομαι",
+        lemma: "παραγίνομαι",
         pos: {
             PT: "verbo, presente regular imperfeito médio indicativo",
             EN: "regular present verb imperfect middle indicative"
@@ -309414,7 +309414,7 @@ export const morphology: Morphology[] = [
     },
     {
         word: "γεγονυῖαν",
-        lemma: "γίγνομαι",
+        lemma: "γίνομαι",
         pos: {
             PT: "perfeito ativo perfeito ativo particípio",
             EN: "perfect active perfect active participle"
@@ -310557,7 +310557,7 @@ export const morphology: Morphology[] = [
     },
     {
         word: "γεγονόσι",
-        lemma: "γίγνομαι",
+        lemma: "γίνομαι",
         pos: {
             PT: "perfeito ativo perfeito ativo particípio",
             EN: "perfect active perfect active participle"
@@ -311295,7 +311295,7 @@ export const morphology: Morphology[] = [
     },
     {
         word: "διαγίνωνται",
-        lemma: "διαγίγνομαι",
+        lemma: "διαγίνομαι",
         pos: {
             PT: "verbo, presente regular presente médio subjuntivo",
             EN: "regular present verb present middle subjunctive"
@@ -313257,7 +313257,7 @@ export const morphology: Morphology[] = [
     },
     {
         word: "ἐγεγόνει",
-        lemma: "γίγνομαι",
+        lemma: "γίνομαι",
         pos: {
             PT: "perfeito ativo perfeito ativo indicativo",
             EN: "perfect active perfect active indicative"
@@ -314526,7 +314526,7 @@ export const morphology: Morphology[] = [
     },
     {
         word: "προγεγονὼς",
-        lemma: "προγίγνομαι",
+        lemma: "προγίνομαι",
         pos: {
             PT: "perfeito ativo perfeito ativo particípio",
             EN: "perfect active perfect active participle"
@@ -316470,7 +316470,7 @@ export const morphology: Morphology[] = [
     },
     {
         word: "προγεγονότα",
-        lemma: "προγίγνομαι",
+        lemma: "προγίνομαι",
         pos: {
             PT: "perfeito ativo perfeito ativo particípio",
             EN: "perfect active perfect active participle"
@@ -317136,7 +317136,7 @@ export const morphology: Morphology[] = [
     },
     {
         word: "παραγινόμενοι",
-        lemma: "παραγίγνομαι",
+        lemma: "παραγίνομαι",
         pos: {
             PT: "verbo, presente regular presente médio particípio",
             EN: "regular present verb present middle participle"
@@ -319134,7 +319134,7 @@ export const morphology: Morphology[] = [
     },
     {
         word: "ἐπιγινομένοις",
-        lemma: "ἐπιγίγνομαι",
+        lemma: "ἐπιγίνομαι",
         pos: {
             PT: "verbo, presente regular presente médio particípio",
             EN: "regular present verb present middle participle"
@@ -324021,7 +324021,7 @@ export const morphology: Morphology[] = [
     },
     {
         word: "παραγεγονότας",
-        lemma: "παραγίγνομαι",
+        lemma: "παραγίνομαι",
         pos: {
             PT: "perfeito ativo perfeito ativo particípio",
             EN: "perfect active perfect active participle"
@@ -325623,7 +325623,7 @@ export const morphology: Morphology[] = [
     },
     {
         word: "γεγενημένας",
-        lemma: "γίγνομαι",
+        lemma: "γίνομαι",
         pos: {
             PT: "perfeito médio perfeito médio particípio",
             EN: "perfect middle perfect middle participle"
@@ -327180,7 +327180,7 @@ export const morphology: Morphology[] = [
     },
     {
         word: "γενηθείσῃ",
-        lemma: "γίγνομαι",
+        lemma: "γίνομαι",
         pos: {
             PT: "aoristo #1 e futuro passivo (tipo q) aoristo passivo particípio",
             EN: "aorist #1 and future passive (type q) aorist passive participle"
@@ -327864,7 +327864,7 @@ export const morphology: Morphology[] = [
     },
     {
         word: "γεγενημένων",
-        lemma: "γίγνομαι",
+        lemma: "γίνομαι",
         pos: {
             PT: "perfeito médio perfeito médio particípio",
             EN: "perfect middle perfect middle participle"
@@ -332598,7 +332598,7 @@ export const morphology: Morphology[] = [
     },
     {
         word: "γινομένῃ",
-        lemma: "γίγνομαι",
+        lemma: "γίνομαι",
         pos: {
             PT: "verbo, presente regular presente médio particípio",
             EN: "regular present verb present middle participle"
@@ -333975,7 +333975,7 @@ export const morphology: Morphology[] = [
     },
     {
         word: "γενοίμεθα",
-        lemma: "γίγνομαι",
+        lemma: "γίνομαι",
         pos: {
             PT: "segundo aoristo ativo aoristo médio optativo",
             EN: "second aorist active #1 aorist middle optative"
@@ -339249,7 +339249,7 @@ export const morphology: Morphology[] = [
     },
     {
         word: "γεγονότας",
-        lemma: "γίγνομαι",
+        lemma: "γίνομαι",
         pos: {
             PT: "perfeito ativo perfeito ativo particípio",
             EN: "perfect active perfect active participle"
@@ -339501,7 +339501,7 @@ export const morphology: Morphology[] = [
     },
     {
         word: "περιεγένοντο",
-        lemma: "περιγίγνομαι",
+        lemma: "περιγίνομαι",
         pos: {
             PT: "segundo aoristo ativo aoristo médio indicativo",
             EN: "second aorist active #1 aorist middle indicative"
@@ -342318,7 +342318,7 @@ export const morphology: Morphology[] = [
     },
     {
         word: "γεγένημαι",
-        lemma: "γίγνομαι",
+        lemma: "γίνομαι",
         pos: {
             PT: "perfeito médio perfeito médio indicativo",
             EN: "perfect middle perfect middle indicative"
@@ -343209,7 +343209,7 @@ export const morphology: Morphology[] = [
     },
     {
         word: "γεγενημένος",
-        lemma: "γίγνομαι",
+        lemma: "γίνομαι",
         pos: {
             PT: "perfeito médio perfeito médio particípio",
             EN: "perfect middle perfect middle participle"
@@ -353541,7 +353541,7 @@ export const morphology: Morphology[] = [
     },
     {
         word: "ἐγενήθησάν",
-        lemma: "γίγνομαι",
+        lemma: "γίνομαι",
         pos: {
             PT: "aoristo #1 e futuro passivo (tipo q) aoristo passivo indicativo",
             EN: "aorist #1 and future passive (type q) aorist passive indicative"
@@ -355692,7 +355692,7 @@ export const morphology: Morphology[] = [
     },
     {
         word: "ἐγενήθης",
-        lemma: "γίγνομαι",
+        lemma: "γίνομαι",
         pos: {
             PT: "aoristo #1 e futuro passivo (tipo q) aoristo passivo indicativo",
             EN: "aorist #1 and future passive (type q) aorist passive indicative"
@@ -362928,7 +362928,7 @@ export const morphology: Morphology[] = [
     },
     {
         word: "ἐγίνου",
-        lemma: "γίγνομαι",
+        lemma: "γίνομαι",
         pos: {
             PT: "verbo, presente regular imperfeito médio indicativo",
             EN: "regular present verb imperfect middle indicative"
@@ -377355,7 +377355,7 @@ export const morphology: Morphology[] = [
     },
     {
         word: "γινόμενα",
-        lemma: "γίγνομαι",
+        lemma: "γίνομαι",
         pos: {
             PT: "verbo, presente regular presente médio particípio",
             EN: "regular present verb present middle participle"
@@ -389343,7 +389343,7 @@ export const morphology: Morphology[] = [
     },
     {
         word: "γενησόμενον",
-        lemma: "γίγνομαι",
+        lemma: "γίνομαι",
         pos: {
             PT: "futuro regular futuro médio particípio",
             EN: "regular future future middle participle"
@@ -389397,7 +389397,7 @@ export const morphology: Morphology[] = [
     },
     {
         word: "γενησομένων",
-        lemma: "γίγνομαι",
+        lemma: "γίνομαι",
         pos: {
             PT: "futuro regular futuro médio particípio",
             EN: "regular future future middle participle"
@@ -389424,7 +389424,7 @@ export const morphology: Morphology[] = [
     },
     {
         word: "γινομένων",
-        lemma: "γίγνομαι",
+        lemma: "γίνομαι",
         pos: {
             PT: "verbo, presente regular presente médio particípio",
             EN: "regular present verb present middle participle"
@@ -389811,7 +389811,7 @@ export const morphology: Morphology[] = [
     },
     {
         word: "γινομένῳ",
-        lemma: "γίγνομαι",
+        lemma: "γίνομαι",
         pos: {
             PT: "verbo, presente regular presente médio particípio",
             EN: "regular present verb present middle participle"
@@ -391143,7 +391143,7 @@ export const morphology: Morphology[] = [
     },
     {
         word: "γινομένη",
-        lemma: "γίγνομαι",
+        lemma: "γίνομαι",
         pos: {
             PT: "verbo, presente regular presente médio particípio",
             EN: "regular present verb present middle participle"
@@ -395301,7 +395301,7 @@ export const morphology: Morphology[] = [
     },
     {
         word: "παραγέγονας",
-        lemma: "παραγίγνομαι",
+        lemma: "παραγίνομαι",
         pos: {
             PT: "perfeito médio perfeito médio indicativo",
             EN: "perfect middle perfect middle indicative"
@@ -397587,7 +397587,7 @@ export const morphology: Morphology[] = [
     },
     {
         word: "γίνομαι",
-        lemma: "γίγνομαι",
+        lemma: "γίνομαι",
         pos: {
             PT: "verbo, presente regular presente médio indicativo",
             EN: "regular present verb present middle indicative"
@@ -399585,7 +399585,7 @@ export const morphology: Morphology[] = [
     },
     {
         word: "γένεσθε",
-        lemma: "γίγνομαι",
+        lemma: "γίνομαι",
         pos: {
             PT: "segundo aoristo ativo aoristo médio imperativo",
             EN: "second aorist active #1 aorist middle imperative"
@@ -405435,7 +405435,7 @@ export const morphology: Morphology[] = [
     },
     {
         word: "γενοίμην",
-        lemma: "γίγνομαι",
+        lemma: "γίνομαι",
         pos: {
             PT: "segundo aoristo ativo aoristo médio optativo",
             EN: "second aorist active #1 aorist middle optative"
@@ -405552,7 +405552,7 @@ export const morphology: Morphology[] = [
     },
     {
         word: "γεγόναμεν",
-        lemma: "γίγνομαι",
+        lemma: "γίνομαι",
         pos: {
             PT: "perfeito ativo perfeito ativo indicativo",
             EN: "perfect active perfect active indicative"
@@ -422526,7 +422526,7 @@ export const morphology: Morphology[] = [
     },
     {
         word: "προγεγονότων",
-        lemma: "προγίγνομαι",
+        lemma: "προγίνομαι",
         pos: {
             PT: "perfeito ativo perfeito ativo particípio",
             EN: "perfect active perfect active participle"
@@ -439770,7 +439770,7 @@ export const morphology: Morphology[] = [
     },
     {
         word: "γεγονότες",
-        lemma: "γίγνομαι",
+        lemma: "γίνομαι",
         pos: {
             PT: "perfeito ativo perfeito ativo particípio",
             EN: "perfect active perfect active participle"
@@ -450327,7 +450327,7 @@ export const morphology: Morphology[] = [
     },
     {
         word: "ἐγένεσθε",
-        lemma: "γίγνομαι",
+        lemma: "γίνομαι",
         pos: {
             PT: "segundo aoristo ativo aoristo médio indicativo",
             EN: "second aorist active #1 aorist middle indicative"
@@ -460884,7 +460884,7 @@ export const morphology: Morphology[] = [
     },
     {
         word: "ἐγενήθητέ",
-        lemma: "γίγνομαι",
+        lemma: "γίνομαι",
         pos: {
             PT: "aoristo #1 e futuro passivo (tipo q) aoristo passivo indicativo",
             EN: "aorist #1 and future passive (type q) aorist passive indicative"
@@ -472422,7 +472422,7 @@ export const morphology: Morphology[] = [
     },
     {
         word: "γένεσθέ",
-        lemma: "γίγνομαι",
+        lemma: "γίνομαι",
         pos: {
             PT: "segundo aoristo ativo aoristo médio imperativo",
             EN: "second aorist active #1 aorist middle imperative"
@@ -477192,7 +477192,7 @@ export const morphology: Morphology[] = [
     },
     {
         word: "γεγενῆσθαί",
-        lemma: "γίγνομαι",
+        lemma: "γίνομαι",
         pos: {
             PT: "perfeito médio perfeito médio infinitivo",
             EN: "perfect middle perfect middle infinitive"
@@ -477588,7 +477588,7 @@ export const morphology: Morphology[] = [
     },
     {
         word: "παραγινόμενος",
-        lemma: "παραγίγνομαι",
+        lemma: "παραγίνομαι",
         pos: {
             PT: "verbo, presente regular presente médio particípio",
             EN: "regular present verb present middle participle"
@@ -477759,7 +477759,7 @@ export const morphology: Morphology[] = [
     },
     {
         word: "ἐγενόμεθα",
-        lemma: "γίγνομαι",
+        lemma: "γίνομαι",
         pos: {
             PT: "segundo aoristo ativo aoristo médio indicativo",
             EN: "second aorist active #1 aorist middle indicative"
@@ -480180,7 +480180,7 @@ export const morphology: Morphology[] = [
     },
     {
         word: "γένωμαί",
-        lemma: "γίγνομαι",
+        lemma: "γίνομαι",
         pos: {
             PT: "segundo aoristo ativo aoristo médio subjuntivo",
             EN: "second aorist active #1 aorist middle subjunctive"
@@ -483636,7 +483636,7 @@ export const morphology: Morphology[] = [
     },
     {
         word: "γενηθῇς",
-        lemma: "γίγνομαι",
+        lemma: "γίνομαι",
         pos: {
             PT: "aoristo #1 e futuro passivo (tipo q) aoristo passivo subjuntivo",
             EN: "aorist #1 and future passive (type q) aorist passive subjunctive"
@@ -483924,7 +483924,7 @@ export const morphology: Morphology[] = [
     },
     {
         word: "γενέσθωσαν",
-        lemma: "γίγνομαι",
+        lemma: "γίνομαι",
         pos: {
             PT: "segundo aoristo ativo aoristo médio imperativo",
             EN: "second aorist active #1 aorist middle imperative"
@@ -487668,7 +487668,7 @@ export const morphology: Morphology[] = [
     },
     {
         word: "παραγένεσθε",
-        lemma: "παραγίγνομαι",
+        lemma: "παραγίνομαι",
         pos: {
             PT: "segundo aoristo ativo aoristo médio imperativo",
             EN: "second aorist active #1 aorist middle imperative"
@@ -499053,7 +499053,7 @@ export const morphology: Morphology[] = [
     },
     {
         word: "γινομέναις",
-        lemma: "γίγνομαι",
+        lemma: "γίνομαι",
         pos: {
             PT: "verbo, presente regular presente médio particípio",
             EN: "regular present verb present middle participle"
@@ -502716,7 +502716,7 @@ export const morphology: Morphology[] = [
     },
     {
         word: "γεγενημένοις",
-        lemma: "γίγνομαι",
+        lemma: "γίνομαι",
         pos: {
             PT: "perfeito médio perfeito médio particípio",
             EN: "perfect middle perfect middle participle"
@@ -502725,7 +502725,7 @@ export const morphology: Morphology[] = [
     },
     {
         word: "γεγόνασί",
-        lemma: "γίγνομαι",
+        lemma: "γίνομαι",
         pos: {
             PT: "perfeito ativo perfeito ativo indicativo",
             EN: "perfect active perfect active indicative"
@@ -506046,7 +506046,7 @@ export const morphology: Morphology[] = [
     },
     {
         word: "γίνῃ",
-        lemma: "γίγνομαι",
+        lemma: "γίνομαι",
         pos: {
             PT: "verbo, presente regular presente médio subjuntivo",
             EN: "regular present verb present middle subjunctive"
@@ -510285,7 +510285,7 @@ export const morphology: Morphology[] = [
     },
     {
         word: "καταγινόμενοι",
-        lemma: "καταγίγνομαι",
+        lemma: "καταγίνομαι",
         pos: {
             PT: "verbo, presente regular presente médio particípio",
             EN: "regular present verb present middle participle"
@@ -514191,7 +514191,7 @@ export const morphology: Morphology[] = [
     },
     {
         word: "γενηθέντων",
-        lemma: "γίγνομαι",
+        lemma: "γίνομαι",
         pos: {
             PT: "aoristo #1 e futuro passivo (tipo q) aoristo passivo particípio",
             EN: "aorist #1 and future passive (type q) aorist passive participle"
@@ -521769,7 +521769,7 @@ export const morphology: Morphology[] = [
     },
     {
         word: "συγγινομένους",
-        lemma: "συνγίγνομαι",
+        lemma: "συνγίνομαι",
         pos: {
             PT: "verbo, presente regular presente médio particípio",
             EN: "regular present verb present middle participle"

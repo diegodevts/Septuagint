@@ -7,8 +7,6 @@ import { useCallback, useContext, useEffect, useState } from "react";
 import React, {
     Dimensions,
     FlatList,
-    KeyboardAvoidingView,
-    Pressable,
     StyleSheet,
     Switch,
     Text,
@@ -401,7 +399,7 @@ export const Search = () => {
                     onEndEditing={() => setWordAndWordsLemmas(word)}
                     onChangeText={setWord}
                 />
-                <KeyboardAvoidingView
+                <View
                     style={{
                         flex: 1,
                         alignItems: "center",
@@ -441,7 +439,7 @@ export const Search = () => {
                     >
                         {`Ocorrências: ${occurrences}`}
                     </Text>
-                </KeyboardAvoidingView>
+                </View>
             </View>
             <View
                 style={{
