@@ -3,10 +3,12 @@ import { morphology } from "@/src/config/morphology/lxx_morphology";
 import { greek } from "@/src/config/septuagint-versions/greek-version";
 import { MaterialIcons } from "@expo/vector-icons";
 import { useNavigation } from "@react-navigation/native";
-import { useCallback, useContext, useEffect, useState } from "react";
-import React, {
+import React, { useCallback, useContext, useEffect, useState } from "react";
+import {
     Dimensions,
     FlatList,
+    KeyboardAvoidingView,
+    Platform,
     StyleSheet,
     Switch,
     Text,
@@ -33,15 +35,14 @@ export const Search = () => {
     const [isFragment, setIsFragment] = useState(false);
     const [searchMode, setSearchMode] = useState("word");
     const [searchWord, setSearchWord] = useState("");
-    const [wordsWithSameLemma, setWordsWithSameLemma] = useState([]);
+    const [wordsWithSameLemma, setWordsWithSameLemma] = useState<string[]>([]);
     const [occurrences, setOcurrences] = useState(0);
     const [filteredResults, setFilteredResults] = useState<SearchResult[]>([]);
     const toggleSwitch = () => setIsFragment((previousState) => !previousState);
-
     const { lang } = useContext(MyContext);
+    const insets = useSafeAreaInsets();
 
     useEffect(() => {
-        // limpa sempre que mudar o modo ou a palavra
         setFilteredResults([]);
         setOcurrences(0);
 
@@ -80,13 +81,11 @@ export const Search = () => {
 
     const highlightWord = (verse: string, word: string) => {
         if (!word) return <Text style={styles.title}>{verse}</Text>;
-
         const cleanWord = removeGreekAccents(word);
 
         if (isFragment) {
             const regex = new RegExp(`(${cleanWord})`, "gi");
             const parts = removeGreekAccents(verse).split(regex);
-
             return (
                 <Text style={styles.title}>
                     {parts.map((part, index) => {
@@ -96,20 +95,19 @@ export const Search = () => {
                         ) {
                             return (
                                 <Text
-                                    id={`frag-${index}`}
+                                    key={index}
                                     style={{ color: "red", fontSize: 16 }}
                                 >
                                     {part}
                                 </Text>
                             );
                         }
-                        return <Text id={`frag-${index}`}>{part}</Text>;
+                        return <Text key={index}>{part}</Text>;
                     })}
                 </Text>
             );
         }
 
-        // Quando busca por palavra exata
         const parts = verse?.split(" ");
         return (
             <Text style={styles.title}>
@@ -121,14 +119,14 @@ export const Search = () => {
                         ) {
                             return (
                                 <Text
-                                    id={`word-${index}`}
+                                    key={index}
                                     style={{ color: "red", fontSize: 16 }}
                                 >
                                     {part + " "}
                                 </Text>
                             );
                         }
-                        return <Text id={`word-${index}`}>{part + " "}</Text>;
+                        return <Text key={index}>{part + " "}</Text>;
                     })}
             </Text>
         );
@@ -147,7 +145,7 @@ export const Search = () => {
 
                     return (
                         <Text
-                            id={`lemma-${index}`}
+                            key={index}
                             style={{
                                 color: isLemma ? "red" : "#fff",
                                 fontSize: 16
@@ -187,8 +185,6 @@ export const Search = () => {
         ),
         [word, searchWord]
     );
-
-    const insets = useSafeAreaInsets();
 
     const searchWordInBooks = (
         word: string,
@@ -292,17 +288,12 @@ export const Search = () => {
             setWordsWithSameLemma(wordsLemmas);
         }
     };
-    return (
-        <View
-            style={{ flex: 1, alignItems: "center", justifyContent: "center" }}
-        >
-            <View
-                style={{
-                    flexDirection: "row",
-                    marginTop: 10,
-                    flex: 1
-                }}
-            >
+
+    /** COMPONENTE HEADER */
+    const header = (
+        <View style={{ alignItems: "center", paddingTop: 10 }}>
+            {/* Botões de busca */}
+            <View style={{ flexDirection: "row", marginTop: 10 }}>
                 <TouchableOpacity
                     style={{
                         height: 50,
@@ -337,7 +328,6 @@ export const Search = () => {
                     </Text>
                 </TouchableOpacity>
 
-                {/* Botão Busca por Lemma */}
                 <TouchableOpacity
                     style={{
                         height: 50,
@@ -373,12 +363,16 @@ export const Search = () => {
                     </Text>
                 </TouchableOpacity>
             </View>
+
+            {/* Input */}
             <View
                 style={{
                     flexDirection: "column",
                     gap: 3,
-                    flex: 1,
-                    marginBottom: 15
+                    marginTop: 15,
+                    marginBottom: 15,
+                    width: "100%",
+                    alignItems: "center"
                 }}
             >
                 <TextInput
@@ -401,11 +395,10 @@ export const Search = () => {
                 />
                 <View
                     style={{
-                        flex: 1,
-                        alignItems: "center",
                         flexDirection: "row",
-                        justifyContent: "flex-start",
-                        marginTop: 5
+                        alignItems: "center",
+                        marginTop: 5,
+                        gap: 10
                     }}
                 >
                     <Text
@@ -416,11 +409,10 @@ export const Search = () => {
                             fontFamily: "Poppins-Regular"
                         }}
                     >
-                        {"Buscar por fragmentos"}
+                        Buscar por fragmentos
                     </Text>
                     <Switch
                         style={{
-                            marginLeft: 10,
                             display: searchMode === "word" ? "flex" : "none"
                         }}
                         trackColor={{ false: "#767577", true: "#f4f3f4" }}
@@ -441,26 +433,27 @@ export const Search = () => {
                     </Text>
                 </View>
             </View>
-            <View
-                style={{
-                    justifyContent: "flex-start",
-                    height: Dimensions.get("screen").height * 0.6,
-                    marginBottom: insets.bottom + 7
-                }}
-            >
-                <FlatList
-                    style={{
-                        flex: 1,
-                        borderRadius: 8
-                    }}
-                    data={filteredResults}
-                    renderItem={renderItem}
-                    keyExtractor={(item, index) =>
-                        item["#"] ?? index.toString()
-                    }
-                />
-            </View>
         </View>
+    );
+
+    return (
+        <KeyboardAvoidingView
+            style={{ flex: 1 }}
+            behavior={Platform.OS === "ios" ? "padding" : "height"}
+            keyboardVerticalOffset={Platform.OS === "ios" ? 90 : 0}
+        >
+            <FlatList
+                data={filteredResults}
+                renderItem={renderItem}
+                keyExtractor={(_, i) => i.toString()}
+                ListHeaderComponent={header}
+                keyboardShouldPersistTaps="handled"
+                contentContainerStyle={{
+                    paddingBottom: insets.bottom,
+                    alignItems: "center"
+                }}
+            />
+        </KeyboardAvoidingView>
     );
 };
 

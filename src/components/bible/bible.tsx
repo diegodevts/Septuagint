@@ -13,7 +13,7 @@ import {
     TouchableWithoutFeedback,
     View
 } from "react-native";
-import React, { SyntheticEvent, useCallback } from "react";
+import React, { useCallback } from "react";
 import Icon from "react-native-vector-icons/FontAwesome";
 import { useContext, useEffect, useMemo, useRef, useState } from "react";
 import MyContext from "@/src/contexts/items-context";
@@ -40,14 +40,14 @@ import { RootStackParamList } from "@/src/@types/types";
 import { removeGreekAccents } from "@/src/utils/remove-accents";
 import { greek } from "@/src/config/septuagint-versions/greek-version";
 
-const height = Dimensions.get("screen").height;
-const width = Dimensions.get("screen").width;
+const { width } = Dimensions.get("screen");
 
 export type NavigationProp = NativeStackNavigationProp<
     RootStackParamList,
     "Bible" | "Biblia"
 >;
 type BibleRouteProp = RouteProp<RootStackParamList, "Bible" | "Biblia">;
+
 export const Bible = () => {
     const route = useRoute<BibleRouteProp>();
     const {
@@ -74,6 +74,7 @@ export const Bible = () => {
         setVerse,
         setGreekCurrentBook
     } = useContext(MyContext);
+
     const [voiceMode, setVoiceMode] = useState(false);
     const [voiceResults, setVoiceResults] = useState<string[] | undefined>([]);
     const [versePositions, setVersePositions] = useState<any>({});
@@ -93,12 +94,6 @@ export const Bible = () => {
         lemma: string;
     }>(null);
     const [wordWidth, setWordWidth] = useState(0);
-    // const handleWordPress = (word: string, event: GestureResponderEvent) => {
-    //     const { pageX, pageY } = event.nativeEvent;
-    //     setPopupPosition({ x: pageX, y: pageY });
-    //     setSelectedWord(word);
-    //     setPopupVisible(true);
-    // };
 
     useFocusEffect(
         useCallback(() => {
@@ -207,13 +202,12 @@ export const Bible = () => {
         if (!greekChapter || !versePositions) return;
 
         if (verse && versePositions[verse - 1] !== undefined) {
-            // Se há um verso específico
             scrollToVerse(bookPage, verse);
         } else if (versePositions[0] !== undefined) {
-            // Se só quer ir pro início do capítulo
             scrollRef.current?.scrollTo({ y: versePositions[0] });
         }
     }, [versePositions, verse, greekChapter]);
+
     useEffect(() => {
         (() => {
             if (voiceResults && voiceResults.length > 0) {
@@ -225,7 +219,6 @@ export const Bible = () => {
                     !isNaN(+formattedResults[1])
                 ) {
                     setVerse(+formattedResults[1]);
-
                     return;
                 }
 
@@ -267,7 +260,6 @@ export const Bible = () => {
                     } else {
                         setVerse(1);
                     }
-
                     return;
                 }
 
@@ -294,7 +286,6 @@ export const Bible = () => {
             setSelectedVerses([]);
             setBackgroundVerseColor("#fff");
             setCopyButtonVisible(false);
-
             return;
         }
 
@@ -302,7 +293,6 @@ export const Bible = () => {
             const updated = selectedVerses.filter((v) => v.index !== index);
             setSelectedVerses(updated);
             setCopyButtonVisible(true);
-
             return;
         }
 
@@ -316,8 +306,8 @@ export const Bible = () => {
         try {
             await Clipboard.setStringAsync(
                 `${currentBookName} ${greekChapter}\n\n${selectedVerses
-                    .slice() // cria uma cópia para não alterar o original
-                    .sort((a, b) => a.index - b.index) // ordena pelos índices
+                    .slice()
+                    .sort((a, b) => a.index - b.index)
                     .map(({ text, index }) => `${index + 1}: ${text}`)
                     .join("\n")}`
             );
@@ -337,7 +327,6 @@ export const Bible = () => {
                     x: pageX,
                     y: pageY
                 });
-
                 setWordWidth(width);
                 setPopupVisible(true);
             });
@@ -365,19 +354,20 @@ export const Bible = () => {
 
     return (
         <Pressable
-            style={{ height: insets.bottom, flex: 1 }}
+            style={{ flex: 1 }}
             onPress={() => setSearchButtonVisible((prevState) => !prevState)}
         >
             <View
                 style={{
-                    height: Dimensions.get("screen").height - insets.bottom * 4,
-                    padding: 5
+                    flex: 1,
+                    padding: 5,
+                    paddingBottom: insets.bottom + 60
                 }}
             >
                 <ScrollView
                     ref={scrollRef}
                     scrollEventThrottle={100}
-                    style={{ height: "100%" }}
+                    style={{ flex: 1 }}
                 >
                     {currentChapter?.map((a, index) => (
                         <TouchableWithoutFeedback
@@ -386,13 +376,6 @@ export const Bible = () => {
                             onLongPress={() =>
                                 handleText(index, a, "longpress")
                             }
-                            style={{
-                                backgroundColor: selectedVerses.find(
-                                    (verse) => verse.index === index
-                                )
-                                    ? "#f0f0f0"
-                                    : "#fff"
-                            }}
                         >
                             <View
                                 onLayout={(e) => handleVerseLayout(index, e)}
@@ -436,6 +419,7 @@ export const Bible = () => {
 
                                             return (
                                                 <View
+                                                    key={wordKey}
                                                     pointerEvents={
                                                         isCopyButtonVisible
                                                             ? "none"
@@ -443,7 +427,6 @@ export const Bible = () => {
                                                     }
                                                 >
                                                     <TouchableOpacity
-                                                        key={wordKey}
                                                         ref={(ref) => {
                                                             wordRefs.current[
                                                                 wordKey
@@ -484,16 +467,18 @@ export const Bible = () => {
                     ))}
                 </ScrollView>
             </View>
+
+            {/* BOTÃO MICROFONE */}
             <TouchableOpacity
                 style={{
                     display: isSearchButtonVisible ? "flex" : "none",
                     height: 50,
-                    position: "absolute",
                     width: 50,
-                    borderRadius: 50,
-                    top: height - 190,
-                    left: width / 2.4,
-                    zIndex: 1,
+                    borderRadius: 25,
+                    position: "absolute",
+                    bottom: insets.bottom + 3,
+                    alignSelf: "center",
+                    zIndex: 10,
                     alignItems: "center",
                     justifyContent: "center",
                     backgroundColor: !voiceMode ? "#218B52" : "red"
@@ -501,32 +486,21 @@ export const Bible = () => {
                 onPress={!voiceMode ? startVoiceMode : stopVoiceMode}
             >
                 <Icon
-                    name="microphone"
-                    size={20}
-                    color="white"
-                    style={{
-                        color: "#fff",
-                        display: !voiceMode ? "flex" : "none"
-                    }}
-                />
-
-                <Icon
-                    name="stop"
+                    name={voiceMode ? "stop" : "microphone"}
                     size={20}
                     color="#fff"
-                    style={{
-                        display: voiceMode ? "flex" : "none"
-                    }}
                 />
             </TouchableOpacity>
+
+            {/* BOTÃO COPIAR */}
             <TouchableOpacity
                 style={{
                     display: isCopyButtonVisible ? "flex" : "none",
                     height: 50,
-                    position: "absolute",
                     width: 50,
-                    borderRadius: 50,
-                    top: height - 190,
+                    borderRadius: 25,
+                    position: "absolute",
+                    bottom: insets.bottom + 3,
                     left: width / 4.8,
                     zIndex: isCopyButtonVisible ? 100 : 1,
                     alignItems: "center",
@@ -535,15 +509,9 @@ export const Bible = () => {
                 }}
                 onPress={copyText}
             >
-                <Icon
-                    name="copy"
-                    size={20}
-                    color="white"
-                    style={{
-                        color: "#fff"
-                    }}
-                />
+                <Icon name="copy" size={20} color="#fff" />
             </TouchableOpacity>
+
             {popupVisible && selectedWord && (
                 <Pressable
                     style={{
@@ -552,7 +520,7 @@ export const Bible = () => {
                         left: 0,
                         right: 0,
                         bottom: 0,
-                        zIndex: 998 // atrás do popup
+                        zIndex: 998
                     }}
                     onPress={() => setPopupVisible(false)}
                 >
@@ -561,11 +529,6 @@ export const Bible = () => {
                             position: "absolute",
                             top: Math.min(
                                 popupPosition.y - 60,
-                                // limita para não ultrapassar a barra inferior
-                                // 20 é um padding extra opcional
-                                // insets.bottom dá a altura da barra de ações/navegação
-                                // Dimensions.get('window').height é a altura da tela
-                                // mas se vc não quer que encoste no bottom, subtraia insets.bottom + margem
                                 require("react-native").Dimensions.get("window")
                                     .height -
                                     insets.bottom -
@@ -595,7 +558,6 @@ export const Bible = () => {
                             alignItems: "center"
                         }}
                     >
-                        {/* Seta para cima */}
                         <View
                             style={{
                                 position: "absolute",
@@ -654,37 +616,10 @@ export const Bible = () => {
 };
 
 const styles = StyleSheet.create({
-    column: {
-        flex: 1,
-        width: "100%",
-        flexDirection: "row",
-        height: "100%"
-    },
-    caretLeft: {
-        position: "absolute",
-        top: height - 200,
-        right: width - 50
-    },
-    caretRight: {
-        position: "absolute",
-        top: height - 200,
-        left: width - 50
-    },
-    container: {
-        display: "flex",
-        width: "100%",
-        height: "100%",
-        padding: 3
-    },
     text: {
         fontFamily: "Poppins-Regular",
         fontSize: 16,
         marginRight: 4,
         marginBottom: 4
-    },
-    pdf: {
-        flex: 1,
-        width: Dimensions.get("window").width,
-        height: Dimensions.get("window").height
     }
 });
