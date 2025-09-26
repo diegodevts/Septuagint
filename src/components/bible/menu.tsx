@@ -43,7 +43,7 @@ export const Menu = () => {
     } = useContext(MyContext);
     const [inputText, setInputText] = useState(`${bookPage}:${verse}`);
     const handleChangeText = (text: string) => {
-        setInputText(text); // atualiza o input sempre
+        setInputText(text);
     };
 
     useMemo(() => {

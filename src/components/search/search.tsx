@@ -3,10 +3,17 @@ import { morphology } from "@/src/config/morphology/lxx_morphology";
 import { greek } from "@/src/config/septuagint-versions/greek-version";
 import { MaterialIcons } from "@expo/vector-icons";
 import { useNavigation } from "@react-navigation/native";
-import React, { useCallback, useContext, useEffect, useState } from "react";
+import React, {
+    useCallback,
+    useContext,
+    useEffect,
+    useMemo,
+    useState
+} from "react";
 import {
     Dimensions,
     FlatList,
+    InteractionManager,
     KeyboardAvoidingView,
     Platform,
     StyleSheet,
@@ -20,6 +27,7 @@ import { useSafeAreaInsets } from "react-native-safe-area-context";
 import Icon from "react-native-vector-icons/FontAwesome5";
 import { NavigationProp } from "../bible/bible";
 import MyContext from "@/src/contexts/items-context";
+import Loading from "../loading/loading";
 
 type SearchResult = {
     book: string;
@@ -38,26 +46,29 @@ export const Search = () => {
     const [wordsWithSameLemma, setWordsWithSameLemma] = useState<string[]>([]);
     const [occurrences, setOcurrences] = useState(0);
     const [filteredResults, setFilteredResults] = useState<SearchResult[]>([]);
+    const [isLoading, setIsLoading] = useState(false);
     const toggleSwitch = () => setIsFragment((previousState) => !previousState);
     const { lang } = useContext(MyContext);
     const insets = useSafeAreaInsets();
 
     useEffect(() => {
-        setFilteredResults([]);
-        setOcurrences(0);
-
         if (!searchWord) return;
 
-        let results: SearchResult[] = [];
+        setIsLoading(true);
 
-        if (searchMode === "word") {
-            results = searchWordInBooks(searchWord, greek);
-        } else if (searchMode === "lemma") {
-            results = searchLemma(searchWord, greek);
-        }
+        setTimeout(() => {
+            let results: SearchResult[] = [];
 
-        setFilteredResults(results);
-        setOcurrences(results.length);
+            if (searchMode === "word") {
+                results = searchWordInBooks(searchWord, greek);
+            } else if (searchMode === "lemma") {
+                results = searchLemma(searchWord, greek);
+            }
+
+            setFilteredResults(results);
+            setOcurrences(results.length);
+            setIsLoading(false);
+        }, 100);
     }, [searchWord, searchMode, isFragment, wordsWithSameLemma]);
 
     const setTextToScroll = (data: {
@@ -266,26 +277,32 @@ export const Search = () => {
         return results;
     };
 
-    const setWordAndWordsLemmas = (word: string) => {
-        setSearchWord(word);
-        const getMorphology = morphology.find(
-            (data) =>
-                data.word.toLowerCase().trim() === word.toLowerCase().trim() ||
-                removeGreekAccents(data.word.toLowerCase().trim()) ===
-                    removeGreekAccents(word.toLowerCase().trim())
-        );
+    const setWordAndWordsLemmas = () => {
+        if (word.trim() !== "") {
+            setSearchWord(word);
+            const getMorphology = morphology.find(
+                (data) =>
+                    data.word.toLowerCase().trim() ===
+                        word.toLowerCase().trim() ||
+                    removeGreekAccents(data.word.toLowerCase().trim()) ===
+                        removeGreekAccents(word.toLowerCase().trim())
+            );
 
-        if (getMorphology) {
-            const lemma = removeGreekAccents(getMorphology.lemma.toLowerCase());
-
-            const wordsLemmas = morphology
-                .filter(
-                    (data) =>
-                        removeGreekAccents(data.lemma.toLowerCase()) === lemma
-                )
-                .map(({ word }) => removeGreekAccents(word.toLowerCase()));
-
-            setWordsWithSameLemma(wordsLemmas);
+            if (getMorphology) {
+                const lemma = removeGreekAccents(
+                    getMorphology.lemma.toLowerCase()
+                );
+                const wordsLemmas = morphology
+                    .filter(
+                        (data) =>
+                            removeGreekAccents(data.lemma.toLowerCase()) ===
+                            lemma
+                    )
+                    .map(({ word }) => removeGreekAccents(word.toLowerCase()));
+                setWordsWithSameLemma(wordsLemmas);
+            } else {
+                setWordsWithSameLemma([]);
+            }
         }
     };
 
@@ -311,6 +328,8 @@ export const Search = () => {
                         setWord("");
                         setSearchWord("");
                         setWordsWithSameLemma([]);
+                        setFilteredResults([]);
+                        setOcurrences(0);
                     }}
                 >
                     <Icon
@@ -346,6 +365,8 @@ export const Search = () => {
                         setWord("");
                         setSearchWord("");
                         setWordsWithSameLemma([]);
+                        setFilteredResults([]);
+                        setOcurrences(0);
                     }}
                 >
                     <Icon
@@ -390,7 +411,7 @@ export const Search = () => {
                     }}
                     value={word}
                     placeholder="Digite algo para pesquisar"
-                    onEndEditing={() => setWordAndWordsLemmas(word)}
+                    onSubmitEditing={setWordAndWordsLemmas}
                     onChangeText={setWord}
                 />
                 <View
@@ -435,24 +456,27 @@ export const Search = () => {
             </View>
         </View>
     );
-
     return (
         <KeyboardAvoidingView
             style={{ flex: 1 }}
             behavior={Platform.OS === "ios" ? "padding" : "height"}
             keyboardVerticalOffset={Platform.OS === "ios" ? 90 : 0}
         >
-            <FlatList
-                data={filteredResults}
-                renderItem={renderItem}
-                keyExtractor={(_, i) => i.toString()}
-                ListHeaderComponent={header}
-                keyboardShouldPersistTaps="handled"
-                contentContainerStyle={{
-                    paddingBottom: insets.bottom,
-                    alignItems: "center"
-                }}
-            />
+            {!isLoading ? (
+                <FlatList
+                    data={filteredResults}
+                    renderItem={renderItem}
+                    keyExtractor={(_, i) => i.toString()}
+                    ListHeaderComponent={header}
+                    keyboardShouldPersistTaps="handled"
+                    contentContainerStyle={{
+                        paddingBottom: insets.bottom,
+                        alignItems: "center"
+                    }}
+                />
+            ) : (
+                <Loading isLoading={isLoading} />
+            )}
         </KeyboardAvoidingView>
     );
 };
