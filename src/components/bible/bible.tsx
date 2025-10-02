@@ -17,10 +17,6 @@ import React, { useCallback } from "react";
 import Icon from "react-native-vector-icons/FontAwesome";
 import { useContext, useEffect, useMemo, useRef, useState } from "react";
 import MyContext from "@/src/contexts/items-context";
-import Voice, {
-    SpeechErrorEvent,
-    SpeechResultsEvent
-} from "@react-native-voice/voice";
 import {
     normalizeBookName,
     capitalizeFirstLetter
@@ -39,6 +35,7 @@ import { NativeStackNavigationProp } from "@react-navigation/native-stack";
 import { RootStackParamList } from "@/src/@types/types";
 import { removeGreekAccents } from "@/src/utils/remove-accents";
 import { greek } from "@/src/config/septuagint-versions/greek-version";
+import { useVoice, VoiceMode } from "react-native-voicekit";
 
 const { width } = Dimensions.get("screen");
 
@@ -75,9 +72,13 @@ export const Bible = () => {
         setGreekCurrentBook
     } = useContext(MyContext);
 
-    const [voiceMode, setVoiceMode] = useState(false);
-    const [voiceResults, setVoiceResults] = useState<string[] | undefined>([]);
     const [versePositions, setVersePositions] = useState<any>({});
+    const { available, listening, transcript, startListening, stopListening } =
+        useVoice({
+            locale: "pt-BR",
+            mode: VoiceMode.Continuous,
+            enablePartialResults: true
+        });
 
     const [isSearchButtonVisible, setSearchButtonVisible] =
         useState<boolean>(true);
@@ -143,46 +144,6 @@ export const Bible = () => {
         }
     }, [bookPage]);
 
-    const onSpeechError = (error: SpeechErrorEvent) => {
-        console.log(error);
-    };
-
-    const startVoiceMode = async () => {
-        await Voice.start("pt-BR");
-        setVoiceMode(true);
-    };
-    const stopVoiceMode = async () => {
-        await Voice.stop();
-        setVoiceMode(false);
-    };
-
-    const requestMicrophonePermission = async () => {
-        try {
-            const granted = await PermissionsAndroid.request(
-                PermissionsAndroid.PERMISSIONS.RECORD_AUDIO
-            );
-            if (granted === PermissionsAndroid.RESULTS.GRANTED) {
-                console.log("Ok");
-            } else {
-                console.log("Permission denied");
-            }
-        } catch (err) {
-            console.warn("");
-        }
-    };
-
-    useMemo(() => {
-        requestMicrophonePermission();
-
-        Voice.onSpeechResults = (result: SpeechResultsEvent) => {
-            setVoiceResults(result.value);
-        };
-
-        Voice.onSpeechError = onSpeechError;
-
-        return () => Voice.destroy().then(Voice.removeAllListeners);
-    }, []);
-
     const handleVerseLayout = (index: number, event: LayoutChangeEvent) => {
         const { y } = event.nativeEvent.layout;
         setVersePositions((prevPositions: any) => ({
@@ -210,8 +171,8 @@ export const Bible = () => {
 
     useEffect(() => {
         (() => {
-            if (voiceResults && voiceResults.length > 0) {
-                const formattedResults = voiceResults[0].split(" ");
+            if (transcript && transcript.length > 0) {
+                const formattedResults = transcript.split(" ");
 
                 if (
                     formattedResults.length == 2 &&
@@ -266,7 +227,7 @@ export const Bible = () => {
                 Toast.error(`Não existe um livro chamado ${book}`, "top");
             }
         })();
-    }, [voiceResults]);
+    }, [transcript]);
 
     const [selectedVerses, setSelectedVerses] = useState<
         { index: number; text: string }[]
@@ -481,12 +442,14 @@ export const Bible = () => {
                     zIndex: 10,
                     alignItems: "center",
                     justifyContent: "center",
-                    backgroundColor: !voiceMode ? "#218B52" : "red"
+                    backgroundColor: !listening ? "#218B52" : "red"
                 }}
-                onPress={!voiceMode ? startVoiceMode : stopVoiceMode}
+                onPress={
+                    available && listening ? stopListening : startListening
+                }
             >
                 <Icon
-                    name={voiceMode ? "stop" : "microphone"}
+                    name={listening ? "stop" : "microphone"}
                     size={20}
                     color="#fff"
                 />
