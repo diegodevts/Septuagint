@@ -19,7 +19,7 @@
                 "foregroundImage": "./assets/images/favicon.png",
                 "backgroundColor": "#ffffff"
             },
-            "permissions": ["android.permission.RECORD_AUDIO"],
+            "permissions": ["android.permission.RECORD_AUDIO", "RECORD_AUDIO"],
             "package": "com.diegodevts.septuaginta"
         },
         "web": {
@@ -28,10 +28,10 @@
         "plugins": [
             "expo-font",
             [
-                "@react-native-voice/voice",
+                "react-native-voicekit",
                 {
-                    "microphonePermission": "CUSTOM: Allow $(PRODUCT_NAME) to access the microphone",
-                    "speechRecognitionPermission": "CUSTOM: Allow $(PRODUCT_NAME) to securely recognize user speech"
+                    "speechRecognitionPermission": "Custom iOS speech recognition permission message (optional)",
+                    "microphonePermission": "Custom iOS microphone permission message (optional)"
                 }
             ]
         ],

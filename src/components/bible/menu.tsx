@@ -39,7 +39,8 @@ export const Menu = () => {
         setPopupVisible,
         setVerse,
         verse,
-        setGreekChapter
+        setGreekChapter,
+        setCurrentBookIndex
     } = useContext(MyContext);
     const [inputText, setInputText] = useState(`${bookPage}:${verse}`);
     const handleChangeText = (text: string) => {
@@ -84,6 +85,7 @@ export const Menu = () => {
         setGreekChapter(1);
         setVerse(1);
         setGreekCurrentBook(greek[index - 1]);
+        setCurrentBookIndex(index - 1);
     };
 
     return (

@@ -73,12 +73,18 @@ export const Bible = () => {
     } = useContext(MyContext);
 
     const [versePositions, setVersePositions] = useState<any>({});
-    const { available, listening, transcript, startListening, stopListening } =
-        useVoice({
-            locale: "pt-BR",
-            mode: VoiceMode.Continuous,
-            enablePartialResults: true
-        });
+    const {
+        available,
+        listening,
+        transcript,
+        resetTranscript,
+        startListening,
+        stopListening
+    } = useVoice({
+        locale: "pt-BR",
+        mode: VoiceMode.Continuous,
+        enablePartialResults: true
+    });
 
     const [isSearchButtonVisible, setSearchButtonVisible] =
         useState<boolean>(true);
@@ -170,64 +176,100 @@ export const Bible = () => {
     }, [versePositions, verse, greekChapter]);
 
     useEffect(() => {
-        (() => {
-            if (transcript && transcript.length > 0) {
-                const formattedResults = transcript.split(" ");
+        if (!transcript || transcript.trim().length === 0) return;
 
-                if (
-                    formattedResults.length == 2 &&
-                    formattedResults.includes("verso") &&
-                    !isNaN(+formattedResults[1])
-                ) {
-                    setVerse(+formattedResults[1]);
-                    return;
-                }
+        if (!listening) {
+            const formattedResults = transcript
+                .toLowerCase()
+                .normalize("NFD") // remove acentos
+                .replace(/[\u0300-\u036f]/g, "")
+                .split(" ")
+                .filter((w) => w.trim() !== "");
 
-                const hasVerse =
-                    formattedResults.indexOf("verso") != -1
-                        ? formattedResults.indexOf("verso") - 1
-                        : formattedResults.length - 1;
+            // CASO SIMPLES: "verso 5"
+            if (
+                formattedResults.length === 2 &&
+                (formattedResults[0] === "verso" ||
+                    formattedResults[0] === "versiculo") &&
+                !isNaN(+formattedResults[1])
+            ) {
+                setVerse(+formattedResults[1]);
 
-                let book = capitalizeFirstLetter(
-                    formattedResults
-                        .slice(0, hasVerse)
-                        .toString()
-                        .split(",")
-                        .join(" ")
-                );
-                const chapter = formattedResults[hasVerse];
-
-                if (book.includes("Primeira")) {
-                    book = book.replace(/Primeira/i, "1");
-                }
-
-                if (book.includes("Segunda")) {
-                    book = book.replace(/Segunda/i, "2");
-                }
-
-                const currentBookIndex = normalizeBookName(
-                    portugueseBooksNames,
-                    book
-                );
-
-                if (currentBookIndex != -1 && !isNaN(+chapter)) {
-                    setCurrentBookIndex(currentBookIndex);
-                    setBookPage(+chapter);
-
-                    if (formattedResults.includes("verso")) {
-                        setVerse(
-                            +formattedResults[formattedResults.length - 1]
-                        );
-                    } else {
-                        setVerse(1);
-                    }
-                    return;
-                }
-
-                Toast.error(`Não existe um livro chamado ${book}`, "top");
+                resetTranscript();
+                return;
             }
-        })();
-    }, [transcript]);
+
+            // Identifica se foi falado "verso"
+            const versoIndex =
+                formattedResults.indexOf("verso") ??
+                formattedResults.indexOf("versiculo");
+
+            let bookWords: string[];
+            let chapter: string;
+            let verseNumber: string | null = null;
+
+            if (versoIndex !== -1) {
+                bookWords = formattedResults.slice(0, versoIndex - 1);
+                chapter = formattedResults[versoIndex - 1];
+                verseNumber = formattedResults[versoIndex + 1] || null;
+            } else {
+                bookWords = formattedResults.slice(
+                    0,
+                    formattedResults.length - 1
+                );
+                chapter = formattedResults[formattedResults.length - 1];
+            }
+
+            let book = capitalizeFirstLetter(bookWords.join(" "));
+
+            // Substitui ordinais
+            book = book
+                .replace(/primeira/i, "1")
+                .replace(/segunda/i, "2")
+                .replace(/terceira/i, "3");
+
+            // Normaliza para achar índice do livro
+            const currentBookIndex = normalizeBookName(
+                portugueseBooksNames,
+                book
+            );
+
+            if (currentBookIndex !== -1 && !isNaN(+chapter)) {
+                // busca o livro dentro do array greek
+                const hasBookToScroll = greek.find((b, index) => {
+                    if (index === currentBookIndex) {
+                        setCurrentBookIndex(index);
+                        return true;
+                    }
+                    return false;
+                });
+
+                if (!hasBookToScroll) {
+                    Toast.error(`Não reconheci o livro "${book}"`, "top");
+
+                    resetTranscript();
+                    return;
+                }
+
+                // aplica o mesmo fluxo que você fez no outro useEffect
+                setBookPage(+chapter);
+                setGreekCurrentBook(hasBookToScroll);
+                setGreekChapter(+chapter);
+
+                if (verseNumber && !isNaN(+verseNumber)) {
+                    setVerse(+verseNumber);
+                } else {
+                    setVerse(1);
+                }
+
+                resetTranscript();
+                return;
+            }
+
+            resetTranscript();
+            Toast.error(`Não reconheci o livro "${book}"`, "top");
+        }
+    }, [listening]);
 
     const [selectedVerses, setSelectedVerses] = useState<
         { index: number; text: string }[]
